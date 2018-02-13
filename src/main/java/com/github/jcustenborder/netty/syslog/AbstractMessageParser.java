@@ -16,7 +16,6 @@
 package com.github.jcustenborder.netty.syslog;
 
 import io.netty.buffer.ByteBuf;
-import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.unix.DatagramSocketAddress;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -65,7 +64,7 @@ public abstract class AbstractMessageParser {
   private static final String NULL_TOKEN = "-";
 
   private static final Pattern MESSAGE_PATTERN_RFC5424 = Pattern.compile("^<(?<priority>\\d+)>(?<version>\\d{1,3})\\s*(?<date>[0-9:+-TZ]+)\\s*(?<host>\\S+)\\s*(?<appname>\\S+)\\s*(?<procid>\\S+)\\s*(?<msgid>\\S+)\\s*(?<structureddata>(-|\\[.+\\]))\\s*(?<message>.+)$");
-  private static final Pattern MESSAGE_PATTERN_RFC3164 = Pattern.compile("^<(?<priority>\\d+)>(?<date>([a-zA-Z]{3}\\s+\\d+\\s+\\d+:\\d+:\\d+)|([0-9T:.Z-]+))\\s+(?<host>\\S+)\\s+(\\S+):*\\s*(?<message>.+)$");
+  private static final Pattern MESSAGE_PATTERN_RFC3164 = Pattern.compile("^<(?<priority>\\d+)>(?<date>([a-zA-Z]{3}\\s+\\d+\\s+\\d+:\\d+:\\d+)|([0-9T:.Z-]+))\\s+(?<host>\\S+)\\s+((?<appname>\\S+):)*\\s*(?<message>.+)$");
   private static final Pattern MESSAGE_PATTERN_CISCO = Pattern.compile("^(?<date>([a-zA-Z]{3}\\s+\\d+\\s+\\d+\\s+\\d+:\\d+:\\d+)):\\s+%(?<host>\\S+):\\s*(?<message>.+)$");
   private static final Pattern MESSAGE_PATTERN_FALLBACK = Pattern.compile("^(?<date>([a-zA-Z]{3}\\s+\\d+\\s+\\d+:\\d+:\\d+)) (?<host>\\S+) (?<appname>\\S+)\\[(?<procid>\\d+)\\]:\\s(?<message>.*)$");
   private static final Pattern STRUCTURED_DATA_PATTERN = Pattern.compile("\\[([^\\]]+)\\]");
@@ -98,6 +97,7 @@ public abstract class AbstractMessageParser {
 
   protected abstract void parse(
       List<Object> output,
+      String rawMessage,
       Date date,
       InetAddress remoteAddress,
       String host,
@@ -132,6 +132,7 @@ public abstract class AbstractMessageParser {
 
     parse(
         output,
+        message,
         date,
         remoteAddress,
         groupHost,
@@ -142,8 +143,7 @@ public abstract class AbstractMessageParser {
         groupProcID,
         null,
         null,
-        groupMessage
-    );
+        groupMessage);
 
     return true;
   }
@@ -163,6 +163,7 @@ public abstract class AbstractMessageParser {
 
     parse(
         output,
+        message,
         date,
         remoteAddress,
         groupHost,
@@ -173,8 +174,7 @@ public abstract class AbstractMessageParser {
         null,
         null,
         null,
-        groupMessage
-    );
+        groupMessage);
 
     return true;
   }
@@ -210,6 +210,7 @@ public abstract class AbstractMessageParser {
 
     parse(
         output,
+        message,
         date,
         remoteAddress,
         groupHost,
@@ -219,8 +220,7 @@ public abstract class AbstractMessageParser {
         appName,
         procID,
         messageID,
-        structuredData,
-        groupMessage);
+        structuredData, groupMessage);
     return true;
   }
 
@@ -236,6 +236,7 @@ public abstract class AbstractMessageParser {
     final String groupDate = matcher.group("date");
     final String groupHost = matcher.group("host");
     final String groupMessage = matcher.group("message");
+    final String groupAppName = matcher.group("appname");
     final int priority = Integer.parseInt(groupPriority);
     final int facility = facility(priority);
     final Date date = parseDate(groupDate);
@@ -243,18 +244,18 @@ public abstract class AbstractMessageParser {
 
     parse(
         output,
+        message,
         date,
         remoteAddress,
         groupHost,
         facility,
         level,
         null,
+        groupAppName,
         null,
         null,
         null,
-        null,
-        groupMessage
-    );
+        groupMessage);
 
     return true;
   }

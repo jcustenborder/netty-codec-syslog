@@ -103,8 +103,5 @@ public class SyslogMessageParserTest extends AbstractMessageParserTest<SyslogMes
     assertEquals(expected.date(), actual.date(), "date should match.");
   }
 
-  public static class TestCase {
-    public String input;
-    public SyslogMessage expected;
-  }
+
 }

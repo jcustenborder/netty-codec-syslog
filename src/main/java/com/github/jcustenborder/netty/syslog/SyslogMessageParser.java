@@ -38,7 +38,7 @@ public class SyslogMessageParser extends AbstractMessageParser {
   @Override
   protected void parse(
       List<Object> output,
-      Date date,
+      String rawMessage, Date date,
       InetAddress remoteAddress,
       String host,
       Integer facility,
