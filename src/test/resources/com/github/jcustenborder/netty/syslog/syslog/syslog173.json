@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 29 2004 09:57:02: %PIX-6-302005: Built UDP connection for faddr 66.246.44.108/59213 gaddr 10.0.0.187/53 laddr 192.168.0.2/53",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "Built UDP connection for faddr 66.246.44.108/59213 gaddr 10.0.0.187/53 laddr 192.168.0.2/53",
+    "host" : "PIX-6-302005",
+    "date" : 1080554222000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Built UDP connection for faddr 66.246.44.108/59213 gaddr 10.0.0.187/53 laddr 192.168.0.2/53"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "input" : "Feb 2 09:00:41 avas.example.com amavisd[11599]: (11599-04) Not-Delivered, <> -> , quarantine spam-6234502ce990e93fd0f5c8c6c5eb37c8-20040202-090041-11599-04, Message-ID: , Hits: 10.844",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "(11599-04) Not-Delivered, <> -> , quarantine spam-6234502ce990e93fd0f5c8c6c5eb37c8-20040202-090041-11599-04, Message-ID: , Hits: 10.844",
+    "host" : "avas.example.com",
+    "date" : 1517562041000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "(11599-04) Not-Delivered, <> -> , quarantine spam-6234502ce990e93fd0f5c8c6c5eb37c8-20040202-090041-11599-04, Message-ID: , Hits: 10.844"
+  }
+}

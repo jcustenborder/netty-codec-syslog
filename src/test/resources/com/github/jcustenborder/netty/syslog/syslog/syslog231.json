@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 1 00:00:06 avas postfix/cleanup[1666]: 4391461A83: message-id=<20040301080005.445C261AA4@avas.example.com>",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "4391461A83: message-id=<20040301080005.445C261AA4@avas.example.com>",
+    "host" : "avas",
+    "date" : 1519862406000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "4391461A83: message-id=<20040301080005.445C261AA4@avas.example.com>"
+  }
+}

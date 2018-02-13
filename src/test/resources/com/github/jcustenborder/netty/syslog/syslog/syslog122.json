@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 29 2004 09:56:24: %PIX-6-302001: Built outbound TCP connection 152060 for faddr 130.57.4.27/80 gaddr 10.0.0.187/56673 laddr 192.168.0.2/56673",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "Built outbound TCP connection 152060 for faddr 130.57.4.27/80 gaddr 10.0.0.187/56673 laddr 192.168.0.2/56673",
+    "host" : "PIX-6-302001",
+    "date" : 1080554184000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Built outbound TCP connection 152060 for faddr 130.57.4.27/80 gaddr 10.0.0.187/56673 laddr 192.168.0.2/56673"
+  }
+}

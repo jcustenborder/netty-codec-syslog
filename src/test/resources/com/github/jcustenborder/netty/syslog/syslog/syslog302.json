@@ -1,0 +1,13 @@
+{
+  "input" : "Feb 2 09:00:14 avas.example.com amavisd[11569]: No $unrar, not using it",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "No $unrar, not using it",
+    "host" : "avas.example.com",
+    "date" : 1517562014000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "No $unrar, not using it"
+  }
+}

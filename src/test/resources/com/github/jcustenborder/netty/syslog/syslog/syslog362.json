@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 7 05:00:00 avas CROND[20094]: (cronjob) CMD (/sbin/uv.sh)",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "(cronjob) CMD (/sbin/uv.sh)",
+    "host" : "avas",
+    "date" : 1520398800000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "(cronjob) CMD (/sbin/uv.sh)"
+  }
+}

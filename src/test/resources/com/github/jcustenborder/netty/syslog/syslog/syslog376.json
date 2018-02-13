@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 6 19:01:12 avas dccd[13284]: no incoming flood connection from dcc1.example.no, server-ID XXXX",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "no incoming flood connection from dcc1.example.no, server-ID XXXX",
+    "host" : "avas",
+    "date" : 1520362872000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "no incoming flood connection from dcc1.example.no, server-ID XXXX"
+  }
+}

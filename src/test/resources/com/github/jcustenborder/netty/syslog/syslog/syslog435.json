@@ -1,0 +1,4 @@
+{
+  "input" : "*Feb  8 08:51:58.706: %PA-3-PA_INIT_FAILED: Performance Agent failed to initialize (Missing Data License)",
+  "expected" : null
+}

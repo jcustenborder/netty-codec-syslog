@@ -1,0 +1,4 @@
+{
+  "input" : "*Mar  1 00:00:08.485: %ATA-6-DEV_FOUND: device 0x171",
+  "expected" : null
+}

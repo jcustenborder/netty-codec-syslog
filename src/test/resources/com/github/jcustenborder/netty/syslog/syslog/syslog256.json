@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 1 00:01:31 avas postfix/smtpd[2410]: connect from user-0c99au7.cable.mindspring.com[24.148.171.199]",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "connect from user-0c99au7.cable.mindspring.com[24.148.171.199]",
+    "host" : "avas",
+    "date" : 1519862491000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "connect from user-0c99au7.cable.mindspring.com[24.148.171.199]"
+  }
+}

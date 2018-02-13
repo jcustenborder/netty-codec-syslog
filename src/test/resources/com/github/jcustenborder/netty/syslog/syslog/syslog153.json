@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 29 2004 09:56:39: %PIX-5-304001: 192.168.0.2 Accessed URL 216.52.17.116:/b/ss/novellcom/0/G.1-XP-R/s14102280031206?[AQB]purl=http%3A%2F%2Fwww.novell.com%2Fde-de%2F&pccr=true&&ndh=1&t=29/2/2004%2012%3A20%3A20%201%20-120&ch=www.novell.com/de-de/&se",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "192.168.0.2 Accessed URL 216.52.17.116:/b/ss/novellcom/0/G.1-XP-R/s14102280031206?[AQB]purl=http%3A%2F%2Fwww.novell.com%2Fde-de%2F&pccr=true&&ndh=1&t=29/2/2004%2012%3A20%3A20%201%20-120&ch=www.novell.com/de-de/&se",
+    "host" : "PIX-5-304001",
+    "date" : 1080554199000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "192.168.0.2 Accessed URL 216.52.17.116:/b/ss/novellcom/0/G.1-XP-R/s14102280031206?[AQB]purl=http%3A%2F%2Fwww.novell.com%2Fde-de%2F&pccr=true&&ndh=1&t=29/2/2004%2012%3A20%3A20%201%20-120&ch=www.novell.com/de-de/&se"
+  }
+}

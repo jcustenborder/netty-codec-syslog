@@ -1,0 +1,13 @@
+{
+  "input" : "Feb 2 09:00:46 avas.example.com amavisd[11599]: (11599-06) Passed,  -> , Message-ID: <401e7cf6.171.7f8.20446@example.com>, Hits: 1.587",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "(11599-06) Passed,  -> , Message-ID: <401e7cf6.171.7f8.20446@example.com>, Hits: 1.587",
+    "host" : "avas.example.com",
+    "date" : 1517562046000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "(11599-06) Passed,  -> , Message-ID: <401e7cf6.171.7f8.20446@example.com>, Hits: 1.587"
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "input" : "Mar 12 09:27:20 server5 syslog: su : - ttyp1 user-informix",
+  "expected" : null
+}

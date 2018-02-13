@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,8 +22,17 @@ import io.netty.handler.codec.MessageToMessageDecoder;
 import java.util.List;
 
 public class TCPSyslogMessageDecoder extends MessageToMessageDecoder<ByteBuf> {
-  @Override
-  protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf, List<Object> list) throws Exception {
+  final AbstractMessageParser parser;
 
+  public TCPSyslogMessageDecoder(AbstractMessageParser parser) {
+    this.parser = parser;
+  }
+
+  public TCPSyslogMessageDecoder() {
+    this(new SyslogMessageParser("UTC"));
+  }
+  @Override
+  protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf, List<Object> output) throws Exception {
+    this.parser.parse(output, channelHandlerContext.channel().remoteAddress(), byteBuf);
   }
 }

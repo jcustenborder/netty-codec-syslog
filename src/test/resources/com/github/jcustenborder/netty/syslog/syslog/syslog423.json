@@ -1,0 +1,13 @@
+{
+  "input" : "<46>1 2018-02-01T20:28:36.836975+00:00 miner-01 rsyslogd - - - rsyslogd's groupid changed to 108",
+  "expected" : {
+    "level" : 6,
+    "version" : 1,
+    "facility" : 5,
+    "message" : "rsyslogd's groupid changed to 108",
+    "host" : "miner-01",
+    "date" : 1517517752975,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "rsyslogd's groupid changed to 108"
+  }
+}

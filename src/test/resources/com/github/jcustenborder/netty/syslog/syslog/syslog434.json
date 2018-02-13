@@ -1,0 +1,4 @@
+{
+  "input" : "*Mar  1 00:00:08.704: %NVRAM-5-CONFIG_NVRAM_READ_OK: NVRAM configuration 'flash:/nvram' was read from disk.",
+  "expected" : null
+}

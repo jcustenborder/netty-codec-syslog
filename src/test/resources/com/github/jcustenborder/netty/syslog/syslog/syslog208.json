@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 12 12:32:24 server6 sshd[11187]: Accepted password for jfalgout from 111.222.333.444 port 34138 ssh2",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "Accepted password for jfalgout from 111.222.333.444 port 34138 ssh2",
+    "host" : "server6",
+    "date" : 1520814744000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Accepted password for jfalgout from 111.222.333.444 port 34138 ssh2"
+  }
+}

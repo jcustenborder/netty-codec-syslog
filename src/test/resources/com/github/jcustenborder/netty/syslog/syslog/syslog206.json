@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 12 08:49:53 server6 ftpd[27281]: FTP LOGIN FROM 111.222.333.444 [111.222.333.444], netscape",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "FTP LOGIN FROM 111.222.333.444 [111.222.333.444], netscape",
+    "host" : "server6",
+    "date" : 1520844593000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "FTP LOGIN FROM 111.222.333.444 [111.222.333.444], netscape"
+  }
+}

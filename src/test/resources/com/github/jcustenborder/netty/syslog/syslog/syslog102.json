@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 29 2004 09:56:08: %PIX-5-109012: Authen Session End: user '', sid 1, elapsed 313 seconds",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "Authen Session End: user '', sid 1, elapsed 313 seconds",
+    "host" : "PIX-5-109012",
+    "date" : 1080554168000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Authen Session End: user '', sid 1, elapsed 313 seconds"
+  }
+}

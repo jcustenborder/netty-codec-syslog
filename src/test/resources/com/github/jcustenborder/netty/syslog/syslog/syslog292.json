@@ -1,0 +1,13 @@
+{
+  "input" : "Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Unix::Syslog 0.99",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "Module Unix::Syslog 0.99",
+    "host" : "avas.example.com",
+    "date" : 1517562014000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Module Unix::Syslog 0.99"
+  }
+}

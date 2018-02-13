@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 1 00:00:03 avas postfix/smtpd[2314]: C0E5861AA4: client=host81-153-11-97.range81-153.btcentralplus.com[81.153.11.97]",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "C0E5861AA4: client=host81-153-11-97.range81-153.btcentralplus.com[81.153.11.97]",
+    "host" : "avas",
+    "date" : 1519862403000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "C0E5861AA4: client=host81-153-11-97.range81-153.btcentralplus.com[81.153.11.97]"
+  }
+}

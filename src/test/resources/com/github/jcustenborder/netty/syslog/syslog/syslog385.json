@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 7 03:48:25 avas dccd[10491]: automatic dbclean; starting `dbclean -DPq -i 1189 -L info,local5.notice -L error,local5.err`",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "automatic dbclean; starting `dbclean -DPq -i 1189 -L info,local5.notice -L error,local5.err`",
+    "host" : "avas",
+    "date" : 1520394505000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "automatic dbclean; starting `dbclean -DPq -i 1189 -L info,local5.notice -L error,local5.err`"
+  }
+}

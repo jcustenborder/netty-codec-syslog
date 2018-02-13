@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 29 2004 09:56:04: %PIX-6-302006: Teardown UDP connection for faddr 192.42.93.30/2383 gaddr 10.0.0.187/1059 laddr 192.168.0.2/1059 ()",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "Teardown UDP connection for faddr 192.42.93.30/2383 gaddr 10.0.0.187/1059 laddr 192.168.0.2/1059 ()",
+    "host" : "PIX-6-302006",
+    "date" : 1080554164000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Teardown UDP connection for faddr 192.42.93.30/2383 gaddr 10.0.0.187/1059 laddr 192.168.0.2/1059 ()"
+  }
+}

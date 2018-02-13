@@ -1,0 +1,4 @@
+{
+  "input" : "Mar 12 12:01:02 server4 snort: snort startup succeeded",
+  "expected" : null
+}
