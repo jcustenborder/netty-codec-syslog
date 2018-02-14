@@ -15,16 +15,10 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DynamicTest;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestFactory;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -47,7 +41,7 @@ public class SyslogMessageParserTest extends AbstractMessageParserTest<SyslogMes
   public Stream<DynamicTest> parse() {
     final File testsPath = new File("src/test/resources/com/github/jcustenborder/netty/syslog/syslog");
     return Arrays.stream(testsPath.listFiles()).map(file -> dynamicTest(file.getName(), () -> {
-      final TestCase testCase = this.mapper.readValue(file, TestCase.class);
+      final SyslogTestCase testCase = this.mapper.readValue(file, SyslogTestCase.class);
       List<Object> output = new ArrayList<>();
       parse(output, testCase.input);
       assertFalse(output.isEmpty());
@@ -76,7 +70,7 @@ public class SyslogMessageParserTest extends AbstractMessageParserTest<SyslogMes
 //    File outputRoot = new File("src/test/resources/com/github/jcustenborder/netty/syslog/syslog");
 //
 //    for (String s : lines) {
-//      TestCase testCase = new TestCase();
+//      SyslogTestCase testCase = new SyslogTestCase();
 //      testCase.input = s;
 //      testCase.expected = parse(testCase.input);
 //      String filename = String.format("syslog%03d.json", index);

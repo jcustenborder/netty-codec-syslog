@@ -1,6 +1,6 @@
 package com.github.jcustenborder.netty.syslog;
 
-public class TestCase {
+public class SyslogTestCase {
   public String input;
   public SyslogMessage expected;
 }

@@ -1,4 +1,0 @@
-{
-  "input" : "Mar 12 12:01:02 server4 snort: telnet_decode arguments:",
-  "expected" : null
-}

@@ -1,4 +1,0 @@
-{
-  "input" : "*Feb  8 08:52:05.064: %LINK-3-UPDOWN: Interface GigabitEthernet0/0, changed state to up",
-  "expected" : null
-}
