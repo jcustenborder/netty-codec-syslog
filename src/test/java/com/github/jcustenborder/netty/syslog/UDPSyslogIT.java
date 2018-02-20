@@ -36,10 +36,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.net.InetAddress;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class UDPSyslogIT {
   private static final Logger log = LoggerFactory.getLogger(UDPSyslogIT.class);
@@ -47,11 +51,14 @@ public class UDPSyslogIT {
   EventLoopGroup bossGroup;
   Bootstrap b;
   ChannelFuture channelFuture;
+  SyslogMessageHandler handler;
 
   class SyslogMessageHandler extends SimpleChannelInboundHandler<SyslogMessage> {
+    List<SyslogMessage> messages = new ArrayList<>(1024);
+
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, SyslogMessage message) throws Exception {
-      log.info("message = {}", message);
+      messages.add(message);
     }
   }
 
@@ -69,7 +76,7 @@ public class UDPSyslogIT {
             channelPipeline.addLast(
                 new LoggingHandler("Syslog", LogLevel.TRACE),
                 new UDPSyslogMessageDecoder(),
-                new SyslogMessageHandler()
+                handler = new SyslogMessageHandler()
             );
           }
         });
@@ -79,13 +86,14 @@ public class UDPSyslogIT {
   }
 
   @Test
-  public void foo() throws InterruptedException {
+  public void roundtrip() throws InterruptedException {
     SyslogIF syslogIF = Syslog.getInstance("UDP");
     syslogIF.getConfig().setHost("127.0.0.1");
     syslogIF.getConfig().setPort(12345);
     for (int i = 0; i < 100; i++)
       syslogIF.info("foo");
     Thread.sleep(100);
+    assertEquals(100, this.handler.messages.size());
   }
 
   @AfterEach
