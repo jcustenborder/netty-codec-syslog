@@ -29,12 +29,13 @@ import java.util.regex.Matcher;
 
 public class CEFMessageParser extends MessageParser {
   private static final Logger log = LoggerFactory.getLogger(CEFMessageParser.class);
-  private static final String PATTERN = "^(<(?<priority>\\d+)>)?(?<date>([a-zA-Z]{3}\\s+\\d+\\s+\\d+:\\d+:\\d+)|([0-9T:.Z-]+))\\s+(?<host>\\S+)\\s+CEF:(?<version>\\d+)\\|(?<deviceVendor>[^|]+)\\|(?<deviceProduct>[^|]+)\\|(?<deviceVersion>[^|]+)\\|(?<deviceEventClassId>[^|]+)\\|(?<name>[^|]+)\\|(?<severity>[^|]+)\\|(?<extension>.*)$";
   private static final String CEF_PREFIX_PATTERN = "^(<(?<priority>\\d+)>)?(?<date>([a-zA-Z]{3}\\s+\\d+\\s+\\d+:\\d+:\\d+)|([0-9T:.Z-]+))\\s+(?<host>\\S+)\\s+CEF:(?<version>\\d+)\\|(?<data>.*)$";
   private static final String CEF_MAIN_PATTERN = "(?<!\\\\)\\|";
+  private static final String PATTERN_EXTENSION = "(\\w+)=";
 
   private final ThreadLocal<Matcher> matcherCEFPrefix;
   private final ThreadLocal<Matcher> matcherCEFMain;
+  private final ThreadLocal<Matcher> matcherCEFExtension;
 
 
   public CEFMessageParser() {
@@ -45,12 +46,14 @@ public class CEFMessageParser extends MessageParser {
     super(timeZone);
     this.matcherCEFPrefix = initMatcher(CEF_PREFIX_PATTERN);
     this.matcherCEFMain = initMatcher(CEF_MAIN_PATTERN);
+    this.matcherCEFExtension = initMatcher(PATTERN_EXTENSION);
   }
 
   public CEFMessageParser(String timeZoneId) {
     super(timeZoneId);
     this.matcherCEFPrefix = initMatcher(CEF_PREFIX_PATTERN);
     this.matcherCEFMain = initMatcher(CEF_MAIN_PATTERN);
+    this.matcherCEFExtension = initMatcher(PATTERN_EXTENSION);
   }
 
   List<String> splitToList(String data) {
@@ -66,8 +69,8 @@ public class CEFMessageParser extends MessageParser {
       result.add(part);
     }
 
-    if (data.length() > end + 1) {
-      result.add(data.substring(end + 1));
+    if (data.length() > end) {
+      result.add(data.substring(end));
     }
 
     return result;
@@ -132,7 +135,8 @@ public class CEFMessageParser extends MessageParser {
           builder.severity(token);
           break;
         case 6:
-
+          Map<String, String> extension = parseExtension(token);
+          builder.extension(extension);
           break;
         default:
           break;
@@ -141,20 +145,43 @@ public class CEFMessageParser extends MessageParser {
       index++;
     }
 
-//
-//    final String groupdeviceVendor = matcherPrefix.group("deviceVendor");
-//    final String groupdeviceProduct = matcherPrefix.group("deviceProduct");
-//    final String groupdeviceVersion = matcherPrefix.group("deviceVersion");
-//    final String groupdeviceEventClassId = matcherPrefix.group("deviceEventClassId");
-//    final String groupname = matcherPrefix.group("name");
-//    final String groupseverity = matcherPrefix.group("severity");
-//    final String groupextension = matcherPrefix.group("extension");
-
-
-    final Map<String, String> extension = new LinkedHashMap<>();
-
     output.add(builder.build());
-
     return true;
+  }
+
+  private Map<String, String> parseExtension(String token) {
+    log.trace("parseExtension() - token = '{}'", token);
+    final Map<String, String> result = new LinkedHashMap<>();
+    if (null == token || token.isEmpty()) {
+      return result;
+    }
+
+    Matcher matcher = this.matcherCEFExtension.get().reset(token);
+
+    String key = null;
+    String value;
+    int lastEnd = -1, lastStart = -1;
+
+    while (matcher.find()) {
+      log.trace("parseExtension() - matcher.start() = {}, matcher.end() = {}", matcher.start(), matcher.end());
+
+      if (lastEnd > -1) {
+        value = token.substring(lastEnd, matcher.start()).trim();
+        result.put(key, value);
+        log.trace("parseExtension() - key='{}' value='{}'", key, value);
+      }
+
+      key = matcher.group(1);
+      lastStart = matcher.start();
+      lastEnd = matcher.end();
+    }
+
+    if (lastStart > -1 && !result.containsKey(key)) {
+      value = token.substring(lastEnd).trim();
+      result.put(key, value);
+      log.trace("parseExtension() - key='{}' value='{}'", key, value);
+    }
+
+    return result;
   }
 }

@@ -1,6 +1,5 @@
 package com.github.jcustenborder.netty.syslog;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestFactory;
@@ -15,10 +14,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
 public class RFC5424MessageParserTest extends MessageParserTest<StructuredSyslogMessage, RFC5424MessageParser> {
@@ -26,18 +23,7 @@ public class RFC5424MessageParserTest extends MessageParserTest<StructuredSyslog
 
   @Override
   protected void assertMessage(StructuredSyslogMessage expected, StructuredSyslogMessage actual) {
-    if (null != expected) {
-      assertNotNull(actual, "actual should not be null.");
-    } else {
-      assertNull(actual, "actual should be null.");
-      return;
-    }
-
-    assertEquals(expected.facility(), actual.facility(), "facility should match.");
-    assertEquals(expected.message(), actual.message(), "message should match.");
-    assertEquals(expected.level(), actual.level(), "level should match.");
-    assertEquals(expected.remoteAddress(), actual.remoteAddress(), "remoteAddress should match.");
-    assertEquals(expected.date(), actual.date(), "date should match.");
+    MessageAssertions.assertMessage(expected, actual);
   }
 
   @TestFactory

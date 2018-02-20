@@ -1,5 +1,6 @@
 package com.github.jcustenborder.netty.syslog;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestFactory;
@@ -17,7 +18,6 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
 public class CEFMessageParserTest extends MessageParserTest<CEFSyslogMessage, CEFMessageParser> {
@@ -25,18 +25,14 @@ public class CEFMessageParserTest extends MessageParserTest<CEFSyslogMessage, CE
 
   @Override
   protected void assertMessage(CEFSyslogMessage expected, CEFSyslogMessage actual) {
-    if (null != expected) {
-      assertNotNull(actual, "actual should not be null.");
-    } else {
-      assertNull(actual, "actual should be null.");
-      return;
-    }
-
-    assertEquals(expected.facility(), actual.facility(), "facility should match.");
-//    assertEquals(expected.message(), actual.message(), "message should match.");
-    assertEquals(expected.level(), actual.level(), "level should match.");
-    assertEquals(expected.remoteAddress(), actual.remoteAddress(), "remoteAddress should match.");
-    assertEquals(expected.date(), actual.date(), "date should match.");
+    MessageAssertions.assertMessage(expected, actual);
+    assertEquals(expected.deviceEventClassId(), actual.deviceEventClassId(), "deviceEventClassId does not match.");
+    assertEquals(expected.deviceProduct(), actual.deviceProduct(), "deviceProduct does not match.");
+    assertEquals(expected.deviceVendor(), actual.deviceVendor(), "deviceVendor does not match.");
+    assertEquals(expected.deviceVersion(), actual.deviceVersion(), "deviceVersion does not match.");
+    assertEquals(expected.name(), actual.name(), "name does not match.");
+    assertEquals(expected.severity(), actual.severity(), "severity does not match.");
+    assertEquals(expected.extension(), actual.extension(), "extension does not match.");
   }
 
   @TestFactory
@@ -53,7 +49,7 @@ public class CEFMessageParserTest extends MessageParserTest<CEFSyslogMessage, CE
     }));
   }
 
-  //  @Disabled
+  @Disabled
   @Test
   public void foo() throws IOException {
 
