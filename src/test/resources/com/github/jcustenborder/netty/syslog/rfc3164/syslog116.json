@@ -1,0 +1,15 @@
+{
+  "input" : "Feb 2 09:00:14 avas.example.com amavisd[11569]: No $zoo, not using it",
+  "expected" : {
+    "tag" : "amavisd",
+    "processId" : 11569,
+    "message" : "No $zoo, not using it",
+    "date" : 1517562014000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Feb 2 09:00:14 avas.example.com amavisd[11569]: No $zoo, not using it",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "avas.example.com"
+  }
+}

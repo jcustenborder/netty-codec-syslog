@@ -1,0 +1,15 @@
+{
+  "input" : "Mar 1 00:01:36 avas postfix/smtpd[2410]: AA8F561A83: reject: RCPT from user-0c99au7.cable.mindspring.com[24.148.171.199]: 557 Service unavailable; Client host [24.148.171.199] blocked using list.dsbl.org; http://dsbl.org/listing?ip=24.148.171.199; from= to= proto=SMTP helo=",
+  "expected" : {
+    "tag" : "postfix/smtpd",
+    "processId" : 2410,
+    "message" : "AA8F561A83: reject: RCPT from user-0c99au7.cable.mindspring.com[24.148.171.199]: 557 Service unavailable; Client host [24.148.171.199] blocked using list.dsbl.org; http://dsbl.org/listing?ip=24.148.171.199; from= to= proto=SMTP helo=",
+    "date" : 1519862496000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Mar 1 00:01:36 avas postfix/smtpd[2410]: AA8F561A83: reject: RCPT from user-0c99au7.cable.mindspring.com[24.148.171.199]: 557 Service unavailable; Client host [24.148.171.199] blocked using list.dsbl.org; http://dsbl.org/listing?ip=24.148.171.199; from= to= proto=SMTP helo=",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "avas"
+  }
+}

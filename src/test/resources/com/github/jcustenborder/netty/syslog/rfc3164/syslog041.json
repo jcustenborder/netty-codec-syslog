@@ -1,0 +1,15 @@
+{
+  "input" : "Mar 1 00:00:05 avas postfix/smtpd[2314]: disconnect from host81-153-11-97.range81-153.btcentralplus.com[81.153.11.97]",
+  "expected" : {
+    "tag" : "postfix/smtpd",
+    "processId" : 2314,
+    "message" : "disconnect from host81-153-11-97.range81-153.btcentralplus.com[81.153.11.97]",
+    "date" : 1519862405000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Mar 1 00:00:05 avas postfix/smtpd[2314]: disconnect from host81-153-11-97.range81-153.btcentralplus.com[81.153.11.97]",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "avas"
+  }
+}

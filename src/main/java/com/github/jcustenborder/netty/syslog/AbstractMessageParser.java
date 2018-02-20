@@ -107,7 +107,7 @@ public abstract class AbstractMessageParser {
       String appName,
       String procID,
       String messageID,
-      List<StructuredData> structuredData,
+      List<StructuredSyslogMessage.StructuredData> structuredData,
       String message);
 
 
@@ -206,7 +206,7 @@ public abstract class AbstractMessageParser {
     final String procID = nullableString(groupProcID);
     final String messageID = nullableString(groupMessageID);
 
-    final List<StructuredData> structuredData = parseStructuredData(groupStructuredData);
+    final List<StructuredSyslogMessage.StructuredData> structuredData = parseStructuredData(groupStructuredData);
 
     parse(
         output,
@@ -269,10 +269,10 @@ public abstract class AbstractMessageParser {
   }
 
 
-  static List<StructuredData> parseStructuredData(String structuredData) {
+  static List<StructuredSyslogMessage.StructuredData> parseStructuredData(String structuredData) {
     log.trace("parseStructuredData() - structuredData = '{}'", structuredData);
     final Matcher matcher = MATCHER_STRUCTURED_DATA.get().reset(structuredData);
-    final List<StructuredData> result = new ArrayList<>();
+    final List<StructuredSyslogMessage.StructuredData> result = new ArrayList<>();
     while (matcher.find()) {
       final String input = matcher.group(1);
       log.trace("parseStructuredData() - input = '{}'", input);
@@ -301,10 +301,10 @@ public abstract class AbstractMessageParser {
   public void parse(List<Object> output, SocketAddress socketAddress, ByteBuf buf) {
     final InetAddress remoteAddress;
 
-    if(socketAddress instanceof DatagramSocketAddress) {
-      remoteAddress = ((DatagramSocketAddress)socketAddress).getAddress();
-    } else if(socketAddress instanceof InetSocketAddress) {
-      remoteAddress = ((InetSocketAddress)socketAddress).getAddress();
+    if (socketAddress instanceof DatagramSocketAddress) {
+      remoteAddress = ((DatagramSocketAddress) socketAddress).getAddress();
+    } else if (socketAddress instanceof InetSocketAddress) {
+      remoteAddress = ((InetSocketAddress) socketAddress).getAddress();
     } else {
       remoteAddress = null;
     }

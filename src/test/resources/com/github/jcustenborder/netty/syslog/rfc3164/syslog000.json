@@ -1,0 +1,15 @@
+{
+  "input" : "Mar 12 12:00:08 server2 rcd[308]: Loaded 12 packages in 'ximian-red-carpet|351' (0.01878 seconds)",
+  "expected" : {
+    "tag" : "rcd",
+    "processId" : 308,
+    "message" : "Loaded 12 packages in 'ximian-red-carpet|351' (0.01878 seconds)",
+    "date" : 1520812808000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Mar 12 12:00:08 server2 rcd[308]: Loaded 12 packages in 'ximian-red-carpet|351' (0.01878 seconds)",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "server2"
+  }
+}

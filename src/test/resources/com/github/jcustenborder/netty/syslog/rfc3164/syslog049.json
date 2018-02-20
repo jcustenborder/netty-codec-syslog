@@ -1,0 +1,15 @@
+{
+  "input" : "Mar 1 00:00:06 avas postfix/smtp[2580]: 4391461A83: to=, relay=10.0.0.251[10.0.0.251], delay=0, status=sent (250 Command DATA Processed mail data Ok)",
+  "expected" : {
+    "tag" : "postfix/smtp",
+    "processId" : 2580,
+    "message" : "4391461A83: to=, relay=10.0.0.251[10.0.0.251], delay=0, status=sent (250 Command DATA Processed mail data Ok)",
+    "date" : 1519862406000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Mar 1 00:00:06 avas postfix/smtp[2580]: 4391461A83: to=, relay=10.0.0.251[10.0.0.251], delay=0, status=sent (250 Command DATA Processed mail data Ok)",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "avas"
+  }
+}

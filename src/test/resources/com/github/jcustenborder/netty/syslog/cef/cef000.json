@@ -1,0 +1,19 @@
+{
+  "input" : "Sep   19  08:26:10 host CEF:0|Security|threatmanager|1.0|100|worm successfully stopped|10|src=10.0.0.1 dst=2.1.2.2 spt=1232",
+  "expected" : {
+    "deviceVendor" : "Security",
+    "deviceProduct" : "threatmanager",
+    "deviceVersion" : "1.0",
+    "deviceEventClassId" : "100",
+    "name" : "worm successfully stopped",
+    "severity" : "10",
+    "extension" : { },
+    "date" : 1537345570000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Sep   19  08:26:10 host CEF:0|Security|threatmanager|1.0|100|worm successfully stopped|10|src=10.0.0.1 dst=2.1.2.2 spt=1232",
+    "level" : null,
+    "version" : 0,
+    "facility" : null,
+    "host" : "host"
+  }
+}

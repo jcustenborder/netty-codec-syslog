@@ -15,16 +15,28 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
 
 import java.util.Map;
 
 @Value.Immutable
 @Value.Style(visibility = Value.Style.ImplementationVisibility.PACKAGE)
+@JsonSerialize(as = ImmutableCEFSyslogMessage.class)
+@JsonDeserialize(as = ImmutableCEFSyslogMessage.class)
 public interface CEFSyslogMessage extends Message {
-  String messageId();
+  String deviceVendor();
 
-  Map<String, Map<String, String>> structuredData();
+  String deviceProduct();
 
-  String procId();
+  String deviceVersion();
+
+  String deviceEventClassId();
+
+  String name();
+
+  String severity();
+
+  Map<String, String> extension();
 }

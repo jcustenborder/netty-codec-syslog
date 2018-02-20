@@ -1,0 +1,15 @@
+{
+  "input" : "Mar 12 12:01:02 server4 snort: snort startup succeeded",
+  "expected" : {
+    "tag" : "snort",
+    "processId" : null,
+    "message" : "snort startup succeeded",
+    "date" : 1520812862000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Mar 12 12:01:02 server4 snort: snort startup succeeded",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "server4"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "input" : "Mar 8 03:50:40 avas dbclean[13362]: expired 3741033 records and 10305510 checksums in /home/dcc/dcc_db",
+  "expected" : {
+    "tag" : "dbclean",
+    "processId" : 13362,
+    "message" : "expired 3741033 records and 10305510 checksums in /home/dcc/dcc_db",
+    "date" : 1520481040000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Mar 8 03:50:40 avas dbclean[13362]: expired 3741033 records and 10305510 checksums in /home/dcc/dcc_db",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "avas"
+  }
+}

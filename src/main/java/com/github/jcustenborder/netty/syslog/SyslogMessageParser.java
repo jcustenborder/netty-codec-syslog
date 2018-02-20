@@ -47,7 +47,7 @@ public class SyslogMessageParser extends AbstractMessageParser {
       String appName,
       String procID,
       String messageID,
-      List<StructuredData> structuredData,
+      List<StructuredSyslogMessage.StructuredData> structuredData,
       String message) {
     output.add(
         ImmutableSyslogMessage.builder()

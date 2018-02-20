@@ -1,0 +1,15 @@
+{
+  "input" : "Mar 7 11:14:35 avas dccd[13284]: 22 requests/sec are too many from anonymous 205.201.1.56,2248",
+  "expected" : {
+    "tag" : "dccd",
+    "processId" : 13284,
+    "message" : "22 requests/sec are too many from anonymous 205.201.1.56,2248",
+    "date" : 1520421275000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Mar 7 11:14:35 avas dccd[13284]: 22 requests/sec are too many from anonymous 205.201.1.56,2248",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "avas"
+  }
+}

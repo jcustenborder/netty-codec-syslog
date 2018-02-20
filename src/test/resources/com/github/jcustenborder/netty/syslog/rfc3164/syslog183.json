@@ -1,0 +1,15 @@
+{
+  "input" : "Mar 6 03:48:24 avas dccd[13284]: database cleaning begun",
+  "expected" : {
+    "tag" : "dccd",
+    "processId" : 13284,
+    "message" : "database cleaning begun",
+    "date" : 1520308104000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Mar 6 03:48:24 avas dccd[13284]: database cleaning begun",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "avas"
+  }
+}

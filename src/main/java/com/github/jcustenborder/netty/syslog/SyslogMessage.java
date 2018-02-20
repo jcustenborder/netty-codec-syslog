@@ -25,15 +25,11 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableSyslogMessage.class)
 public interface SyslogMessage extends Message {
   @Nullable
-  Integer level();
+  String tag();
 
   @Nullable
-  Integer version();
+  Integer processId();
 
   @Nullable
-  Integer facility();
-
   String message();
-
-  String host();
 }

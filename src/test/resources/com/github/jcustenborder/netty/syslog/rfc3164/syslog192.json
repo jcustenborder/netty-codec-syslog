@@ -1,0 +1,15 @@
+{
+  "input" : "Mar 7 00:00:00 avas dccifd[13451]: 1.2.32 rejected messages to 0 targets and discarded messages to 0 targets among 1552 total since 03/06/04 00:00:00",
+  "expected" : {
+    "tag" : "dccifd",
+    "processId" : 13451,
+    "message" : "1.2.32 rejected messages to 0 targets and discarded messages to 0 targets among 1552 total since 03/06/04 00:00:00",
+    "date" : 1520380800000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Mar 7 00:00:00 avas dccifd[13451]: 1.2.32 rejected messages to 0 targets and discarded messages to 0 targets among 1552 total since 03/06/04 00:00:00",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "avas"
+  }
+}

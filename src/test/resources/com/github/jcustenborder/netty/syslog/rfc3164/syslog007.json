@@ -1,0 +1,15 @@
+{
+  "input" : "Mar 12 12:01:02 server4 snort: alert_multiple_requests: ACTIVE",
+  "expected" : {
+    "tag" : "snort",
+    "processId" : null,
+    "message" : "alert_multiple_requests: ACTIVE",
+    "date" : 1520812862000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Mar 12 12:01:02 server4 snort: alert_multiple_requests: ACTIVE",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "server4"
+  }
+}

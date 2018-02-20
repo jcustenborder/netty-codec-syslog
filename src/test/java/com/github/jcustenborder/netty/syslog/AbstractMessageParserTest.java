@@ -20,8 +20,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelHandlerContext;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
@@ -37,7 +35,6 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public abstract class AbstractMessageParserTest<M extends Message, T extends AbstractMessageParser> {
   protected abstract void assertMessage(M expected, M actual);
@@ -66,7 +63,7 @@ public abstract class AbstractMessageParserTest<M extends Message, T extends Abs
 
   @TestFactory
   public Stream<DynamicTest> parseStructuredData() {
-    Map<String, List<StructuredData>> tests = new LinkedHashMap<>();
+    Map<String, List<StructuredSyslogMessage.StructuredData>> tests = new LinkedHashMap<>();
     tests.put(
         "[exampleSDID@32473 iut=\"3\" eventSource=\"Application\" eventID=\"1011\"]",
         Arrays.asList(
@@ -95,8 +92,8 @@ public abstract class AbstractMessageParserTest<M extends Message, T extends Abs
     );
 
     return tests.entrySet().stream().map(test -> DynamicTest.dynamicTest(test.getKey(), () -> {
-      final List<StructuredData> expected = test.getValue();
-      final List<StructuredData> actual = AbstractMessageParser.parseStructuredData(test.getKey());
+      final List<StructuredSyslogMessage.StructuredData> expected = test.getValue();
+      final List<StructuredSyslogMessage.StructuredData> actual = AbstractMessageParser.parseStructuredData(test.getKey());
       assertEquals(expected, actual);
     }));
   }

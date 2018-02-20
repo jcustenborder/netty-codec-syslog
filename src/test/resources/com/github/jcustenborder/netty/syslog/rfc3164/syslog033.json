@@ -1,0 +1,15 @@
+{
+  "input" : "Mar 1 00:00:03 avas postfix/smtpd[1822]: 4EC6561A83: client=unknown[62.113.122.52]",
+  "expected" : {
+    "tag" : "postfix/smtpd",
+    "processId" : 1822,
+    "message" : "4EC6561A83: client=unknown[62.113.122.52]",
+    "date" : 1519862403000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Mar 1 00:00:03 avas postfix/smtpd[1822]: 4EC6561A83: client=unknown[62.113.122.52]",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "avas"
+  }
+}

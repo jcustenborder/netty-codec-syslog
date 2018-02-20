@@ -1,0 +1,17 @@
+{
+  "input" : "<46>1 2018-02-01T20:28:36.837100+00:00 miner-01 rsyslogd - - -  [origin software=\\\"rsyslogd\\\" swVersion=\\\"8.16.0\\\" x-pid=\\\"15651\\\" x-info=\\\"http://www.rsyslog.com\\\"] start",
+  "expected" : {
+    "messageId" : null,
+    "procId" : null,
+    "appName" : "rsyslogd",
+    "message" : "[origin software=\\\"rsyslogd\\\" swVersion=\\\"8.16.0\\\" x-pid=\\\"15651\\\" x-info=\\\"http://www.rsyslog.com\\\"] start",
+    "structuredData" : [ ],
+    "date" : 1517517753100,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "<46>1 2018-02-01T20:28:36.837100+00:00 miner-01 rsyslogd - - -  [origin software=\\\"rsyslogd\\\" swVersion=\\\"8.16.0\\\" x-pid=\\\"15651\\\" x-info=\\\"http://www.rsyslog.com\\\"] start",
+    "level" : 6,
+    "version" : 1,
+    "facility" : 5,
+    "host" : "miner-01"
+  }
+}

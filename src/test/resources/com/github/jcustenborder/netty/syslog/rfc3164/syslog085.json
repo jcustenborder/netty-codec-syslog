@@ -1,0 +1,15 @@
+{
+  "input" : "Mar 1 00:01:57 avas postfix/smtpd[1822]: disconnect from host76-117.pool80180.interbusiness.it[80.180.117.76]",
+  "expected" : {
+    "tag" : "postfix/smtpd",
+    "processId" : 1822,
+    "message" : "disconnect from host76-117.pool80180.interbusiness.it[80.180.117.76]",
+    "date" : 1519862517000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Mar 1 00:01:57 avas postfix/smtpd[1822]: disconnect from host76-117.pool80180.interbusiness.it[80.180.117.76]",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "avas"
+  }
+}

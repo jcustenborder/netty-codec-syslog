@@ -15,16 +15,42 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
 
+import java.util.List;
 import java.util.Map;
 
+/**
+ * This interface represents a RFC5424 message with support for structured data.
+ */
 @Value.Immutable
 @Value.Style(visibility = Value.Style.ImplementationVisibility.PACKAGE)
+@JsonSerialize(as = ImmutableStructuredSyslogMessage.class)
+@JsonDeserialize(as = ImmutableStructuredSyslogMessage.class)
 public interface StructuredSyslogMessage extends Message {
+  @Nullable
   String messageId();
 
-  Map<String, Map<String, String>> structuredData();
-
+  @Nullable
   String procId();
+
+  @Nullable
+  String appName();
+
+  @Nullable
+  String message();
+
+  List<StructuredData> structuredData();
+
+  @Value.Immutable
+  @Value.Style(visibility = Value.Style.ImplementationVisibility.PACKAGE)
+  @JsonSerialize(as = ImmutableStructuredData.class)
+  @JsonDeserialize(as = ImmutableStructuredData.class)
+  interface StructuredData {
+    String id();
+
+    Map<String, String> structuredDataElements();
+  }
 }

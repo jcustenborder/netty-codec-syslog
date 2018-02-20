@@ -27,4 +27,16 @@ public interface Message {
   InetAddress remoteAddress();
 
   String rawMessage();
+
+  @Nullable
+  Integer level();
+
+  @Nullable
+  Integer version();
+
+  @Nullable
+  Integer facility();
+
+  @Nullable
+  String host();
 }

@@ -1,0 +1,15 @@
+{
+  "input" : "Mar 7 03:48:25 avas dbclean[10491]: 1.2.32 cleaning dcc_db",
+  "expected" : {
+    "tag" : "dbclean",
+    "processId" : 10491,
+    "message" : "1.2.32 cleaning dcc_db",
+    "date" : 1520394505000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Mar 7 03:48:25 avas dbclean[10491]: 1.2.32 cleaning dcc_db",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "avas"
+  }
+}
