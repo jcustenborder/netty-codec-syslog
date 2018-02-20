@@ -1,3 +1,18 @@
+/**
+ * Copyright © 2018 Jeremy Custenborder (jcustenborder@gmail.com)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.github.jcustenborder.netty.syslog;
 
 import org.junit.jupiter.api.Disabled;
@@ -47,39 +62,6 @@ public class CEFMessageParserTest extends MessageParserTest<CEFSyslogMessage, CE
       assertNotNull(actual, "actual should not be null.");
       assertMessage(testCase.expected, actual);
     }));
-  }
-
-  @Disabled
-  @Test
-  public void foo() throws IOException {
-
-    List<String> lines = new ArrayList<>();
-    try (Reader streamReader = new InputStreamReader(this.getClass().getResourceAsStream("/syslog.txt"))) {
-      try (BufferedReader reader = new BufferedReader(streamReader)) {
-        String line;
-        while (null != (line = reader.readLine())) {
-          lines.add(line);
-        }
-      }
-    }
-
-    int index = 0;
-
-    File outputRoot = new File("src/test/resources/com/github/jcustenborder/netty/syslog/cef");
-
-    for (String s : lines) {
-      TestCase testCase = new TestCase();
-      testCase.input = s;
-
-      List<Object> output = new ArrayList<>(1);
-      if (parse(output, testCase.input)) {
-        testCase.expected = (CEFSyslogMessage) output.get(0);
-        String filename = String.format("cef%03d.json", index);
-        File outputFile = new File(outputRoot, filename);
-        this.mapper.writeValue(outputFile, testCase);
-        index++;
-      }
-    }
   }
 
   @Override

@@ -1,5 +1,5 @@
 /**
- * Copyright © 2017 Jeremy Custenborder (jcustenborder@gmail.com)
+ * Copyright © 2018 Jeremy Custenborder (jcustenborder@gmail.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,17 +22,18 @@ import io.netty.handler.codec.MessageToMessageDecoder;
 import java.util.List;
 
 public class TCPSyslogMessageDecoder extends MessageToMessageDecoder<ByteBuf> {
-  final AbstractMessageParser parser;
+  final SyslogMessageDecoder messageDecoder;
 
-  public TCPSyslogMessageDecoder(AbstractMessageParser parser) {
-    this.parser = parser;
+  public TCPSyslogMessageDecoder(List<MessageParser> parsers) {
+    this.messageDecoder = new SyslogMessageDecoder(parsers);
   }
 
   public TCPSyslogMessageDecoder() {
-    this(new SyslogMessageParser("UTC"));
+    this.messageDecoder = new SyslogMessageDecoder();
   }
+
   @Override
   protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf, List<Object> output) throws Exception {
-    this.parser.parse(output, channelHandlerContext.channel().remoteAddress(), byteBuf);
+    this.messageDecoder.decode(channelHandlerContext, byteBuf, output);
   }
 }

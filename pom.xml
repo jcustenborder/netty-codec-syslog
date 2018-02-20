@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-    Copyright © 2017 Jeremy Custenborder (jcustenborder@gmail.com)
+    Copyright © 2018 Jeremy Custenborder (jcustenborder@gmail.com)
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@
     <version>0.1-SNAPSHOT</version>
     <name>netty-codec-syslog</name>
     <url>https://github.com/jcustenborder/netty-codec-syslog</url>
-    <inceptionYear>2017</inceptionYear>
+    <inceptionYear>2018</inceptionYear>
     <licenses>
         <license>
             <name>Apache License 2.0</name>

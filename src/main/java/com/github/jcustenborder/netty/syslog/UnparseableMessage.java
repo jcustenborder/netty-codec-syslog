@@ -1,5 +1,5 @@
 /**
- * Copyright © 2017 Jeremy Custenborder (jcustenborder@gmail.com)
+ * Copyright © 2018 Jeremy Custenborder (jcustenborder@gmail.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,15 @@ package com.github.jcustenborder.netty.syslog;
 
 import org.immutables.value.Value;
 
+import java.net.InetAddress;
+import java.util.Date;
+
 @Value.Immutable
 @Value.Style(visibility = Value.Style.ImplementationVisibility.PACKAGE)
-public interface UnparseableMessage extends Message {
+public interface UnparseableMessage {
+  Date date();
 
+  InetAddress remoteAddress();
+
+  String rawMessage();
 }

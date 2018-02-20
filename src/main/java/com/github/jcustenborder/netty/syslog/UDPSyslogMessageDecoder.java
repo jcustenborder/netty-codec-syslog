@@ -1,5 +1,5 @@
 /**
- * Copyright © 2017 Jeremy Custenborder (jcustenborder@gmail.com)
+ * Copyright © 2018 Jeremy Custenborder (jcustenborder@gmail.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,18 +22,18 @@ import io.netty.handler.codec.MessageToMessageDecoder;
 import java.util.List;
 
 public class UDPSyslogMessageDecoder extends MessageToMessageDecoder<DatagramPacket> {
-  final AbstractMessageParser parser;
+  final SyslogMessageDecoder messageDecoder;
 
-  public UDPSyslogMessageDecoder(AbstractMessageParser parser) {
-    this.parser = parser;
+  public UDPSyslogMessageDecoder(List<MessageParser> parsers) {
+    this.messageDecoder = new SyslogMessageDecoder(parsers);
   }
 
   public UDPSyslogMessageDecoder() {
-    this(new SyslogMessageParser("UTC"));
+    this.messageDecoder = new SyslogMessageDecoder();
   }
 
   @Override
   protected void decode(ChannelHandlerContext channelHandlerContext, DatagramPacket datagramPacket, List<Object> output) throws Exception {
-    this.parser.parse(output, datagramPacket.sender(), datagramPacket.content());
+    this.messageDecoder.decode(channelHandlerContext, datagramPacket, output);
   }
 }
