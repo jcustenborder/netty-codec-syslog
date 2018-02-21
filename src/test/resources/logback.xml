@@ -10,7 +10,7 @@
 
     <logger name="com.github.jcustenborder.netty.syslog" level="TRACE" />
 
-    <root level="INFO">
+    <root level="TRACE">
         <appender-ref ref="STDOUT" />
     </root>
 </configuration>
