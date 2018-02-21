@@ -18,7 +18,6 @@ package com.github.jcustenborder.netty.syslog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.net.InetAddress;
 import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
@@ -44,12 +43,12 @@ public class RFC5424MessageParser extends MessageParser {
   }
 
   @Override
-  public boolean parse(List<Object> output, InetAddress remoteAddress, String rawMessage) {
-    log.trace("parse() - remoteAddress='{}' rawMessage='{}'", remoteAddress, rawMessage);
-    final Matcher matcher = matcherThreadLocal.get().reset(rawMessage);
+  public boolean parse(SyslogRequest request, List<Object> output) {
+    log.trace("parse() - request = '{}'", request);
+    final Matcher matcher = matcherThreadLocal.get().reset(request.rawMessage());
 
     if (!matcher.find()) {
-      log.trace("parse() - Could not match message. rawMessage='{}'", rawMessage);
+      log.trace("parse() - Could not match message. request = '{}'", request);
       return false;
     }
 
@@ -77,8 +76,8 @@ public class RFC5424MessageParser extends MessageParser {
 
     output.add(
         ImmutableStructuredSyslogMessage.builder()
-            .rawMessage(rawMessage)
-            .remoteAddress(remoteAddress)
+            .rawMessage(request.rawMessage())
+            .remoteAddress(request.remoteAddress())
             .date(date)
             .host(groupHost)
             .level(level)

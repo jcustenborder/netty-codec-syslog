@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,23 +15,17 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
-import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.socket.DatagramPacket;
+import io.netty.handler.codec.MessageToMessageDecoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.SocketAddress;
-import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-class SyslogMessageDecoder {
+public class SyslogMessageDecoder extends MessageToMessageDecoder<SyslogRequest> {
   private static final Logger log = LoggerFactory.getLogger(SyslogMessageDecoder.class);
-  private static final Charset CHARSET = Charset.forName("UTF-8");
 
   final List<MessageParser> parsers;
 
@@ -49,45 +43,23 @@ class SyslogMessageDecoder {
     );
   }
 
-
-  public void decode(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf, List<Object> output) throws Exception {
-    final String rawMessage = byteBuf.toString(CHARSET);
-    final SocketAddress socketAddress = channelHandlerContext.channel().remoteAddress();
-    if (socketAddress instanceof InetSocketAddress) {
-      decode(output, ((InetSocketAddress) socketAddress).getAddress(), rawMessage);
-    } else {
-      throw new UnsupportedOperationException(
-          String.format(
-              "%s is not supported.",
-              socketAddress.getClass().getName()
-          )
-      );
-    }
-  }
-
-  public void decode(ChannelHandlerContext channelHandlerContext, DatagramPacket datagramPacket, List<Object> output) throws Exception {
-    final ByteBuf content = datagramPacket.content();
-    final String rawMessage = content.toString(CHARSET);
-    decode(output, datagramPacket.recipient().getAddress(), rawMessage);
-  }
-
-  void decode(final List<Object> output,
-              final InetAddress remoteAddress,
-              final String rawMessage) {
+  @Override
+  protected void decode(ChannelHandlerContext channelHandlerContext, SyslogRequest request, List<Object> output) throws Exception {
+    log.trace("decode() - request = '{}'", request);
 
     for (MessageParser parser : this.parsers) {
-      if (parser.parse(output, remoteAddress, rawMessage)) {
+      if (parser.parse(request, output)) {
         return;
       }
     }
 
-    log.warn("decode() - Could not parse message. rawMessage = '{}'", rawMessage);
+    log.warn("decode() - Could not parse message. request = '{}'", request);
 
     output.add(
         ImmutableUnparseableMessage.builder()
             .date(new Date())
-            .rawMessage(rawMessage)
-            .remoteAddress(remoteAddress)
+            .rawMessage(request.rawMessage())
+            .remoteAddress(request.remoteAddress())
             .build()
     );
   }

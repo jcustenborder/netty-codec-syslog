@@ -18,7 +18,6 @@ package com.github.jcustenborder.netty.syslog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashMap;
@@ -77,12 +76,12 @@ public class CEFMessageParser extends MessageParser {
   }
 
   @Override
-  public boolean parse(List<Object> output, InetAddress remoteAddress, String rawMessage) {
-    log.trace("parse() - remoteAddress='{}' rawMessage='{}'", remoteAddress, rawMessage);
-    final Matcher matcherPrefix = this.matcherCEFPrefix.get().reset(rawMessage);
+  public boolean parse(SyslogRequest request, List<Object> output) {
+    log.trace("parse() - request = '{}'", request);
+    final Matcher matcherPrefix = this.matcherCEFPrefix.get().reset(request.rawMessage());
 
     if (!matcherPrefix.find()) {
-      log.trace("parse() - Could not match message. rawMessage='{}'", rawMessage);
+      log.trace("parse() - Could not match message. request = '{}'", request);
       return false;
     }
 
@@ -102,8 +101,8 @@ public class CEFMessageParser extends MessageParser {
     final List<String> parts = splitToList(groupData);
 
     ImmutableCEFSyslogMessage.Builder builder = ImmutableCEFSyslogMessage.builder();
-    builder.rawMessage(rawMessage);
-    builder.remoteAddress(remoteAddress);
+    builder.rawMessage(request.rawMessage());
+    builder.remoteAddress(request.remoteAddress());
     builder.date(date);
     builder.version(cefVersion);
     builder.host(groupHost);

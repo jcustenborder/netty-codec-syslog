@@ -19,21 +19,30 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.socket.DatagramPacket;
 import io.netty.handler.codec.MessageToMessageDecoder;
 
+import java.net.InetAddress;
+import java.nio.charset.Charset;
 import java.util.List;
 
 public class UDPSyslogMessageDecoder extends MessageToMessageDecoder<DatagramPacket> {
-  final SyslogMessageDecoder messageDecoder;
+  final Charset charset;
 
-  public UDPSyslogMessageDecoder(List<MessageParser> parsers) {
-    this.messageDecoder = new SyslogMessageDecoder(parsers);
+  public UDPSyslogMessageDecoder(Charset charset) {
+    this.charset = charset;
   }
 
   public UDPSyslogMessageDecoder() {
-    this.messageDecoder = new SyslogMessageDecoder();
+    this(Charset.forName("UTF-8"));
   }
 
   @Override
   protected void decode(ChannelHandlerContext channelHandlerContext, DatagramPacket datagramPacket, List<Object> output) throws Exception {
-    this.messageDecoder.decode(channelHandlerContext, datagramPacket, output);
+    final String rawMessage = datagramPacket.content().toString(this.charset);
+    final InetAddress inetAddress = datagramPacket.sender().getAddress();
+    output.add(
+        ImmutableSyslogRequest.builder()
+            .rawMessage(rawMessage)
+            .remoteAddress(inetAddress)
+            .build()
+    );
   }
 }

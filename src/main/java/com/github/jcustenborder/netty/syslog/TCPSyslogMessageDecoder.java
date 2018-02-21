@@ -19,21 +19,30 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageDecoder;
 
+import java.net.InetSocketAddress;
+import java.nio.charset.Charset;
 import java.util.List;
 
 public class TCPSyslogMessageDecoder extends MessageToMessageDecoder<ByteBuf> {
-  final SyslogMessageDecoder messageDecoder;
+  final Charset charset;
 
-  public TCPSyslogMessageDecoder(List<MessageParser> parsers) {
-    this.messageDecoder = new SyslogMessageDecoder(parsers);
+  public TCPSyslogMessageDecoder(Charset charset) {
+    this.charset = charset;
   }
-
   public TCPSyslogMessageDecoder() {
-    this.messageDecoder = new SyslogMessageDecoder();
+    this(Charset.forName("UTF-8"));
   }
 
   @Override
   protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf, List<Object> output) throws Exception {
-    this.messageDecoder.decode(channelHandlerContext, byteBuf, output);
+    final InetSocketAddress socketAddress = (InetSocketAddress) channelHandlerContext.channel().remoteAddress();
+    final String rawMessage = byteBuf.toString(this.charset);
+    output.add(
+        ImmutableSyslogRequest.builder()
+            .remoteAddress(socketAddress.getAddress())
+            .rawMessage(rawMessage)
+            .build()
+    );
   }
+
 }

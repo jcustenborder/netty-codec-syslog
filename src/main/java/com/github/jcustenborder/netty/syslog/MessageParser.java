@@ -18,7 +18,6 @@ package com.github.jcustenborder.netty.syslog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.net.InetAddress;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -61,15 +60,14 @@ public abstract class MessageParser {
   /**
    * Method is used to parse an incoming syslog message.
    *
+   *
+   * @param request
    * @param output        Output to write the message to.
-   * @param remoteAddress Remote address for the sender.
-   * @param rawMessage    Raw Message to parse.
    * @return true if was parsed successfully. False if not.
    */
   public abstract boolean parse(
-      final List<Object> output,
-      final InetAddress remoteAddress,
-      final String rawMessage
+      SyslogRequest request,
+      final List<Object> output
   );
 
   protected final ThreadLocal<Matcher> initMatcher(String pattern) {

@@ -22,6 +22,9 @@ import org.junit.jupiter.api.BeforeEach;
 import java.net.InetAddress;
 import java.util.List;
 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 public abstract class MessageParserTest<M extends Message, T extends MessageParser> {
   protected abstract void assertMessage(M expected, M actual);
 
@@ -31,7 +34,10 @@ public abstract class MessageParserTest<M extends Message, T extends MessagePars
   protected T parser;
 
   protected boolean parse(List<Object> output, String message) {
-    return this.parser.parse(output, InetAddress.getLoopbackAddress(), message);
+    SyslogRequest request = mock(SyslogRequest.class);
+    when(request.rawMessage()).thenReturn(message);
+    when(request.remoteAddress()).thenReturn(InetAddress.getLoopbackAddress());
+    return this.parser.parse(request, output);
   }
 
 
