@@ -20,12 +20,28 @@ import org.immutables.value.Value;
 import java.net.InetAddress;
 import java.util.Date;
 
+/**
+ * Interface that is yielded when none of the configured parsers can parse the current message.
+ */
 @Value.Immutable
 @Value.Style(visibility = Value.Style.ImplementationVisibility.PACKAGE)
 public interface UnparseableMessage {
+  /**
+   * Method is used to return the date that the parser was executed. This is not the date in the
+   * message
+   * @return Date the message was received.
+   */
   Date date();
 
+  /**
+   * Method is used to return the remote address that sent the message.
+   * @return ip address of the host that sent the message.
+   */
   InetAddress remoteAddress();
 
+  /**
+   * Method is used to return the raw unprocessed message.
+   * @return Raw unprocessed message.
+   */
   String rawMessage();
 }

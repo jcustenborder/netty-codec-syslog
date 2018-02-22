@@ -19,24 +19,52 @@ import java.net.InetAddress;
 import java.util.Date;
 
 /**
- *
+ * Represents a standard syslog message.
  */
 public interface Message {
+  /**
+   * Date of the message. This is the parsed date from the client.
+   * @return Date of the message.
+   */
   Date date();
 
+  /**
+   * IP Address for the sender of the message.
+   * @return Sender IP Address.
+   */
   InetAddress remoteAddress();
 
+  /**
+   * Unprocessed copy of the message.
+   * @return Unprocessed message.
+   */
   String rawMessage();
 
+  /**
+   * Level for the message. Parsed from the message.
+   * @return Message Level
+   */
   @Nullable
   Integer level();
 
+  /**
+   * Version of the message.
+   * @return Message version
+   */
   @Nullable
   Integer version();
 
+  /**
+   * Facility of the message.
+   * @return Message facility.
+   */
   @Nullable
   Integer facility();
 
+  /**
+   * Host of the message. This is the value from the message.
+   * @return Message host.
+   */
   @Nullable
   String host();
 }

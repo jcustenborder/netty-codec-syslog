@@ -21,6 +21,9 @@ import org.immutables.value.Value;
 
 import java.util.Map;
 
+/**
+ * Interface represents an implementation of the CEF protocol.
+ */
 @Value.Immutable
 @Value.Style(visibility = Value.Style.ImplementationVisibility.PACKAGE)
 @JsonSerialize(as = ImmutableCEFSyslogMessage.class)

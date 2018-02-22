@@ -21,12 +21,26 @@ import org.immutables.value.Value;
 
 import java.net.InetAddress;
 
+/**
+ * Interface represents an incoming syslog request. This interface acts as an intermediary between
+ * the TCPSyslogMessageDecoder and UDPSyslogMessageDecoder
+ * @see TCPSyslogMessageDecoder
+ * @see UDPSyslogMessageDecoder
+ */
 @Value.Immutable
 @Value.Style(visibility = Value.Style.ImplementationVisibility.PACKAGE)
 @JsonSerialize(as = ImmutableSyslogRequest.class)
 @JsonDeserialize(as = ImmutableSyslogRequest.class)
 public interface SyslogRequest {
+  /**
+   * IP Address for the sender of the message.
+   * @return Sender IP Address
+   */
   InetAddress remoteAddress();
 
+  /**
+   * The raw message that was delivered
+   * @return Raw message.
+   */
   String rawMessage();
 }
