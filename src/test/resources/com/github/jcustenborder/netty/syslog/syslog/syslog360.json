@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 7 05:00:00 avas CROND[20085]: (cronjob) CMD ((cd /home/dcc/libexec; ./fetchblack))",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "(cronjob) CMD ((cd /home/dcc/libexec; ./fetchblack))",
+    "host" : "avas",
+    "date" : 1520398800000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "(cronjob) CMD ((cd /home/dcc/libexec; ./fetchblack))"
+  }
+}

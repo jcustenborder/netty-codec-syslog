@@ -1,0 +1,12 @@
+{
+  "input" : "<114>Oct 11 22:14:15 mymachine su[123]: 'su root' failed for lonvick on /dev/pts/8",
+  "expected" : {
+    "facility" : 14,
+    "level" : 2,
+    "date" : 1539296055000,
+    "message" : "'su root' failed for lonvick on /dev/pts/8",
+    "host" : "mymachine",
+    "remoteAddress" : "localhost",
+    "rawMessage" : "<34>Oct 11 22:14:15 mymachine su: 'su root' failed for lonvick on /dev/pts/8"
+  }
+}

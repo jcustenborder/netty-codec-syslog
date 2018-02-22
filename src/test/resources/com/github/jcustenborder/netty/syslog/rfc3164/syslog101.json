@@ -1,0 +1,15 @@
+{
+  "input" : "Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Net::DNS 0.42",
+  "expected" : {
+    "tag" : "amavisd",
+    "processId" : 11568,
+    "message" : "Module Net::DNS 0.42",
+    "date" : 1517562014000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Net::DNS 0.42",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "avas.example.com"
+  }
+}

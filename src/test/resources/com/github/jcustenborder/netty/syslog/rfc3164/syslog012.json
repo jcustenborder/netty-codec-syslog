@@ -1,0 +1,15 @@
+{
+  "input" : "Mar 10 03:19:48 server5 syslog: su : + tty?? root-informix",
+  "expected" : {
+    "tag" : "syslog",
+    "processId" : null,
+    "message" : "su : + tty?? root-informix",
+    "date" : 1520651988000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Mar 10 03:19:48 server5 syslog: su : + tty?? root-informix",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "server5"
+  }
+}

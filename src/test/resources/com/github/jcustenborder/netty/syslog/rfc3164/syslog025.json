@@ -1,0 +1,15 @@
+{
+  "input" : "Mar 12 11:44:35 server7 tftpd[24955]: Timeout (no requests in 10 minutes)",
+  "expected" : {
+    "tag" : "tftpd",
+    "processId" : 24955,
+    "message" : "Timeout (no requests in 10 minutes)",
+    "date" : 1520855075000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Mar 12 11:44:35 server7 tftpd[24955]: Timeout (no requests in 10 minutes)",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "server7"
+  }
+}

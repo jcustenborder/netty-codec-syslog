@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 12 12:10:00 server2 /USR/SBIN/CRON[6808]: (root) CMD ( /usr/lib/sa/sa1 )",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "(root) CMD ( /usr/lib/sa/sa1 )",
+    "host" : "server2",
+    "date" : 1520813400000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "(root) CMD ( /usr/lib/sa/sa1 )"
+  }
+}

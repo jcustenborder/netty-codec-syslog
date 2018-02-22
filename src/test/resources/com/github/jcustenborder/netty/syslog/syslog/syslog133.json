@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 29 2004 09:56:27: %PIX-5-304001: 192.168.0.2 Accessed URL 130.57.4.27:/common/inc/novell_style.css",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "192.168.0.2 Accessed URL 130.57.4.27:/common/inc/novell_style.css",
+    "host" : "PIX-5-304001",
+    "date" : 1080554187000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "192.168.0.2 Accessed URL 130.57.4.27:/common/inc/novell_style.css"
+  }
+}

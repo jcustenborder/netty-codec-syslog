@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 6 20:06:37 avas dccd[13284]: \"packet length 44 too small for REPORT\" sent to client 1 at 194.63.250.215,56007",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "\"packet length 44 too small for REPORT\" sent to client 1 at 194.63.250.215,56007",
+    "host" : "avas",
+    "date" : 1520366797000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "\"packet length 44 too small for REPORT\" sent to client 1 at 194.63.250.215,56007"
+  }
+}

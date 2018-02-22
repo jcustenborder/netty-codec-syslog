@@ -1,0 +1,15 @@
+{
+  "input" : "Feb 2 09:00:33 avas.example.com amavisd[11600]: (11600-02) Not-Delivered,  -> , quarantine spam-efde75c38625bba7f05e2f4a93cd9263-20040202-090033-11600-02, Message-ID: <705a01c3e9aa$b3cc09f0$48677b4c@cdu-saar.de>, Hits: 15.376",
+  "expected" : {
+    "tag" : "amavisd",
+    "processId" : 11600,
+    "message" : "(11600-02) Not-Delivered,  -> , quarantine spam-efde75c38625bba7f05e2f4a93cd9263-20040202-090033-11600-02, Message-ID: <705a01c3e9aa$b3cc09f0$48677b4c@cdu-saar.de>, Hits: 15.376",
+    "date" : 1517562033000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Feb 2 09:00:33 avas.example.com amavisd[11600]: (11600-02) Not-Delivered,  -> , quarantine spam-efde75c38625bba7f05e2f4a93cd9263-20040202-090033-11600-02, Message-ID: <705a01c3e9aa$b3cc09f0$48677b4c@cdu-saar.de>, Hits: 15.376",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "avas.example.com"
+  }
+}

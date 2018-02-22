@@ -1,0 +1,15 @@
+{
+  "input" : "Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Compress::Zlib 1.31",
+  "expected" : {
+    "tag" : "amavisd",
+    "processId" : 11568,
+    "message" : "Module Compress::Zlib 1.31",
+    "date" : 1517562014000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Compress::Zlib 1.31",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "avas.example.com"
+  }
+}

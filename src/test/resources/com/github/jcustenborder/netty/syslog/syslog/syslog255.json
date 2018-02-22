@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 1 00:01:29 avas postfix/smtpd[2413]: disconnect from unknown[208.37.192.234]",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "disconnect from unknown[208.37.192.234]",
+    "host" : "avas",
+    "date" : 1519862489000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "disconnect from unknown[208.37.192.234]"
+  }
+}

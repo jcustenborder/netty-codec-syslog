@@ -1,0 +1,13 @@
+{
+  "input" : "Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Net::SMTP 2.26",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "Module Net::SMTP 2.26",
+    "host" : "avas.example.com",
+    "date" : 1517562014000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Module Net::SMTP 2.26"
+  }
+}

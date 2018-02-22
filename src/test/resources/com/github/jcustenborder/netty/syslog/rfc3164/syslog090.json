@@ -1,0 +1,15 @@
+{
+  "input" : "Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Archive::Zip 1.08",
+  "expected" : {
+    "tag" : "amavisd",
+    "processId" : 11568,
+    "message" : "Module Archive::Zip 1.08",
+    "date" : 1517562014000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Archive::Zip 1.08",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "avas.example.com"
+  }
+}

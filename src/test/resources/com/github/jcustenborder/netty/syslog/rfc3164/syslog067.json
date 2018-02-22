@@ -1,0 +1,15 @@
+{
+  "input" : "Mar 1 00:01:29 avas postfix/smtpd[2413]: connect from unknown[208.37.192.234]",
+  "expected" : {
+    "tag" : "postfix/smtpd",
+    "processId" : 2413,
+    "message" : "connect from unknown[208.37.192.234]",
+    "date" : 1519862489000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Mar 1 00:01:29 avas postfix/smtpd[2413]: connect from unknown[208.37.192.234]",
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "host" : "avas"
+  }
+}

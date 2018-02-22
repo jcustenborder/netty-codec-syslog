@@ -1,0 +1,13 @@
+{
+  "input" : "Feb 2 09:00:41 avas.example.com amavisd[11602]: (11602-01) Passed,  -> , Message-ID: <970613513.1075739667242.JavaMail.ebayapp@sj-v3offer22>, Hits: 2.172",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "(11602-01) Passed,  -> , Message-ID: <970613513.1075739667242.JavaMail.ebayapp@sj-v3offer22>, Hits: 2.172",
+    "host" : "avas.example.com",
+    "date" : 1517562041000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "(11602-01) Passed,  -> , Message-ID: <970613513.1075739667242.JavaMail.ebayapp@sj-v3offer22>, Hits: 2.172"
+  }
+}

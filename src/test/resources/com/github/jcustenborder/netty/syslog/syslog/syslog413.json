@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 8 03:51:27 avas dbclean[13362]: 21596160 hash entries total, 12649013 or 58% used",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "21596160 hash entries total, 12649013 or 58% used",
+    "host" : "avas",
+    "date" : 1520481087000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "21596160 hash entries total, 12649013 or 58% used"
+  }
+}

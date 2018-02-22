@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 7 05:01:01 avas CROND[20187]: (cronjob) CMD (run-parts /etc/cron.hourly)",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "(cronjob) CMD (run-parts /etc/cron.hourly)",
+    "host" : "avas",
+    "date" : 1520398861000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "(cronjob) CMD (run-parts /etc/cron.hourly)"
+  }
+}

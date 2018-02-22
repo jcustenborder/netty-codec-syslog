@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 29 2004 09:56:35: %PIX-6-302002: Teardown TCP connection 152017 faddr 212.56.240.37/9200 gaddr 10.0.0.187/2795 laddr 192.168.0.2/2795 duration 0:01:03 bytes 33424 (TCP FINs)",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "Teardown TCP connection 152017 faddr 212.56.240.37/9200 gaddr 10.0.0.187/2795 laddr 192.168.0.2/2795 duration 0:01:03 bytes 33424 (TCP FINs)",
+    "host" : "PIX-6-302002",
+    "date" : 1080554195000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Teardown TCP connection 152017 faddr 212.56.240.37/9200 gaddr 10.0.0.187/2795 laddr 192.168.0.2/2795 duration 0:01:03 bytes 33424 (TCP FINs)"
+  }
+}

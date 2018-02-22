@@ -1,0 +1,13 @@
+{
+  "input" : "Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Archive::Zip 1.08",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "Module Archive::Zip 1.08",
+    "host" : "avas.example.com",
+    "date" : 1517562014000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Module Archive::Zip 1.08"
+  }
+}

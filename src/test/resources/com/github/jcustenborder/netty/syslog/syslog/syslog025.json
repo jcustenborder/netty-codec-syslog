@@ -1,0 +1,13 @@
+{
+  "input" : "Mar 29 2004 09:54:39: %PIX-6-106015: Deny TCP (no connection) from 192.168.0.2/2794 to 192.168.216.1/2357 flags SYN ACK on interface inside",
+  "expected" : {
+    "level" : null,
+    "version" : null,
+    "facility" : null,
+    "message" : "Deny TCP (no connection) from 192.168.0.2/2794 to 192.168.216.1/2357 flags SYN ACK on interface inside",
+    "host" : "PIX-6-106015",
+    "date" : 1080554079000,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Deny TCP (no connection) from 192.168.0.2/2794 to 192.168.216.1/2357 flags SYN ACK on interface inside"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "input" : "<46>1 2018-02-01T20:28:36.837039+00:00 miner-01 rsyslogd - - - rsyslogd's userid changed to 104",
+  "expected" : {
+    "level" : 6,
+    "version" : 1,
+    "facility" : 5,
+    "message" : "rsyslogd's userid changed to 104",
+    "host" : "miner-01",
+    "date" : 1517517753039,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "rsyslogd's userid changed to 104"
+  }
+}

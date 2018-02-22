@@ -1,0 +1,13 @@
+{
+  "input" : "<30>1 2018-02-01T20:28:36.837251+00:00 miner-01 systemd 1 - -  Started System Logging Service.",
+  "expected" : {
+    "level" : 6,
+    "version" : 1,
+    "facility" : 3,
+    "message" : "Started System Logging Service.",
+    "host" : "miner-01",
+    "date" : 1517517753251,
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Started System Logging Service."
+  }
+}

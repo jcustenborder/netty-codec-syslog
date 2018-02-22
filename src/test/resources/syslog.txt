@@ -1,0 +1,428 @@
+Mar 29 2004 09:54:18: %PIX-6-302005: Built UDP connection for faddr 198.207.223.240/53337 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:54:19: %PIX-6-302005: Built UDP connection for faddr 198.207.223.240/3842 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:54:19: %PIX-6-302005: Built UDP connection for faddr 198.207.223.240/36205 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:54:26: %PIX-4-106023: Deny icmp src outside:Some-Cisco dst inside:10.0.0.187 (type 3, code 1) by access-group "outside_access_in"
+Mar 29 2004 09:54:27: %PIX-4-106023: Deny icmp src outside:Some-Cisco dst inside:10.0.0.187 (type 3, code 1) by access-group "outside_access_in"
+Mar 29 2004 09:54:29: %PIX-4-106023: Deny icmp src outside:Some-Cisco dst inside:10.0.0.187 (type 3, code 1) by access-group "outside_access_in"
+Mar 29 2004 09:54:30: %PIX-6-106015: Deny TCP (no connection) from 192.168.0.2/2794 to 192.168.216.1/2357 flags SYN ACK on interface inside
+Mar 29 2004 09:54:32: %PIX-6-302006: Teardown UDP connection for faddr 192.168.245.1/137 gaddr 10.0.0.187/2789 laddr 192.168.0.2/2789 ()
+Mar 29 2004 09:54:32: %PIX-6-302006: Teardown UDP connection for faddr 192.168.110.1/137 gaddr 10.0.0.187/2790 laddr 192.168.0.2/2790 ()
+Mar 29 2004 09:54:32: %PIX-6-302006: Teardown UDP connection for faddr 198.207.223.240/53337 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:54:33: %PIX-6-106015: Deny TCP (no connection) from 192.168.0.2/2794 to 192.168.216.1/2357 flags SYN ACK on interface inside
+Mar 29 2004 09:54:38: %PIX-6-302005: Built UDP connection for faddr 194.224.52.6/36455 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:54:39: %PIX-6-106015: Deny TCP (no connection) from 192.168.0.2/2794 to 192.168.216.1/2357 flags SYN ACK on interface inside
+Mar 29 2004 09:54:39: %PIX-6-302005: Built UDP connection for faddr 194.224.52.4/44549 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:54:39: %PIX-6-302005: Built UDP connection for faddr 80.58.34.99/32772 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:54:46: %PIX-6-302005: Built UDP connection for faddr 80.132.253.64/14791 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:54:46: %PIX-6-302006: Teardown UDP connection for faddr 80.132.253.64/14791 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:54:46: %PIX-6-302005: Built UDP connection for faddr 80.132.253.64/14791 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:00: %PIX-6-302005: Built UDP connection for faddr 80.58.4.34/37074 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:03: %PIX-6-302006: Teardown UDP connection for faddr 198.207.223.240/3842 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:03: %PIX-6-302006: Teardown UDP connection for faddr 198.207.223.240/36205 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:03: %PIX-6-302006: Teardown UDP connection for faddr 194.224.52.6/36455 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:03: %PIX-6-302006: Teardown UDP connection for faddr 194.224.52.4/44549 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:03: %PIX-6-302006: Teardown UDP connection for faddr 80.58.34.99/32772 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:03: %PIX-6-302006: Teardown UDP connection for faddr 80.132.253.64/14791 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:03: %PIX-6-302006: Teardown UDP connection for faddr 80.58.4.34/37074 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:03: %PIX-6-305003: Teardown translation for global 10.0.0.188 local 192.168.0.6
+Mar 29 2004 09:55:23: %PIX-6-302005: Built UDP connection for faddr 193.192.160.244/3053 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:23: %PIX-6-302006: Teardown UDP connection for faddr 193.192.160.244/3053 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:23: %PIX-6-302005: Built UDP connection for faddr 193.192.160.244/3053 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:25: %PIX-6-302005: Built UDP connection for faddr 66.196.65.40/51250 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:31: %PIX-6-302001: Built outbound TCP connection 152017 for faddr 212.56.240.37/9200 gaddr 10.0.0.187/2795 laddr 192.168.0.2/2795 ()
+Mar 29 2004 09:55:32: %PIX-6-302005: Built UDP connection for faddr 217.160.131.171/1030 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:32: %PIX-6-302006: Teardown UDP connection for faddr 217.160.131.171/1030 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:32: %PIX-6-302006: Teardown UDP connection for faddr 217.160.131.171/1030 gaddr 10.0.0.187/53 laddr 192.168.0.2/53 ()
+Mar 29 2004 09:55:32: %PIX-6-302005: Built UDP connection for faddr 217.160.131.171/1030 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:32: %PIX-6-302006: Teardown UDP connection for faddr 217.160.131.171/1030 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:32: %PIX-6-302001: Built inbound TCP connection 152022 for faddr 217.160.131.171/4336 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:32: %PIX-6-302006: Teardown UDP connection for faddr 217.160.131.171/1030 gaddr 10.0.0.187/53 laddr 192.168.0.2/53 ()
+Mar 29 2004 09:55:32: %PIX-6-302005: Built UDP connection for faddr 217.160.131.171/1030 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:32: %PIX-6-302006: Teardown UDP connection for faddr 217.160.131.171/1030 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:32: %PIX-6-302005: Built UDP connection for faddr 217.160.131.171/1030 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:32: %PIX-6-302006: Teardown UDP connection for faddr 217.160.131.171/1030 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:32: %PIX-6-302005: Built UDP connection for faddr 217.160.131.171/1030 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:34: %PIX-6-302006: Teardown UDP connection for faddr 194.64.31.12/59988 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:34: %PIX-6-302006: Teardown UDP connection for faddr 193.192.160.244/3053 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:40: %PIX-6-302005: Built UDP connection for faddr 195.70.224.45/33064 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:40: %PIX-6-302006: Teardown UDP connection for faddr 195.70.224.45/33064 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:40: %PIX-6-302005: Built UDP connection for faddr 195.70.224.45/33064 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:47: %PIX-6-302005: Built UDP connection for faddr 62.189.34.82/32914 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:47: %PIX-6-302006: Teardown UDP connection for faddr 62.189.34.82/32914 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:47: %PIX-6-302005: Built UDP connection for faddr 62.189.34.82/32914 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:49: %PIX-6-302006: Teardown UDP connection for faddr 62.189.34.82/32914 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:49: %PIX-6-302005: Built UDP connection for faddr 62.189.34.82/32914 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:52: %PIX-6-302005: Built UDP connection for faddr 62.189.94.209/61016 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:52: %PIX-6-302006: Teardown UDP connection for faddr 62.189.94.209/61016 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:52: %PIX-6-302005: Built UDP connection for faddr 62.189.94.209/61016 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:53: %PIX-6-302005: Built UDP connection for faddr 195.129.12.114/62096 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:53: %PIX-6-302006: Teardown UDP connection for faddr 195.129.12.114/62096 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:53: %PIX-6-302005: Built UDP connection for faddr 195.129.12.114/62096 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:53: %PIX-6-302005: Built UDP connection for faddr 194.114.201.13/48355 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:54: %PIX-6-302006: Teardown UDP connection for faddr 62.189.94.209/61016 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:54: %PIX-6-302005: Built UDP connection for faddr 62.189.94.209/61016 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:54: %PIX-6-302005: Built UDP connection for faddr 203.124.140.107/12519 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:55: %PIX-6-302006: Teardown UDP connection for faddr 195.129.12.114/62096 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:55: %PIX-6-302005: Built UDP connection for faddr 195.129.12.114/62096 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:55: %PIX-6-302005: Built UDP connection for faddr 203.124.140.107/12520 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:55:56: %PIX-6-302005: Built UDP connection for faddr 195.146.160.3/16708 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:00: %PIX-6-106015: Deny TCP (no connection) from 192.168.0.2/2796 to 192.168.80.1/1719 flags SYN ACK on interface inside
+Mar 29 2004 09:56:02: %PIX-6-302005: Built UDP connection for faddr 194.114.201.14/46474 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:02: %PIX-6-302006: Teardown UDP connection for faddr 194.114.201.14/46474 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:02: %PIX-6-302005: Built UDP connection for faddr 194.114.201.14/46474 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:03: %PIX-6-106015: Deny TCP (no connection) from 192.168.0.2/2796 to 192.168.80.1/1719 flags SYN ACK on interface inside
+Mar 29 2004 09:56:03: %PIX-6-302006: Teardown UDP connection for faddr 194.114.201.13/48355 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:03: %PIX-6-302005: Built UDP connection for faddr 194.114.201.13/48355 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:04: %PIX-6-302006: Teardown UDP connection for faddr 192.168.202.1/137 gaddr 10.0.0.187/2791 laddr 192.168.0.2/2791 ()
+Mar 29 2004 09:56:04: %PIX-6-302006: Teardown UDP connection for faddr 192.42.93.30/10550 gaddr 10.0.0.187/1059 laddr 192.168.0.2/1059 ()
+Mar 29 2004 09:56:04: %PIX-6-302006: Teardown UDP connection for faddr 137.65.1.1/10550 gaddr 10.0.0.187/1059 laddr 192.168.0.2/1059 ()
+Mar 29 2004 09:56:04: %PIX-6-302006: Teardown UDP connection for faddr 66.196.65.40/51250 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:04: %PIX-6-302006: Teardown UDP connection for faddr 217.160.131.171/1030 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:04: %PIX-6-302002: Teardown TCP connection 152022 faddr 217.160.131.171/4336 gaddr 10.0.0.187/53 laddr 192.168.0.2/53 duration 0:00:32 bytes 68 (TCP FINs)
+Mar 29 2004 09:56:04: %PIX-6-302006: Teardown UDP connection for faddr 193.108.91.93/6463 gaddr 10.0.0.187/1059 laddr 192.168.0.2/1059 ()
+Mar 29 2004 09:56:04: %PIX-6-302006: Teardown UDP connection for faddr 192.42.93.30/6464 gaddr 10.0.0.187/1059 laddr 192.168.0.2/1059 ()
+Mar 29 2004 09:56:04: %PIX-6-302006: Teardown UDP connection for faddr 192.42.93.30/2383 gaddr 10.0.0.187/1059 laddr 192.168.0.2/1059 ()
+Mar 29 2004 09:56:04: %PIX-6-302006: Teardown UDP connection for faddr 216.52.17.52/6464 gaddr 10.0.0.187/1059 laddr 192.168.0.2/1059 ()
+Mar 29 2004 09:56:04: %PIX-6-302006: Teardown UDP connection for faddr 195.70.224.45/33064 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:08: %PIX-6-302006: Teardown UDP connection for faddr 194.114.201.14/46474 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:08: %PIX-6-302005: Built UDP connection for faddr 194.114.201.14/46474 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:08: %PIX-6-302006: Teardown UDP connection for faddr 194.114.201.14/46474 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:08: %PIX-5-109012: Authen Session End: user '', sid 1, elapsed 313 seconds
+Mar 29 2004 09:56:08: %PIX-6-302006: Teardown UDP connection for faddr 194.114.201.14/46474 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:08: %PIX-6-302005: Built UDP connection for faddr 194.114.201.14/46474 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:09: %PIX-6-106015: Deny TCP (no connection) from 192.168.0.2/2796 to 192.168.80.1/1719 flags SYN ACK on interface inside
+Mar 29 2004 09:56:13: %PIX-6-302006: Teardown UDP connection for faddr 194.114.201.13/48355 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:13: %PIX-6-302005: Built UDP connection for faddr 194.114.201.13/48355 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:13: %PIX-6-302006: Teardown UDP connection for faddr 194.114.201.13/48355 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:13: %PIX-6-302005: Built UDP connection for faddr 194.114.201.13/48355 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:15: %PIX-6-302005: Built UDP connection for faddr 194.25.0.125/38729 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:17: %PIX-6-302001: Built outbound TCP connection 152054 for faddr 66.102.9.99/80 gaddr 10.0.0.187/56669 laddr 192.168.0.2/56669
+Mar 29 2004 09:56:17: %PIX-5-304001: 192.168.0.2 Accessed URL 66.102.9.99:/
+Mar 29 2004 09:56:18: %PIX-6-302001: Built outbound TCP connection 152055 for faddr 66.102.9.104/80 gaddr 10.0.0.187/56670 laddr 192.168.0.2/56670
+Mar 29 2004 09:56:18: %PIX-5-304001: 192.168.0.2 Accessed URL 66.102.9.104:/
+Mar 29 2004 09:56:19: %PIX-6-302005: Built UDP connection for faddr 211.9.32.235/32770 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:19: %PIX-6-302006: Teardown UDP connection for faddr 211.9.32.235/32770 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:19: %PIX-6-302005: Built UDP connection for faddr 211.9.32.235/32770 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:23: %PIX-6-302001: Built outbound TCP connection 152058 for faddr 130.57.4.27/80 gaddr 10.0.0.187/56672 laddr 192.168.0.2/56672
+Mar 29 2004 09:56:23: %PIX-5-304001: 192.168.0.2 Accessed URL 130.57.4.27:/
+Mar 29 2004 09:56:24: %PIX-6-302006: Teardown UDP connection for faddr 194.114.201.14/46474 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:24: %PIX-6-302005: Built UDP connection for faddr 194.114.201.14/46474 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:24: %PIX-6-302001: Built outbound TCP connection 152060 for faddr 130.57.4.27/80 gaddr 10.0.0.187/56673 laddr 192.168.0.2/56673
+Mar 29 2004 09:56:24: %PIX-5-304001: 192.168.0.2 Accessed URL 130.57.4.27:/inc/hdr_script_common.js
+Mar 29 2004 09:56:24: %PIX-6-302006: Teardown UDP connection for faddr 194.114.201.14/46474 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:24: %PIX-6-302005: Built UDP connection for faddr 194.114.201.14/46474 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:26: %PIX-6-302002: Teardown TCP connection 152060 faddr 130.57.4.27/80 gaddr 10.0.0.187/56673 laddr 192.168.0.2/56673 duration 0:00:01 bytes 11143 (TCP Reset-I)
+Mar 29 2004 09:56:26: %PIX-6-302002: Teardown TCP connection 152058 faddr 130.57.4.27/80 gaddr 10.0.0.187/56672 laddr 192.168.0.2/56672 duration 0:00:02 bytes 11641 (TCP Reset-I)
+Mar 29 2004 09:56:26: %PIX-6-302001: Built outbound TCP connection 152062 for faddr 130.57.4.27/80 gaddr 10.0.0.187/56674 laddr 192.168.0.2/56674
+Mar 29 2004 09:56:26: %PIX-5-304001: 192.168.0.2 Accessed URL 130.57.4.27:/de-de/
+Mar 29 2004 09:56:27: %PIX-6-302006: Teardown UDP connection for faddr 203.124.140.107/12519 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:27: %PIX-6-302005: Built UDP connection for faddr 203.124.140.107/12519 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:27: %PIX-6-302001: Built outbound TCP connection 152064 for faddr 130.57.4.27/80 gaddr 10.0.0.187/56675 laddr 192.168.0.2/56675
+Mar 29 2004 09:56:27: %PIX-5-304001: 192.168.0.2 Accessed URL 130.57.4.27:/common/inc/novell_style.css
+Mar 29 2004 09:56:30: %PIX-6-302005: Built UDP connection for faddr 194.25.0.69/49933 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:32: %PIX-6-302005: Built UDP connection for faddr 195.235.113.3/14809 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:32: %PIX-6-302005: Built UDP connection for faddr 195.235.113.3/18429 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:35: %PIX-6-302006: Teardown UDP connection for faddr 194.114.201.13/48355 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:35: %PIX-6-302005: Built UDP connection for faddr 194.114.201.13/48355 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:35: %PIX-6-302006: Teardown UDP connection for faddr 194.114.201.13/48355 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:35: %PIX-6-302005: Built UDP connection for faddr 194.114.201.13/48355 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:35: %PIX-6-302006: Teardown UDP connection for faddr 192.168.216.1/137 gaddr 10.0.0.187/2793 laddr 192.168.0.2/2793
+Mar 29 2004 09:56:35: %PIX-6-302006: Teardown UDP connection for faddr 203.124.140.107/12520 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:35: %PIX-6-302006: Teardown UDP connection for faddr 195.146.160.3/16708 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:35: %PIX-6-302006: Teardown UDP connection for faddr 62.189.94.209/61016 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:35: %PIX-6-302002: Teardown TCP connection 152017 faddr 212.56.240.37/9200 gaddr 10.0.0.187/2795 laddr 192.168.0.2/2795 duration 0:01:03 bytes 33424 (TCP FINs)
+Mar 29 2004 09:56:35: %PIX-6-302006: Teardown UDP connection for faddr 194.25.0.125/38729 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:35: %PIX-6-302006: Teardown UDP connection for faddr 211.9.32.235/32770 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:35: %PIX-6-302006: Teardown UDP connection for faddr 194.114.201.14/46474 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:38: %PIX-6-302001: Built outbound TCP connection 152070 for faddr 216.52.17.116/80 gaddr 10.0.0.187/56677 laddr 192.168.0.2/56677
+Mar 29 2004 09:56:38: %PIX-5-304001: 192.168.0.2 Accessed URL 216.52.17.116:/b/ss/novellcom/0/G.1-XP-R/s14102280031206?[AQB]&ndh=1&t=29/2/2004%2012%3A20%3A20%201%20-120&ch=www.novell.com/de-de/&server=www.novell.com&eVarCFG=200-200-200--&c5=de-de%3Ad
+Mar 29 2004 09:56:39: %PIX-6-302002: Teardown TCP connection 152070 faddr 216.52.17.116/80 gaddr 10.0.0.187/56677 laddr 192.168.0.2/56677 duration 0:00:01 bytes 1551 (TCP Reset-I)
+Mar 29 2004 09:56:39: %PIX-6-302001: Built outbound TCP connection 152071 for faddr 216.52.17.116/80 gaddr 10.0.0.187/56678 laddr 192.168.0.2/56678
+Mar 29 2004 09:56:39: %PIX-5-304001: 192.168.0.2 Accessed URL 216.52.17.116:/b/ss/novellcom/0/G.1-XP-R/s14102280031206?[AQB]purl=http%3A%2F%2Fwww.novell.com%2Fde-de%2F&pccr=true&&ndh=1&t=29/2/2004%2012%3A20%3A20%201%20-120&ch=www.novell.com/de-de/&se
+Mar 29 2004 09:56:39: %PIX-6-302002: Teardown TCP connection 152071 faddr 216.52.17.116/80 gaddr 10.0.0.187/56678 laddr 192.168.0.2/56678 duration 0:00:01 bytes 1329 (TCP Reset-I)
+Mar 29 2004 09:56:50: %PIX-6-302005: Built UDP connection for faddr 192.168.202.1/137 gaddr 10.0.0.187/2797 laddr 192.168.0.2/2797
+Mar 29 2004 09:56:50: %PIX-6-302005: Built UDP connection for faddr 192.168.216.1/137 gaddr 10.0.0.187/2798 laddr 192.168.0.2/2798
+Mar 29 2004 09:56:50: %PIX-4-106023: Deny icmp src outside:Some-Cisco dst inside:10.0.0.187 (type 3, code 1) by access-group "outside_access_in"
+Mar 29 2004 09:56:52: %PIX-6-302005: Built UDP connection for faddr 80.58.4.34/37074 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:52: %PIX-4-106023: Deny icmp src outside:Some-Cisco dst inside:10.0.0.187 (type 3, code 1) by access-group "outside_access_in"
+Mar 29 2004 09:56:53: %PIX-6-302005: Built UDP connection for faddr 194.114.201.14/46474 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:53: %PIX-6-302006: Teardown UDP connection for faddr 194.114.201.14/46474 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:53: %PIX-6-302005: Built UDP connection for faddr 194.114.201.14/46474 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:53: %PIX-4-106023: Deny icmp src outside:Some-Cisco dst inside:10.0.0.187 (type 3, code 1) by access-group "outside_access_in"
+Mar 29 2004 09:56:53: %PIX-6-302006: Teardown UDP connection for faddr 194.114.201.14/46474 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:53: %PIX-6-302005: Built UDP connection for faddr 194.114.201.14/46474 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:53: %PIX-6-302005: Built UDP connection for faddr 209.120.214.162/32769 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:53: %PIX-6-302006: Teardown UDP connection for faddr 209.120.214.162/32769 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:53: %PIX-6-302005: Built UDP connection for faddr 209.120.214.162/32769 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:56:55: %PIX-6-106015: Deny TCP (no connection) from 192.168.0.2/2799 to 192.168.202.1/2244 flags SYN ACK on interface inside
+Mar 29 2004 09:56:58: %PIX-6-106015: Deny TCP (no connection) from 192.168.0.2/2799 to 192.168.202.1/2244 flags SYN ACK on interface inside
+Mar 29 2004 09:57:02: %PIX-6-302005: Built UDP connection for faddr 66.246.44.108/59213 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:57:02: %PIX-6-302006: Teardown UDP connection for faddr 66.246.44.108/59213 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:57:02: %PIX-6-302005: Built UDP connection for faddr 66.246.44.108/59213 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:57:04: %PIX-6-106015: Deny TCP (no connection) from 192.168.0.2/2799 to 192.168.202.1/2244 flags SYN ACK on interface inside
+Mar 29 2004 09:57:04: %PIX-6-302002: Teardown TCP connection 151958 faddr 212.227.109.224/80 gaddr 10.0.0.187/56614 laddr 192.168.0.2/56614 duration 0:04:56 bytes 11069 (TCP Reset-I)
+Mar 29 2004 09:57:04: %PIX-6-302002: Teardown TCP connection 151957 faddr 212.227.109.224/80 gaddr 10.0.0.187/56613 laddr 192.168.0.2/56613 duration 0:04:56 bytes 11069 (TCP Reset-I)
+Mar 29 2004 09:57:04: %PIX-6-302001: Built outbound TCP connection 152082 for faddr 212.227.109.224/80 gaddr 10.0.0.187/56683 laddr 192.168.0.2/56683
+Mar 29 2004 09:57:04: %PIX-6-302001: Built outbound TCP connection 152083 for faddr 212.227.109.224/80 gaddr 10.0.0.187/56684 laddr 192.168.0.2/56684
+Mar 29 2004 09:57:04: %PIX-5-304001: 192.168.0.2 Accessed URL 212.227.109.224:/stylelib/Microsites.css
+Mar 29 2004 09:57:04: %PIX-5-304001: 192.168.0.2 Accessed URL 212.227.109.224:/scriptlib/ClientStdScripts.js
+Mar 29 2004 09:57:06: %PIX-6-302006: Teardown UDP connection for faddr 203.124.140.107/12519 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:57:06: %PIX-6-302006: Teardown UDP connection for faddr 194.25.0.69/49933 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:57:06: %PIX-6-302006: Teardown UDP connection for faddr 195.235.113.3/14809 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:57:06: %PIX-6-302006: Teardown UDP connection for faddr 195.235.113.3/18429 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:57:06: %PIX-6-302006: Teardown UDP connection for faddr 194.114.201.13/48355 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 29 2004 09:57:06: %PIX-6-302006: Teardown UDP connection for faddr 80.58.4.34/37074 gaddr 10.0.0.187/53 laddr 192.168.0.2/53
+Mar 12 12:00:08 server2 rcd[308]: Loaded 12 packages in 'ximian-red-carpet|351' (0.01878 seconds)
+Mar 12 12:00:08 server2 rcd[308]: id=304 COMPLETE 'Downloading https://server2/data/red-carpet.rdf' time=0s (failed)
+Mar 12 12:00:08 server2 rcd[308]: Unable to downloaded licenses info: Unable to authenticate - Authorization Required (https://server2/data/red-carpet.rdf)
+Mar 12 12:10:00 server2 /USR/SBIN/CRON[6808]: (root) CMD ( /usr/lib/sa/sa1 )
+Mar 12 12:20:00 server2 /USR/SBIN/CRON[6837]: (root) CMD ( /usr/lib/sa/sa1 )
+Mar 12 12:27:00 server3 named[32172]: lame server resolving 'jakarta5.wasantara.net.id' (in 'wasantara.net.id'?): 202.159.65.171#53
+Mar 12 12:27:03 server3 named[32173]: lame server resolving 'jakarta5.wasantara.net.id' (in 'wasantara.net.id'?): 202.159.65.171#53
+Mar 12 12:01:02 server4 snort: alert_multiple_requests: ACTIVE
+Mar 12 12:01:02 server4 snort: telnet_decode arguments:
+Mar 12 12:01:02 server4 snort: snort startup succeeded
+Mar 12 12:01:02 server4 snort: Ports to decode telnet on: 21 23 25 119
+Mar 12 12:01:03 server4 snort: Snort initialization completed successfully
+Mar 10 03:19:48 server5 syslog: su : + tty?? root-informix
+Mar 11 03:19:54 server5 syslog: su : + tty?? root-informix
+Mar 12 03:19:51 server5 syslog: su : + tty?? root-informix
+Mar 12 09:27:20 server5 syslog: su : - ttyp1 user-informix
+Mar 12 09:27:35 server5 syslog: su : + ttyp1 user-informix
+Mar 12 08:24:51 server6 sshd[24742]: Accepted password for netscape from 111.222.333.444 port 1420 ssh2
+Mar 12 08:25:15 server6 tftpd[24241]: Timeout (no requests in 10 minutes)
+Mar 12 08:49:53 server6 ftpd[27281]: FTP LOGIN FROM 111.222.333.444 [111.222.333.444], netscape
+Mar 12 09:05:22 server6 ftpd[27281]: exiting on signal 14
+Mar 12 12:32:24 server6 sshd[11187]: Accepted password for jfalgout from 111.222.333.444 port 34138 ssh2
+Mar 12 11:44:20 server7 ftpd[25306]: command: QUIT^M
+Mar 12 11:44:20 server7 ftpd[25306]: <--- 221
+Mar 12 11:44:20 server7 ftpd[25306]: Goodbye.
+Mar 12 11:44:35 server7 tftpd[24955]: Timeout (no requests in 10 minutes)
+Mar 12 12:17:03 server7 sshd[26501]: pam_authenticate: error Authentication failed
+Mar 12 12:17:03 server7 sshd[26501]: Accepted publickey for user from 111.222.333.444 port 32774 ssh2
+Mar 12 12:34:23 server7 sshd[27393]: pam_authenticate: error Authentication failed
+Mar 1 00:00:00 avas postfix/smtpd[2410]: A1CE861A83: reject: RCPT from unknown[218.246.34.68]: 557 Service unavailable; Client host [218.246.34.68] blocked using list.dsbl.org; http://dsbl.org/listing?ip=218.246.34.68; from= to= proto=SMTP helo=
+Mar 1 00:00:02 avas postfix/smtpd[2410]: lost connection after RCPT from unknown[218.246.34.68]
+Mar 1 00:00:02 avas postfix/smtpd[2410]: disconnect from unknown[218.246.34.68]
+Mar 1 00:00:02 avas postfix/smtpd[1822]: connect from unknown[62.113.122.52]
+Mar 1 00:00:03 avas postfix/smtpd[1822]: 4EC6561A83: client=unknown[62.113.122.52]
+Mar 1 00:00:03 avas postfix/smtpd[2314]: connect from host81-153-11-97.range81-153.btcentralplus.com[81.153.11.97]
+Mar 1 00:00:03 avas postfix/smtpd[1822]: 4EC6561A83: reject: RCPT from unknown[62.113.122.52]: 450 : Sender address rejected: Domain not found; from= to= proto=ESMTP helo=
+Mar 1 00:00:03 avas postfix/smtpd[2314]: C0E5861AA4: client=host81-153-11-97.range81-153.btcentralplus.com[81.153.11.97]
+Mar 1 00:00:04 avas postfix/smtpd[2314]: C0E5861AA4: reject: RCPT from host81-153-11-97.range81-153.btcentralplus.com[81.153.11.97]: 450 : Sender address rejected: Domain not found; from= to= proto=ESMTP helo=
+Mar 1 00:00:05 avas postfix/pickup[1473]: 445C261AA4: uid=0 from=
+Mar 1 00:00:05 avas postfix/cleanup[2400]: 445C261AA4: message-id=<20040301080005.445C261AA4@avas.example.com>
+Mar 1 00:00:05 avas postfix/qmgr[23698]: 445C261AA4: from=, size=704, nrcpt=1 (queue active)
+Mar 1 00:00:05 avas postfix/smtpd[2314]: disconnect from host81-153-11-97.range81-153.btcentralplus.com[81.153.11.97]
+Mar 1 00:00:06 avas postfix/smtpd[2579]: connect from avas.example.com[127.0.0.1]
+Mar 1 00:00:06 avas postfix/smtpd[2579]: 4391461A83: client=avas.example.com[127.0.0.1]
+Mar 1 00:00:06 avas postfix/cleanup[1666]: 4391461A83: message-id=<20040301080005.445C261AA4@avas.example.com>
+Mar 1 00:00:06 avas postfix/qmgr[23698]: 4391461A83: from=, size=1048, nrcpt=1 (queue active)
+Mar 1 00:00:06 avas postfix/smtpd[2579]: disconnect from avas.example.com[127.0.0.1]
+Mar 1 00:00:06 avas amavis[2430]: (02430-01) Passed,  -> , Message-ID: <20040301080005.445C261AA4@avas.example.com>, Hits: 0
+Mar 1 00:00:06 avas postfix/smtp[2573]: 445C261AA4: to=, relay=127.0.0.1[127.0.0.1], delay=1, status=sent (250 2.6.0 Ok, id=02430-01, from MTA: 250 Ok: queued as 4391461A83)
+Mar 1 00:00:06 avas postfix/smtp[2580]: 4391461A83: to=, relay=10.0.0.251[10.0.0.251], delay=0, status=sent (250 Command DATA Processed mail data Ok)
+Mar 1 00:00:13 avas postfix/smtpd[2411]: warning: 208.37.192.234: address not listed for hostname mail.globrite.com
+Mar 1 00:00:13 avas postfix/smtpd[2411]: connect from unknown[208.37.192.234]
+Mar 1 00:00:14 avas postfix/smtpd[2411]: disconnect from unknown[208.37.192.234]
+Mar 1 00:00:28 avas postfix/smtpd[2413]: warning: 208.37.192.234: address not listed for hostname mail.globrite.com
+Mar 1 00:00:28 avas postfix/smtpd[2413]: connect from unknown[208.37.192.234]
+Mar 1 00:00:29 avas postfix/smtpd[2413]: disconnect from unknown[208.37.192.234]
+Mar 1 00:00:43 avas postfix/smtpd[2410]: warning: 208.37.192.234: address not listed for hostname mail.globrite.com
+Mar 1 00:00:43 avas postfix/smtpd[2410]: connect from unknown[208.37.192.234]
+Mar 1 00:00:44 avas postfix/smtpd[2410]: disconnect from unknown[208.37.192.234]
+Mar 1 00:00:58 avas postfix/smtpd[2314]: warning: 208.37.192.234: address not listed for hostname mail.globrite.com
+Mar 1 00:00:58 avas postfix/smtpd[2314]: connect from unknown[208.37.192.234]
+Mar 1 00:00:59 avas postfix/smtpd[2314]: disconnect from unknown[208.37.192.234]
+Mar 1 00:01:10 avas postfix/smtpd[1822]: disconnect from unknown[62.113.122.52]
+Mar 1 00:01:13 avas postfix/smtpd[2411]: warning: 208.37.192.234: address not listed for hostname mail.globrite.com
+Mar 1 00:01:13 avas postfix/smtpd[2411]: connect from unknown[208.37.192.234]
+Mar 1 00:01:14 avas postfix/smtpd[2411]: disconnect from unknown[208.37.192.234]
+Mar 1 00:01:29 avas postfix/smtpd[2413]: warning: 208.37.192.234: address not listed for hostname mail.globrite.com
+Mar 1 00:01:29 avas postfix/smtpd[2413]: connect from unknown[208.37.192.234]
+Mar 1 00:01:29 avas postfix/smtpd[2413]: disconnect from unknown[208.37.192.234]
+Mar 1 00:01:31 avas postfix/smtpd[2410]: connect from user-0c99au7.cable.mindspring.com[24.148.171.199]
+Mar 1 00:01:34 avas postfix/smtpd[2410]: AA8F561A83: client=user-0c99au7.cable.mindspring.com[24.148.171.199]
+Mar 1 00:01:36 avas postfix/smtpd[2410]: AA8F561A83: reject: RCPT from user-0c99au7.cable.mindspring.com[24.148.171.199]: 557 Service unavailable; Client host [24.148.171.199] blocked using list.dsbl.org; http://dsbl.org/listing?ip=24.148.171.199; from= to= proto=SMTP helo=
+Mar 1 00:01:36 avas postfix/smtpd[2314]: connect from unknown[218.149.178.173]
+Mar 1 00:01:38 avas postfix/smtpd[2314]: 2B34C61AA4: client=unknown[218.149.178.173]
+Mar 1 00:01:38 avas postfix/smtpd[1822]: connect from host76-117.pool80180.interbusiness.it[80.180.117.76]
+Mar 1 00:01:39 avas postfix/smtpd[2410]: lost connection after RCPT from user-0c99au7.cable.mindspring.com[24.148.171.199]
+Mar 1 00:01:39 avas postfix/smtpd[2410]: disconnect from user-0c99au7.cable.mindspring.com[24.148.171.199]
+Mar 1 00:01:43 avas postfix/smtpd[1822]: 0141A61A83: client=host76-117.pool80180.interbusiness.it[80.180.117.76]
+Mar 1 00:01:44 avas postfix/smtpd[2411]: warning: 208.37.192.234: address not listed for hostname mail.globrite.com
+Mar 1 00:01:44 avas postfix/smtpd[2411]: connect from unknown[208.37.192.234]
+Mar 1 00:01:44 avas postfix/smtpd[2411]: disconnect from unknown[208.37.192.234]
+Mar 1 00:01:47 avas postfix/smtpd[2314]: 2B34C61AA4: reject: RCPT from unknown[218.149.178.173]: 557 Service unavailable; Client host [218.149.178.173] blocked using dnsbl.sorbs.net; Dynamic IP Address See: http://www.dnsbl.sorbs.net/cgi-bin/lookup?IP=218.149.178.173; from= to= proto=SMTP helo=<10.0.0.214>
+Mar 1 00:01:49 avas postfix/smtpd[2314]: disconnect from unknown[218.149.178.173]
+Mar 1 00:01:54 avas postfix/smtpd[1822]: 0141A61A83: reject: RCPT from host76-117.pool80180.interbusiness.it[80.180.117.76]: 557 Service unavailable; Client host [80.180.117.76] blocked using dnsbl.sorbs.net; Dynamic IP Address See: http://www.dnsbl.sorbs.net/cgi-bin/lookup?IP=80.180.117.76; from=<00rkug3ytgb83@cyberlink.com> to= proto=SMTP helo=
+Mar 1 00:01:57 avas postfix/smtpd[1822]: lost connection after RCPT from host76-117.pool80180.interbusiness.it[80.180.117.76]
+Mar 1 00:01:57 avas postfix/smtpd[1822]: disconnect from host76-117.pool80180.interbusiness.it[80.180.117.76]
+Feb 2 09:00:14 avas.example.com amavisd[11568]: starting. amavisd at avas.example.com amavisd-new-20030616-p6, Unicode aware, LANG=en_US.iso885915
+Feb 2 09:00:14 avas.example.com amavisd[11568]: Perl version 5.008001
+Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Amavis::Conf 1.15
+Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Archive::Tar 1.07
+Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Archive::Zip 1.08
+Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Compress::Zlib 1.31
+Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Convert::TNEF 0.17
+Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Convert::UUlib 0.31
+Feb 2 09:00:14 avas.example.com amavisd[11568]: Module MIME::Entity 5.404
+Feb 2 09:00:14 avas.example.com amavisd[11568]: Module MIME::Parser 5.406
+Feb 2 09:00:14 avas.example.com amavisd[11568]: Module MIME::Tools 5.411
+Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Mail::Header 1.60
+Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Mail::Internet 1.60
+Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Mail::SpamAssassin 2.63
+Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Net::Cmd 2.24
+Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Net::DNS 0.42
+Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Net::SMTP 2.26
+Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Net::Server 0.86
+Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Time::HiRes 1.52
+Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Unix::Syslog 0.99
+Feb 2 09:00:14 avas.example.com amavisd[11569]: Found $file at /usr/local/bin/file
+Feb 2 09:00:14 avas.example.com amavisd[11569]: No $arc, not using it
+Feb 2 09:00:14 avas.example.com amavisd[11569]: Found $gzip at /usr/bin/gzip
+Feb 2 09:00:14 avas.example.com amavisd[11569]: Found $bzip2 at /usr/bin/bzip2
+Feb 2 09:00:14 avas.example.com amavisd[11569]: No $lzop, not using it
+Feb 2 09:00:14 avas.example.com amavisd[11569]: No $lha, not using it
+Feb 2 09:00:14 avas.example.com amavisd[11569]: No $unarj, not using it
+Feb 2 09:00:14 avas.example.com amavisd[11569]: Found $uncompress at /usr/bin/uncompress
+Feb 2 09:00:14 avas.example.com amavisd[11569]: No $unfreeze, not using it
+Feb 2 09:00:14 avas.example.com amavisd[11569]: No $unrar, not using it
+Feb 2 09:00:14 avas.example.com amavisd[11569]: No $zoo, not using it
+Feb 2 09:00:14 avas.example.com amavisd[11569]: Found $cpio at /bin/cpio
+Feb 2 09:00:14 avas.example.com amavisd[11569]: Using internal av scanner code for (primary) Clam Antivirus-clamd
+Feb 2 09:00:14 avas.example.com amavisd[11569]: Found primary av scanner NAI McAfee AntiVirus (uvscan) at /usr/local/bin/uvscan
+Feb 2 09:00:14 avas.example.com amavisd[11569]: Found secondary av scanner Clam Antivirus - clamscan at /usr/local/bin/clamscan
+Feb 2 09:00:29 avas.example.com amavisd[11599]: (11599-01) Passed,  -> , Message-ID: <01L64VNZ9OH68WWF3X@CATHY.IJS.SI>, Hits: -
+Feb 2 09:00:31 avas.example.com amavisd[11601]: (11601-01) Passed,  -> , Message-ID: <7BEFD9ACD7E4174EABE9A6B3D23B47676B5CB2@cacmail.example.com>, Hits: 0.422
+Feb 2 09:00:31 avas.example.com amavisd[11600]: (11600-01) Passed,  -> , Message-ID: <7BEFD9ACD7E4174EABE9A6B3D23B476703DAF49D@cacmail.example.com>, Hits: 1.219
+Feb 2 09:00:33 avas.example.com amavisd[11599]: (11599-02) Not-Delivered,  -> , quarantine spam-8b8880d575b664542bf8c045ac28c220-20040202-090033-11599-02, Message-ID: <1075739741.3557@cbn.net.id>, Hits: 13.621
+Feb 2 09:00:33 avas.example.com amavisd[11600]: (11600-02) Not-Delivered,  -> , quarantine spam-efde75c38625bba7f05e2f4a93cd9263-20040202-090033-11600-02, Message-ID: <705a01c3e9aa$b3cc09f0$48677b4c@cdu-saar.de>, Hits: 15.376
+Feb 2 09:00:35 avas.example.com amavisd[11599]: (11599-03) Passed,  -> , Message-ID: , Hits: 5.353
+Feb 2 09:00:36 avas.example.com amavisd[11601]: (11601-02) Passed,  -> , Message-ID: , Hits: 0.194
+Feb 2 09:00:36 avas.example.com amavisd[11600]: (11600-03) Passed,  -> , Message-ID: <20040202164028.4185861B05@avas.example.com>, Hits: 0
+Feb 2 09:00:38 avas.example.com amavisd[11600]: (11600-04) Not-Delivered,  -> , quarantine spam-33f14e0d35a02c88714201b11984a1c6-20040202-090038-11600-04, Message-ID: <401E7F65.0FA4B9AC@tiscali.co.uk>, Hits: 15.23
+Feb 2 09:00:39 avas.example.com amavisd[11601]: (11601-03) Passed,  -> , Message-ID: , Hits: 0.156
+Feb 2 09:00:41 avas.example.com amavisd[11602]: (11602-01) Passed,  -> , Message-ID: <970613513.1075739667242.JavaMail.ebayapp@sj-v3offer22>, Hits: 2.172
+Feb 2 09:00:41 avas.example.com amavisd[11599]: (11599-04) Not-Delivered, <> -> , quarantine spam-6234502ce990e93fd0f5c8c6c5eb37c8-20040202-090041-11599-04, Message-ID: , Hits: 10.844
+Feb 2 09:00:44 avas.example.com amavisd[11599]: (11599-05) Passed,  -> , Message-ID: , Hits: 0
+Feb 2 09:00:44 avas.example.com amavisd[11600]: (11600-05) Not-Delivered, <67dkmsca@hanmir.com> -> ,, quarantine spam-a7bd8bbb40d860656ba8bec5df04e007-20040202-090044-11600-05, Message-ID: <1l$l$r$6494gk-679-l7j2-fy3xx9@lkj5z.l8ml>, Hits: 31.578
+Feb 2 09:00:46 avas.example.com amavisd[11599]: (11599-06) Passed,  -> , Message-ID: <401e7cf6.171.7f8.20446@example.com>, Hits: 1.587
+Mar 7 04:05:00 avas CROND[11233]: (cronjob) CMD (/usr/bin/mrtg /etc/mrtg/mrtg.cfg)
+Mar 7 04:05:00 avas CROND[11234]: (mailman) CMD (/usr/local/bin/python -S /usr/local/mailman/cron/gate_news)
+Mar 7 04:10:00 avas CROND[11253]: (cronjob) CMD (/usr/bin/mrtg /etc/mrtg/mrtg.cfg)
+Mar 7 04:10:00 avas CROND[11254]: (cronjob) CMD (/usr/lib/sa/sa1 1 1)
+Mar 7 04:10:00 avas CROND[11257]: (cronjob) CMD (/sbin/dcccollect.sh)
+Mar 7 04:10:00 avas CROND[11255]: (mailman) CMD (/usr/local/bin/python -S /usr/local/mailman/cron/gate_news)
+Mar 7 04:15:00 avas CROND[11351]: (cronjob) CMD (/usr/bin/mrtg /etc/mrtg/mrtg.cfg)
+Mar 7 04:15:00 avas CROND[11352]: (mailman) CMD (/usr/local/bin/python -S /usr/local/mailman/cron/gate_news)
+Mar 7 04:20:00 avas CROND[11372]: (cronjob) CMD (/usr/bin/mrtg /etc/mrtg/mrtg.cfg)
+Mar 7 04:20:00 avas CROND[11373]: (cronjob) CMD (/usr/lib/sa/sa1 1 1)
+Mar 7 04:20:00 avas CROND[11376]: (cronjob) CMD (/sbin/dcccollect.sh)
+Mar 7 04:20:00 avas CROND[11374]: (mailman) CMD (/usr/local/bin/python -S /usr/local/mailman/cron/gate_news)
+Mar 7 04:22:00 avas CROND[11460]: (cronjob) CMD (run-parts /etc/cron.weekly)
+Mar 7 04:22:00 avas anacron[11464]: Updated timestamp for job `cron.weekly' to 2004-03-07
+Mar 7 04:25:00 avas CROND[19666]: (cronjob) CMD (/usr/bin/mrtg /etc/mrtg/mrtg.cfg)
+Mar 7 04:25:00 avas CROND[19667]: (mailman) CMD (/usr/local/bin/python -S /usr/local/mailman/cron/gate_news)
+Mar 7 04:30:00 avas CROND[19683]: (cronjob) CMD (/usr/bin/mrtg /etc/mrtg/mrtg.cfg)
+Mar 7 04:30:00 avas CROND[19684]: (cronjob) CMD (/usr/lib/sa/sa1 1 1)
+Mar 7 04:30:00 avas CROND[19687]: (cronjob) CMD ((cd /home/dcc/libexec; ./fetchblack))
+Mar 7 04:30:01 avas CROND[19685]: (mailman) CMD (/usr/local/bin/python -S /usr/local/mailman/cron/gate_news)
+Mar 7 04:30:01 avas CROND[19695]: (cronjob) CMD (/sbin/dcccollect.sh)
+Mar 7 04:35:00 avas CROND[19803]: (cronjob) CMD (/usr/bin/mrtg /etc/mrtg/mrtg.cfg)
+Mar 7 04:35:01 avas CROND[19804]: (mailman) CMD (/usr/local/bin/python -S /usr/local/mailman/cron/gate_news)
+Mar 7 04:40:00 avas CROND[19841]: (cronjob) CMD (/usr/bin/mrtg /etc/mrtg/mrtg.cfg)
+Mar 7 04:40:00 avas CROND[19842]: (cronjob) CMD (/usr/lib/sa/sa1 1 1)
+Mar 7 04:40:00 avas CROND[19845]: (cronjob) CMD (/sbin/dcccollect.sh)
+Mar 7 04:40:00 avas CROND[19843]: (mailman) CMD (/usr/local/bin/python -S /usr/local/mailman/cron/gate_news)
+Mar 7 04:45:01 avas CROND[19926]: (cronjob) CMD (/usr/bin/mrtg /etc/mrtg/mrtg.cfg)
+Mar 7 04:45:01 avas CROND[19927]: (mailman) CMD (/usr/local/bin/python -S /usr/local/mailman/cron/gate_news)
+Mar 7 04:50:00 avas CROND[19948]: (cronjob) CMD (/usr/bin/mrtg /etc/mrtg/mrtg.cfg)
+Mar 7 04:50:00 avas CROND[19949]: (cronjob) CMD (/usr/lib/sa/sa1 1 1)
+Mar 7 04:50:00 avas CROND[19952]: (cronjob) CMD (/sbin/dcccollect.sh)
+Mar 7 04:50:00 avas CROND[19950]: (mailman) CMD (/usr/local/bin/python -S /usr/local/mailman/cron/gate_news)
+Mar 7 04:55:00 avas CROND[20053]: (cronjob) CMD (/usr/bin/mrtg /etc/mrtg/mrtg.cfg)
+Mar 7 04:55:01 avas CROND[20054]: (mailman) CMD (/usr/local/bin/python -S /usr/local/mailman/cron/gate_news)
+Mar 7 05:00:00 avas CROND[20081]: (cronjob) CMD (/usr/bin/mrtg /etc/mrtg/mrtg.cfg)
+Mar 7 05:00:00 avas CROND[20082]: (cronjob) CMD (/usr/lib/sa/sa1 1 1)
+Mar 7 05:00:00 avas CROND[20085]: (cronjob) CMD ((cd /home/dcc/libexec; ./fetchblack))
+Mar 7 05:00:00 avas CROND[20083]: (mailman) CMD (/usr/local/bin/python -S /usr/local/mailman/cron/gate_news)
+Mar 7 05:00:00 avas CROND[20094]: (cronjob) CMD (/sbin/uv.sh)
+Mar 7 05:00:00 avas CROND[20095]: (cronjob) CMD (/sbin/dcccollect.sh)
+Mar 7 05:01:01 avas CROND[20187]: (cronjob) CMD (run-parts /etc/cron.hourly)
+Mar 7 05:05:00 avas CROND[20207]: (cronjob) CMD (/usr/bin/mrtg /etc/mrtg/mrtg.cfg)
+Mar 7 05:05:00 avas CROND[20208]: (mailman) CMD (/usr/local/bin/python -S /usr/local/mailman/cron/gate_news)
+Mar 7 05:10:00 avas CROND[20242]: (cronjob) CMD (/usr/bin/mrtg /etc/mrtg/mrtg.cfg) 
+Mar 6 03:48:24 avas dccd[19972]: automatic dbclean; starting `dbclean -DPq -i 1189 -L info,local5.notice -L error,local5.err`
+Mar 6 03:48:24 avas dbclean[19972]: 1.2.32 cleaning dcc_db
+Mar 6 03:48:24 avas dccd[13284]: database cleaning begun
+Mar 6 03:49:26 avas dbclean[19972]: expired 3899900 records and 11994010 checksums in /home/dcc/dcc_db
+Mar 6 03:51:25 avas dbclean[19972]: hashed 9753301 records containing 21909874 checksums, compressed 1316498 records
+Mar 6 03:51:25 avas dbclean[19972]: 27432960 hash entries total, 15545121 or 56% used
+Mar 6 03:52:07 avas dccd[13284]: 1.2.32 database /home/dcc/dcc_db reopened with 997 MByte window
+Mar 6 04:12:03 avas dccd[13284]: "packet length 44 too small for REPORT" sent to client 1 at 80.8.131.68,41000
+Mar 6 19:01:12 avas dccd[13284]: no incoming flood connection from dcc1.example.no, server-ID XXXX
+Mar 6 19:01:42 avas dccd[13284]: no outgoing flood connection to dcc1.example.no, server-ID XXXX
+Mar 6 20:06:37 avas dccd[13284]: "packet length 44 too small for REPORT" sent to client 1 at 194.63.250.215,56007
+Mar 7 00:00:00 avas dccifd[13451]: 1.2.32 rejected messages to 0 targets and discarded messages to 0 targets among 1552 total since 03/06/04 00:00:00
+Mar 7 00:07:21 avas dccifd[7292]: write(MTA socket,4): Broken pipe
+Mar 7 02:10:10 avas dccifd[9128]: write(MTA socket,4): Broken pipe
+Mar 7 02:10:18 avas dccifd[9138]: write(MTA socket,4): Broken pipe
+Mar 7 02:10:26 avas dccifd[9139]: write(MTA socket,4): Broken pipe
+Mar 7 02:10:33 avas dccifd[9168]: write(MTA socket,4): Broken pipe
+Mar 7 03:48:25 avas dccd[10491]: automatic dbclean; starting `dbclean -DPq -i 1189 -L info,local5.notice -L error,local5.err`
+Mar 7 03:48:25 avas dbclean[10491]: 1.2.32 cleaning dcc_db
+Mar 7 03:48:25 avas dccd[13284]: database cleaning begun
+Mar 7 03:49:11 avas dbclean[10491]: expired 4432643 records and 12824643 checksums in /home/dcc/dcc_db
+Mar 7 03:50:02 avas dbclean[10491]: hashed 8581350 records containing 18023228 checksums, compressed 1468188 records
+Mar 7 03:50:02 avas dbclean[10491]: 22763520 hash entries total, 12827182 or 56% used
+Mar 7 03:50:38 avas dccd[13284]: 1.2.32 database /home/dcc/dcc_db reopened with 997 MByte window
+Mar 7 04:11:15 avas dccifd[11335]: write(MTA socket,4): Broken pipe
+Mar 7 06:12:56 avas dccifd[21165]: write(MTA socket,4): Broken pipe
+Mar 7 11:14:35 avas dccd[13284]: 20 requests/sec are too many from anonymous 205.201.1.56,2215
+Mar 7 11:14:35 avas dccd[13284]: 20 requests/sec are too many from anonymous 205.201.1.56,2214
+Mar 7 11:14:35 avas dccd[13284]: 21 requests/sec are too many from anonymous 205.201.1.56,1127
+Mar 7 11:14:35 avas dccd[13284]: 21 requests/sec are too many from anonymous 205.201.1.56,2245
+Mar 7 11:14:35 avas dccd[13284]: 21 requests/sec are too many from anonymous 205.201.1.56,2246
+Mar 7 11:14:35 avas dccd[13284]: 22 requests/sec are too many from anonymous 205.201.1.56,2248
+Mar 7 16:50:58 avas dccifd[998]: missing message body
+Mar 7 19:01:28 avas dccd[13284]: no incoming flood connection from dcc1.example.no, server-ID XXXX
+Mar 7 19:01:58 avas dccd[13284]: no outgoing flood connection to dcc1.example.no, server-ID XXXX
+Mar 7 21:23:22 avas dccifd[6191]: missing message body
+Mar 8 00:00:00 avas dccifd[13451]: 1.2.32 rejected messages to 0 targets and discarded messages to 0 targets among 1775 total since 03/07/04 00:00:00
+Mar 8 00:22:57 avas dccifd[9933]: write(MTA socket,4): Broken pipe
+Mar 8 02:50:26 avas dccifd[12385]: no answer from 127.0.0.1 (127.0.0.1,6277) after 16016 ms
+Mar 8 02:50:26 avas dccifd[12385]: write(MTA socket,4): Broken pipe
+Mar 8 03:48:05 avas dccd[13362]: automatic dbclean; starting `dbclean -DPq -i 1189 -L info,local5.notice -L error,local5.err`
+Mar 8 03:48:05 avas dbclean[13362]: 1.2.32 cleaning dcc_db
+Mar 8 03:48:05 avas dccd[13284]: database cleaning begun
+Mar 8 03:50:40 avas dbclean[13362]: expired 3741033 records and 10305510 checksums in /home/dcc/dcc_db
+Mar 8 03:51:27 avas dbclean[13362]: hashed 8238442 records containing 17108406 checksums, compressed 1272157 records
+Mar 8 03:51:27 avas dbclean[13362]: 21596160 hash entries total, 12649013 or 58% used
+Mar 8 03:52:04 avas dccd[13284]: 1.2.32 database /home/dcc/dcc_db reopened with 997 MByte window
+Mar 8 08:24:29 avas dccifd[19670]: write(MTA socket,4): Broken pipe
+Mar 8 10:24:35 avas dccifd[25077]: write(MTA socket,4): Broken pipe
+Mar 8 10:24:42 avas dccifd[25083]: write(MTA socket,4): Broken pipe
+<46>1 2018-02-01T20:28:36.837100+00:00 miner-01 rsyslogd - - -  [origin software=\"rsyslogd\" swVersion=\"8.16.0\" x-pid=\"15651\" x-info=\"http://www.rsyslog.com\"] start
+<30>1 2018-02-01T20:28:36.832779+00:00 miner-01 systemd 1 - -  Stopping System Logging Service...
+<30>1 2018-02-01T20:28:36.834309+00:00 miner-01 systemd 1 - -  Stopped System Logging Service.
+<30>1 2018-02-01T20:28:36.834553+00:00 miner-01 systemd 1 - -  Starting System Logging Service...
+<30>1 2018-02-01T20:28:36.837251+00:00 miner-01 systemd 1 - -  Started System Logging Service.
+<46>1 2018-02-01T20:28:36.836975+00:00 miner-01 rsyslogd - - - rsyslogd's groupid changed to 108
+<46>1 2018-02-01T20:28:36.837039+00:00 miner-01 rsyslogd - - - rsyslogd's userid changed to 104
+<43>1 2018-02-01T20:28:36.837700+00:00 miner-01 rsyslogd-2039 - - - Could not open output pipe '/dev/xconsole':: No such file or directory [v8.16.0 try http://www.rsyslog.com/e/2039 ]
+<44>1 2018-02-01T20:28:36.837726+00:00 miner-01 rsyslogd-2007 - - - action 'action 10' suspended, next retry is Thu Feb  1 20:29:06 2018 [v8.16.0 try http://www.rsyslog.com/e/2007 ]
+<86>1 2018-02-01T20:28:36.838555+00:00 miner-01 sudo - - -  pam_unix(sudo:session): session closed for user root
+<85>1 2018-02-01T20:28:52.350767+00:00 miner-01 sudo - - -    jeremy : TTY=pts/0 ; PWD=/etc/rsyslog.d ; USER=root ; COMMAND=/bin/cat /var/log/syslog-all
+<86>1 2018-02-01T20:28:52.350959+00:00 miner-01 sudo - - -  pam_unix(sudo:session): session opened for user root by jeremy(uid=0)
+<86>1 2018-02-01T20:28:52.351979+00:00 miner-01 sudo - - -  pam_unix(sudo:session): session closed for user root
+*Mar  1 00:00:01.137: %VIRTIO-3-INIT_FAIL: Failed to initialize device, PCI 0/6/0/1002 , device is disabled, not supported
+*Mar  1 00:00:01.381: %ATA-6-DEV_FOUND: device 0x1F0
+*Mar  1 00:00:08.485: %ATA-6-DEV_FOUND: device 0x171
+*Mar  1 00:00:08.704: %NVRAM-5-CONFIG_NVRAM_READ_OK: NVRAM configuration 'flash:/nvram' was read from disk.
+*Feb  8 08:51:58.706: %PA-3-PA_INIT_FAILED: Performance Agent failed to initialize (Missing Data License)
+*Feb  8 08:52:05.064: %LINK-3-UPDOWN: Interface GigabitEthernet0/0, changed state to up
+*Feb  8 08:52:05.068: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to up
+Sep   19  08:26:10 host CEF:0|Security|threatmanager|1.0|100|worm successfully stopped|10|src=10.0.0.1 dst=2.1.2.2 spt=1232
+Sep   19  08:26:10 host CEF:0|security|threatmanager|1.0|100|detected a \\ in packet|10|src=10.0.0.1 act=blocked a \\ dst=1.1.1.1
+Sep   19  08:26:10 host CEF:0|security|threatmanager|1.0|100|detected a = in message|10|src=10.0.0.1 act=blocked a \= dst=1.1.1.1
