@@ -21,15 +21,9 @@ import org.immutables.value.Value;
 
 @Value.Immutable
 @Value.Style(visibility = Value.Style.ImplementationVisibility.PACKAGE)
-@JsonSerialize(as = ImmutableSyslogMessage.class)
-@JsonDeserialize(as = ImmutableSyslogMessage.class)
-public interface SyslogMessage extends Message {
-  @Nullable
-  String tag();
+@JsonSerialize(as = ImmutableBSDSyslogMessage.class)
+@JsonDeserialize(as = ImmutableBSDSyslogMessage.class)
+public interface BSDSyslogMessage extends RFC3164Message {
 
-  @Nullable
-  Integer processId();
 
-  @Nullable
-  String message();
 }

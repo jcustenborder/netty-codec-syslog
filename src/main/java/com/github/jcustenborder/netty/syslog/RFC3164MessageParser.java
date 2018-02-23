@@ -67,7 +67,7 @@ public class RFC3164MessageParser extends MessageParser {
 
 
     output.add(
-        ImmutableSyslogMessage.builder()
+        ImmutableBSDSyslogMessage.builder()
             .rawMessage(request.rawMessage())
             .remoteAddress(request.remoteAddress())
             .date(date)

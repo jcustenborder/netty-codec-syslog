@@ -15,17 +15,13 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.SimpleChannelInboundHandler;
+public interface RFC3164Message extends Message {
+  @Nullable
+  String tag();
 
-import java.util.ArrayList;
-import java.util.List;
+  @Nullable
+  Integer processId();
 
-class SyslogMessageHandler extends SimpleChannelInboundHandler<BSDSyslogMessage> {
-  List<BSDSyslogMessage> messages = new ArrayList<>(1024);
-
-  @Override
-  protected void channelRead0(ChannelHandlerContext channelHandlerContext, BSDSyslogMessage message) throws Exception {
-    messages.add(message);
-  }
+  @Nullable
+  String message();
 }

@@ -61,7 +61,7 @@ public abstract class MessageParser {
    * Method is used to parse an incoming syslog message.
    *
    *
-   * @param request
+   * @param request Incoming syslog request.
    * @param output        Output to write the message to.
    * @return true if was parsed successfully. False if not.
    */
