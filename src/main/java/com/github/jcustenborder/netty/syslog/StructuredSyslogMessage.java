@@ -19,9 +19,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
 
-import java.util.List;
-import java.util.Map;
-
 /**
  * This interface represents a RFC5424 message with support for structured data.
  */
@@ -29,28 +26,12 @@ import java.util.Map;
 @Value.Style(visibility = Value.Style.ImplementationVisibility.PACKAGE)
 @JsonSerialize(as = ImmutableStructuredSyslogMessage.class)
 @JsonDeserialize(as = ImmutableStructuredSyslogMessage.class)
-public interface StructuredSyslogMessage extends Message {
-  @Nullable
-  String messageId();
-
-  @Nullable
-  String procId();
-
-  @Nullable
-  String appName();
-
-  @Nullable
-  String message();
-
-  List<StructuredData> structuredData();
-
+public interface StructuredSyslogMessage extends RFC5424Message {
   @Value.Immutable
   @Value.Style(visibility = Value.Style.ImplementationVisibility.PACKAGE)
   @JsonSerialize(as = ImmutableStructuredData.class)
   @JsonDeserialize(as = ImmutableStructuredData.class)
-  interface StructuredData {
-    String id();
+  interface StructuredData extends RFC5424Message.StructuredData {
 
-    Map<String, String> structuredDataElements();
   }
 }

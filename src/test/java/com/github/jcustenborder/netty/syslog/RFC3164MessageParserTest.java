@@ -15,18 +15,12 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DynamicTest;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -38,11 +32,11 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
-public class RFC3164MessageParserTest extends MessageParserTest<SyslogMessage, RFC3164MessageParser> {
+public class RFC3164MessageParserTest extends MessageParserTest<BSDSyslogMessage, RFC3164MessageParser> {
   private static final Logger log = LoggerFactory.getLogger(RFC3164MessageParserTest.class);
 
   @Override
-  protected void assertMessage(SyslogMessage expected, SyslogMessage actual) {
+  protected void assertMessage(BSDSyslogMessage expected, BSDSyslogMessage actual) {
     MessageAssertions.assertMessage(expected, actual);
   }
 
@@ -54,7 +48,7 @@ public class RFC3164MessageParserTest extends MessageParserTest<SyslogMessage, R
       List<Object> output = new ArrayList<>();
       parse(output, testCase.input);
       assertFalse(output.isEmpty());
-      SyslogMessage actual = (SyslogMessage) output.get(0);
+      BSDSyslogMessage actual = (BSDSyslogMessage) output.get(0);
       assertNotNull(actual, "actual should not be null.");
       assertMessage(testCase.expected, actual);
     }));
@@ -69,6 +63,6 @@ public class RFC3164MessageParserTest extends MessageParserTest<SyslogMessage, R
 
   public static class TestCase {
     public String input;
-    public SyslogMessage expected;
+    public BSDSyslogMessage expected;
   }
 }
