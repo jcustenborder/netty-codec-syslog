@@ -1,3 +1,5 @@
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.jcustenborder.netty/netty-codec-syslog.svg)]()
+
 # Introduction
 
 This project provides a [Netty](http://netty.io) based solution for receiving syslog messages. The 
