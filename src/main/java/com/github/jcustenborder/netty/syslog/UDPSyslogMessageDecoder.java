@@ -21,6 +21,7 @@ import io.netty.handler.codec.MessageToMessageDecoder;
 
 import java.net.InetAddress;
 import java.nio.charset.Charset;
+import java.util.Date;
 import java.util.List;
 
 public class UDPSyslogMessageDecoder extends MessageToMessageDecoder<DatagramPacket> {
@@ -40,6 +41,7 @@ public class UDPSyslogMessageDecoder extends MessageToMessageDecoder<DatagramPac
     final InetAddress inetAddress = datagramPacket.sender().getAddress();
     output.add(
         ImmutableSyslogRequest.builder()
+            .receivedDate(new Date())
             .rawMessage(rawMessage)
             .remoteAddress(inetAddress)
             .build()

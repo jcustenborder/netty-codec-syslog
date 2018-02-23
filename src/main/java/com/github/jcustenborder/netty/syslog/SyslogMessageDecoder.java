@@ -57,7 +57,7 @@ public class SyslogMessageDecoder extends MessageToMessageDecoder<SyslogRequest>
 
     output.add(
         ImmutableUnparseableMessage.builder()
-            .date(new Date())
+            .date(request.receivedDate())
             .rawMessage(request.rawMessage())
             .remoteAddress(request.remoteAddress())
             .build()
