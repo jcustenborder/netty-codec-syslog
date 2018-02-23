@@ -21,6 +21,7 @@ import io.netty.handler.codec.MessageToMessageDecoder;
 
 import java.net.InetSocketAddress;
 import java.nio.charset.Charset;
+import java.util.Date;
 import java.util.List;
 
 public class TCPSyslogMessageDecoder extends MessageToMessageDecoder<ByteBuf> {
@@ -39,6 +40,7 @@ public class TCPSyslogMessageDecoder extends MessageToMessageDecoder<ByteBuf> {
     final String rawMessage = byteBuf.toString(this.charset);
     output.add(
         ImmutableSyslogRequest.builder()
+            .receivedDate(new Date())
             .remoteAddress(socketAddress.getAddress())
             .rawMessage(rawMessage)
             .build()

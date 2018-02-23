@@ -20,6 +20,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
 
 import java.net.InetAddress;
+import java.util.Date;
 
 /**
  * Interface represents an incoming syslog request. This interface acts as an intermediary between
@@ -32,6 +33,11 @@ import java.net.InetAddress;
 @JsonSerialize(as = ImmutableSyslogRequest.class)
 @JsonDeserialize(as = ImmutableSyslogRequest.class)
 public interface SyslogRequest {
+  /**
+   * The time the message was received by Netty.
+   * @return The time the message was received by Netty.
+   */
+  Date receivedDate();
   /**
    * IP Address for the sender of the message.
    * @return Sender IP Address
