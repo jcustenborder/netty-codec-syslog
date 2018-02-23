@@ -67,4 +67,11 @@ public interface Message {
    */
   @Nullable
   String host();
+
+  /**
+   * Message part of the overall syslog message.
+   * @return Message part of the overall syslog message.
+   */
+  @Nullable
+  String message();
 }

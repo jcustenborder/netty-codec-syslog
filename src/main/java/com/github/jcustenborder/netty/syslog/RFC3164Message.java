@@ -21,7 +21,4 @@ public interface RFC3164Message extends Message {
 
   @Nullable
   Integer processId();
-
-  @Nullable
-  String message();
 }
