@@ -15,5 +15,6 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
-@interface Nullable {
+public @interface Nullable {
+
 }
