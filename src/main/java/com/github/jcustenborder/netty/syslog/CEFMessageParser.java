@@ -93,8 +93,8 @@ public class CEFMessageParser extends MessageParser {
     final String groupData = matcherPrefix.group("data");
 
     final Integer priority = (groupPriority == null || groupPriority.isEmpty()) ? null : Integer.parseInt(groupPriority);
-    final Integer facility = null == priority ? null : facility(priority);
-    final Integer level = null == priority ? null : level(priority, facility);
+    final Integer facility = null == priority ? null : Priority.facility(priority);
+    final Integer level = null == priority ? null : Priority.level(priority, facility);
     final Date date = parseDate(groupDate);
     final Integer cefVersion = Integer.parseInt(groupCEFVersion);
 

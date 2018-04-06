@@ -128,14 +128,6 @@ public abstract class MessageParser {
     return result;
   }
 
-  protected int facility(int priority) {
-    return priority >> 3;
-  }
-
-  protected int level(int priority, int facility) {
-    return priority - (facility << 3);
-  }
-
   static class MatcherInheritableThreadLocal extends InheritableThreadLocal<Matcher> {
     private final Pattern pattern;
 

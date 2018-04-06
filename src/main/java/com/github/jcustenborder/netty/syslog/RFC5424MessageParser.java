@@ -64,9 +64,9 @@ public class RFC5424MessageParser extends MessageParser {
     final String groupMessage = matcher.group("message");
 
     final int priority = Integer.parseInt(groupPriority);
-    final int facility = facility(priority);
+    final int facility = Priority.facility(priority);
     final Date date = parseDate(groupDate);
-    final int level = level(priority, facility);
+    final int level = Priority.level(priority, facility);
     final Integer version = Integer.parseInt(groupVersion);
     final String appName = nullableString(groupAppName);
     final String procID = nullableString(groupProcID);
