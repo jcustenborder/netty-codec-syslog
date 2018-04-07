@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "snort",
     "processId" : null,
-    "message" : "alert_multiple_requests: ACTIVE",
-    "date" : 1520856062000,
+    "date" : 1520856062.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 12 12:01:02 server4 snort: alert_multiple_requests: ACTIVE",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "server4"
+    "host" : "server4",
+    "message" : "alert_multiple_requests: ACTIVE"
   }
 }

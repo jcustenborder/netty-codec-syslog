@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "ftpd",
     "processId" : 25306,
-    "message" : "command: QUIT^M",
-    "date" : 1520855060000,
+    "date" : 1520855060.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 12 11:44:20 server7 ftpd[25306]: command: QUIT^M",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "server7"
+    "host" : "server7",
+    "message" : "command: QUIT^M"
   }
 }

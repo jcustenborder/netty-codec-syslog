@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "amavisd",
     "processId" : 11599,
-    "message" : "(11599-04) Not-Delivered, <> -> , quarantine spam-6234502ce990e93fd0f5c8c6c5eb37c8-20040202-090041-11599-04, Message-ID: , Hits: 10.844",
-    "date" : 1517562041000,
+    "date" : 1517562041.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Feb 2 09:00:41 avas.example.com amavisd[11599]: (11599-04) Not-Delivered, <> -> , quarantine spam-6234502ce990e93fd0f5c8c6c5eb37c8-20040202-090041-11599-04, Message-ID: , Hits: 10.844",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas.example.com"
+    "host" : "avas.example.com",
+    "message" : "(11599-04) Not-Delivered, <> -> , quarantine spam-6234502ce990e93fd0f5c8c6c5eb37c8-20040202-090041-11599-04, Message-ID: , Hits: 10.844"
   }
 }

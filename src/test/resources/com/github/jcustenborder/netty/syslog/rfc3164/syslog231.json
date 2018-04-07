@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "CEF",
     "processId" : null,
-    "message" : "0|Security|threatmanager|1.0|100|worm successfully stopped|10|src=10.0.0.1 dst=2.1.2.2 spt=1232",
-    "date" : 1537345570000,
+    "date" : 1537345570.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Sep   19  08:26:10 host CEF:0|Security|threatmanager|1.0|100|worm successfully stopped|10|src=10.0.0.1 dst=2.1.2.2 spt=1232",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "host"
+    "host" : "host",
+    "message" : "0|Security|threatmanager|1.0|100|worm successfully stopped|10|src=10.0.0.1 dst=2.1.2.2 spt=1232"
   }
 }

@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "amavisd",
     "processId" : 11569,
-    "message" : "Using internal av scanner code for (primary) Clam Antivirus-clamd",
-    "date" : 1517562014000,
+    "date" : 1517562014.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Feb 2 09:00:14 avas.example.com amavisd[11569]: Using internal av scanner code for (primary) Clam Antivirus-clamd",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas.example.com"
+    "host" : "avas.example.com",
+    "message" : "Using internal av scanner code for (primary) Clam Antivirus-clamd"
   }
 }

@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "postfix/smtpd",
     "processId" : 2314,
-    "message" : "connect from host81-153-11-97.range81-153.btcentralplus.com[81.153.11.97]",
-    "date" : 1519862403000,
+    "date" : 1519862403.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 1 00:00:03 avas postfix/smtpd[2314]: connect from host81-153-11-97.range81-153.btcentralplus.com[81.153.11.97]",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas"
+    "host" : "avas",
+    "message" : "connect from host81-153-11-97.range81-153.btcentralplus.com[81.153.11.97]"
   }
 }

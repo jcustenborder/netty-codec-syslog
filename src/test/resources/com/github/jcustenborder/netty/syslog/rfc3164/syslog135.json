@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "amavisd",
     "processId" : 11599,
-    "message" : "(11599-06) Passed,  -> , Message-ID: <401e7cf6.171.7f8.20446@example.com>, Hits: 1.587",
-    "date" : 1517562046000,
+    "date" : 1517562046.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Feb 2 09:00:46 avas.example.com amavisd[11599]: (11599-06) Passed,  -> , Message-ID: <401e7cf6.171.7f8.20446@example.com>, Hits: 1.587",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas.example.com"
+    "host" : "avas.example.com",
+    "message" : "(11599-06) Passed,  -> , Message-ID: <401e7cf6.171.7f8.20446@example.com>, Hits: 1.587"
   }
 }

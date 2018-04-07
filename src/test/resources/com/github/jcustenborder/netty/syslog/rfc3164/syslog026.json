@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "sshd",
     "processId" : 26501,
-    "message" : "pam_authenticate: error Authentication failed",
-    "date" : 1520857023000,
+    "date" : 1520857023.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 12 12:17:03 server7 sshd[26501]: pam_authenticate: error Authentication failed",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "server7"
+    "host" : "server7",
+    "message" : "pam_authenticate: error Authentication failed"
   }
 }

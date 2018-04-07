@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "amavisd",
     "processId" : 11568,
-    "message" : "Module Time::HiRes 1.52",
-    "date" : 1517562014000,
+    "date" : 1517562014.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Time::HiRes 1.52",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas.example.com"
+    "host" : "avas.example.com",
+    "message" : "Module Time::HiRes 1.52"
   }
 }

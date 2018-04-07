@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "postfix/smtpd",
     "processId" : 2314,
-    "message" : "2B34C61AA4: reject: RCPT from unknown[218.149.178.173]: 557 Service unavailable; Client host [218.149.178.173] blocked using dnsbl.sorbs.net; Dynamic IP Address See: http://www.dnsbl.sorbs.net/cgi-bin/lookup?IP=218.149.178.173; from= to= proto=SMTP helo=<10.0.0.214>",
-    "date" : 1519862507000,
+    "date" : 1519862507.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 1 00:01:47 avas postfix/smtpd[2314]: 2B34C61AA4: reject: RCPT from unknown[218.149.178.173]: 557 Service unavailable; Client host [218.149.178.173] blocked using dnsbl.sorbs.net; Dynamic IP Address See: http://www.dnsbl.sorbs.net/cgi-bin/lookup?IP=218.149.178.173; from= to= proto=SMTP helo=<10.0.0.214>",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas"
+    "host" : "avas",
+    "message" : "2B34C61AA4: reject: RCPT from unknown[218.149.178.173]: 557 Service unavailable; Client host [218.149.178.173] blocked using dnsbl.sorbs.net; Dynamic IP Address See: http://www.dnsbl.sorbs.net/cgi-bin/lookup?IP=218.149.178.173; from= to= proto=SMTP helo=<10.0.0.214>"
   }
 }

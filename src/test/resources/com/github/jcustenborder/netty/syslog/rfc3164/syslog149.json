@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "anacron",
     "processId" : 11464,
-    "message" : "Updated timestamp for job `cron.weekly' to 2004-03-07",
-    "date" : 1520396520000,
+    "date" : 1520396520.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 7 04:22:00 avas anacron[11464]: Updated timestamp for job `cron.weekly' to 2004-03-07",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas"
+    "host" : "avas",
+    "message" : "Updated timestamp for job `cron.weekly' to 2004-03-07"
   }
 }

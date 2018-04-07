@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "amavisd",
     "processId" : 11569,
-    "message" : "Found primary av scanner NAI McAfee AntiVirus (uvscan) at /usr/local/bin/uvscan",
-    "date" : 1517562014000,
+    "date" : 1517562014.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Feb 2 09:00:14 avas.example.com amavisd[11569]: Found primary av scanner NAI McAfee AntiVirus (uvscan) at /usr/local/bin/uvscan",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas.example.com"
+    "host" : "avas.example.com",
+    "message" : "Found primary av scanner NAI McAfee AntiVirus (uvscan) at /usr/local/bin/uvscan"
   }
 }

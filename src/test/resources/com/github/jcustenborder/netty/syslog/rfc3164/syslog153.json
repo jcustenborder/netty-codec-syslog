@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "CROND",
     "processId" : 19684,
-    "message" : "(cronjob) CMD (/usr/lib/sa/sa1 1 1)",
-    "date" : 1520397000000,
+    "date" : 1520397000.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 7 04:30:00 avas CROND[19684]: (cronjob) CMD (/usr/lib/sa/sa1 1 1)",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas"
+    "host" : "avas",
+    "message" : "(cronjob) CMD (/usr/lib/sa/sa1 1 1)"
   }
 }

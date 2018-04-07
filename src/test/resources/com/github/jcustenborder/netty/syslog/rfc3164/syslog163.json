@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "CROND",
     "processId" : 19926,
-    "message" : "(cronjob) CMD (/usr/bin/mrtg /etc/mrtg/mrtg.cfg)",
-    "date" : 1520397901000,
+    "date" : 1520397901.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 7 04:45:01 avas CROND[19926]: (cronjob) CMD (/usr/bin/mrtg /etc/mrtg/mrtg.cfg)",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas"
+    "host" : "avas",
+    "message" : "(cronjob) CMD (/usr/bin/mrtg /etc/mrtg/mrtg.cfg)"
   }
 }
