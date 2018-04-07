@@ -4,7 +4,7 @@
     "tag" : "named",
     "processId" : 32172,
     "message" : "lame server resolving 'jakarta5.wasantara.net.id' (in 'wasantara.net.id'?): 202.159.65.171#53",
-    "date" : 1520814420000,
+    "date" : 1520857620000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 12 12:27:00 server3 named[32172]: lame server resolving 'jakarta5.wasantara.net.id' (in 'wasantara.net.id'?): 202.159.65.171#53",
     "level" : null,

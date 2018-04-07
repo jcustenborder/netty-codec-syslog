@@ -6,7 +6,7 @@
     "appName" : "rsyslogd",
     "message" : "[origin software=\\\"rsyslogd\\\" swVersion=\\\"8.16.0\\\" x-pid=\\\"15651\\\" x-info=\\\"http://www.rsyslog.com\\\"] start",
     "structuredData" : [ ],
-    "date" : 1517517753100,
+    "date" : 1517516916100,
     "remoteAddress" : "localhost",
     "rawMessage" : "<46>1 2018-02-01T20:28:36.837100+00:00 miner-01 rsyslogd - - -  [origin software=\\\"rsyslogd\\\" swVersion=\\\"8.16.0\\\" x-pid=\\\"15651\\\" x-info=\\\"http://www.rsyslog.com\\\"] start",
     "level" : 6,

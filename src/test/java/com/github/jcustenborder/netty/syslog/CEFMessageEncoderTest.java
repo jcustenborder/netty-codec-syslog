@@ -15,10 +15,15 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.ByteBufAllocator;
+import io.netty.channel.ChannelHandlerContext;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
 
 import java.io.File;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -28,39 +33,36 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
-public class CEFMessageParserTest extends MessageParserTest<CEFSyslogMessage, CEFMessageParser> {
+public class CEFMessageEncoderTest {
 
+  CEFMessageEncoder encoder;
 
-  @Override
-  protected void assertMessage(CEFSyslogMessage expected, CEFSyslogMessage actual) {
-    MessageAssertions.assertMessage(expected, actual);
-    assertEquals(expected.deviceEventClassId(), actual.deviceEventClassId(), "deviceEventClassId does not match.");
-    assertEquals(expected.deviceProduct(), actual.deviceProduct(), "deviceProduct does not match.");
-    assertEquals(expected.deviceVendor(), actual.deviceVendor(), "deviceVendor does not match.");
-    assertEquals(expected.deviceVersion(), actual.deviceVersion(), "deviceVersion does not match.");
-    assertEquals(expected.name(), actual.name(), "name does not match.");
-    assertEquals(expected.severity(), actual.severity(), "severity does not match.");
-    assertEquals(expected.extension(), actual.extension(), "extension does not match.");
+  @BeforeEach
+  public void setup() {
+    this.encoder = new CEFMessageEncoder();
   }
 
   @TestFactory
-  public Stream<DynamicTest> parse() {
+  public Stream<DynamicTest> encode() {
     final File testsPath = new File("src/test/resources/com/github/jcustenborder/netty/syslog/cef");
     return Arrays.stream(testsPath.listFiles()).map(file -> dynamicTest(file.getName(), () -> {
       final CEFTestCase testCase = ObjectMapperFactory.INSTANCE.readValue(file, CEFTestCase.class);
+      ChannelHandlerContext context = mock(ChannelHandlerContext.class);
+      when(context.alloc()).thenReturn(ByteBufAllocator.DEFAULT);
       List<Object> output = new ArrayList<>();
-      parse(output, testCase.input);
-      assertFalse(output.isEmpty());
-      CEFSyslogMessage actual = (CEFSyslogMessage) output.get(0);
-      assertNotNull(actual, "actual should not be null.");
-      assertMessage(testCase.expected, actual);
-    }));
-  }
 
-  @Override
-  protected CEFMessageParser createParser() {
-    return new CEFMessageParser();
+      this.encoder.encode(context, testCase.expected, output);
+
+      assertFalse(output.isEmpty());
+      ByteBuf actual = (ByteBuf) output.get(0);
+      assertNotNull(actual, "actual should not be null.");
+      String a = actual.toString(Charset.forName("UTF-8")).replaceAll("\\s+", " ");
+      assertEquals(testCase.input.replaceAll("\\s+", " "), a);
+
+    }));
   }
 
 }

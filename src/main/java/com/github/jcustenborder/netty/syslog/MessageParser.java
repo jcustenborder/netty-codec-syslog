@@ -43,8 +43,8 @@ public abstract class MessageParser {
         List<Format> formats = Arrays.asList(
             new Format("yyyy-MM-dd'T'HH:mm:ss.SSSSSSXXX", timeZone),
             new Format("yyyy-MM-dd'T'HH:mm:ssZ", timeZone),
-            new Format("MMM dd hh:mm:ss", timeZone),
-            new Format("MMM dd yyyy hh:mm:ss", timeZone)
+            new Format("MMM dd HH:mm:ss", timeZone),
+            new Format("MMM dd yyyy HH:mm:ss", timeZone)
         );
         return formats;
       }

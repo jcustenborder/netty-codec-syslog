@@ -15,12 +15,15 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.ByteBufAllocator;
+import io.netty.channel.ChannelHandlerContext;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -29,36 +32,37 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
-public class RFC3164MessageParserTest extends MessageParserTest<BSDSyslogMessage, RFC3164MessageParser> {
-  private static final Logger log = LoggerFactory.getLogger(RFC3164MessageParserTest.class);
+public class RFC5424MessageEncoderTest {
 
-  @Override
-  protected void assertMessage(BSDSyslogMessage expected, BSDSyslogMessage actual) {
-    MessageAssertions.assertMessage(expected, actual);
+  RFC5424MessageEncoder encoder;
+
+  @BeforeEach
+  public void setup() {
+    this.encoder = new RFC5424MessageEncoder();
   }
 
   @TestFactory
-  public Stream<DynamicTest> parse() {
-    final File testsPath = new File("src/test/resources/com/github/jcustenborder/netty/syslog/rfc3164");
+  public Stream<DynamicTest> encode() {
+    final File testsPath = new File("src/test/resources/com/github/jcustenborder/netty/syslog/rfc5424");
     return Arrays.stream(testsPath.listFiles()).map(file -> dynamicTest(file.getName(), () -> {
-      final RFC3164TestCase testCase = ObjectMapperFactory.INSTANCE.readValue(file, RFC3164TestCase.class);
+      final RFC5424TestCase testCase = ObjectMapperFactory.INSTANCE.readValue(file, RFC5424TestCase.class);
+      ChannelHandlerContext context = mock(ChannelHandlerContext.class);
+      when(context.alloc()).thenReturn(ByteBufAllocator.DEFAULT);
       List<Object> output = new ArrayList<>();
-      parse(output, testCase.input);
+
+      this.encoder.encode(context, testCase.expected, output);
+
       assertFalse(output.isEmpty());
-      BSDSyslogMessage actual = (BSDSyslogMessage) output.get(0);
+      ByteBuf actual = (ByteBuf) output.get(0);
       assertNotNull(actual, "actual should not be null.");
-      assertMessage(testCase.expected, actual);
+      String a = actual.toString(Charset.forName("UTF-8")).replaceAll("\\s+", " ");
+      assertEquals(testCase.input.replaceAll("\\s+", " "), a);
+
     }));
-  }
-
-
-
-  @Override
-  protected RFC3164MessageParser createParser() {
-    return new RFC3164MessageParser();
   }
 
 }

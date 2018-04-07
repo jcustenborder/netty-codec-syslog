@@ -18,6 +18,9 @@ package com.github.jcustenborder.netty.syslog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAccessor;
 import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
@@ -65,7 +68,8 @@ public class RFC5424MessageParser extends MessageParser {
 
     final int priority = Integer.parseInt(groupPriority);
     final int facility = Priority.facility(priority);
-    final Date date = parseDate(groupDate);
+    final OffsetDateTime d = OffsetDateTime.parse(groupDate, DateTimeFormatter.ISO_OFFSET_TIME);
+    final Date date = new Date(d.toInstant().toEpochMilli());
     final int level = Priority.level(priority, facility);
     final Integer version = Integer.parseInt(groupVersion);
     final String appName = nullableString(groupAppName);
