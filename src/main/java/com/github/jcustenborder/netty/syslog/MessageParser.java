@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,51 +18,51 @@ package com.github.jcustenborder.netty.syslog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.temporal.ChronoField;
+import java.time.temporal.TemporalAccessor;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public abstract class MessageParser {
   private static final Logger log = LoggerFactory.getLogger(MessageParser.class);
   private static final String NULL_TOKEN = "-";
-  protected final ThreadLocal<List<Format>> dateFormats;
+  protected final List<DateTimeFormatter> dateFormats;
   private final ThreadLocal<Matcher> matcherStructuredData;
   private final ThreadLocal<Matcher> matcherKeyValue;
 
-  public MessageParser(TimeZone timeZone) {
-    this.dateFormats = new InheritableThreadLocal<List<Format>>() {
-      @Override
-      protected List<Format> initialValue() {
-        List<Format> formats = Arrays.asList(
-            new Format("yyyy-MM-dd'T'HH:mm:ss.SSSSSSXXX", timeZone),
-            new Format("yyyy-MM-dd'T'HH:mm:ssZ", timeZone),
-            new Format("MMM dd HH:mm:ss", timeZone),
-            new Format("MMM dd yyyy HH:mm:ss", timeZone)
-        );
-        return formats;
-      }
-    };
+
+  public MessageParser() {
+    this.dateFormats = Arrays.asList(
+        DateTimeFormatter.ISO_OFFSET_DATE_TIME,
+        new DateTimeFormatterBuilder()
+            .appendPattern("MMM d")
+            .optionalStart()
+            .appendPattern("[ yyyy]")
+            .parseDefaulting(ChronoField.YEAR_OF_ERA, 1)
+            .optionalEnd()
+            .appendPattern(" HH:mm:ss")
+            .toFormatter()
+    );
+
     this.matcherStructuredData = initMatcher("\\[([^\\]]+)\\]");
     this.matcherKeyValue = initMatcher("(?<key>\\S+)=\"(?<value>[^\"]+)\"|(?<id>\\S+)");
-  }
-
-  public MessageParser(String timeZoneId) {
-    this(TimeZone.getTimeZone(timeZoneId));
   }
 
   /**
    * Method is used to parse an incoming syslog message.
    *
-   *
    * @param request Incoming syslog request.
-   * @param output        Output to write the message to.
+   * @param output  Output to write the message to.
    * @return true if was parsed successfully. False if not.
    */
   public abstract boolean parse(
@@ -83,19 +83,39 @@ public abstract class MessageParser {
     return NULL_TOKEN.equals(groupText) ? null : groupText;
   }
 
-  protected Date parseDate(String date) {
-    List<Format> dateFormatList = dateFormats.get();
-    Date result = null;
+  protected OffsetDateTime parseDate(String date) {
+    final String cleanDate = date.replaceAll("\\s+", " ");
+    OffsetDateTime result = null;
 
-    for (Format format : dateFormatList) {
-      result = format.parse(date);
+    for (DateTimeFormatter formatter : this.dateFormats) {
+      try {
+        final TemporalAccessor temporal = formatter.parseBest(
+            cleanDate,
+            OffsetDateTime::from,
+            LocalDateTime::from
+        );
 
-      if (null != result) {
+        if(temporal instanceof LocalDateTime) {
+          result = ((LocalDateTime) temporal).atOffset(ZoneOffset.UTC);
+        } else {
+          result = (OffsetDateTime) temporal;
+        }
+        /*
+        The parser will output dates that do not have a year. If this happens we default the year
+        to 1 AD which I'm pretty sure there were no computers. This means that the sender was a lazy
+        ass and didn't sent a date. This is easy to detect so we set it to the current date.
+         */
+
+        if(result.getLong(ChronoField.YEAR_OF_ERA) == 1) {
+          result = result.withYear(LocalDateTime.now(ZoneId.of("UTC")).getYear());
+        }
         break;
+      } catch (java.time.DateTimeException e) {
+        log.trace("parseDate() - Could not parse '{}' with '{}'", cleanDate, formatter.toString());
       }
     }
     if (null == result) {
-      log.error("Could not parse date '{}'", date);
+      log.error("Could not parse date '{}'", cleanDate);
     }
     return result;
   }
@@ -141,37 +161,4 @@ public abstract class MessageParser {
     }
   }
 
-  static class Format {
-    public final boolean hasYear;
-    public final SimpleDateFormat format;
-    public final TimeZone timeZone;
-
-    Format(String format, TimeZone timeZone) {
-      this.timeZone = timeZone;
-      this.format = new SimpleDateFormat(format);
-      this.format.setTimeZone(this.timeZone);
-      this.hasYear = this.format.toPattern().contains("y");
-    }
-
-    public Date parse(String s) {
-      Date date;
-
-      try {
-        date = this.format.parse(s);
-
-        if (!this.hasYear) {
-          final Calendar calendar = Calendar.getInstance(this.timeZone);
-          final int year = calendar.get(Calendar.YEAR);
-          calendar.setTime(date);
-          calendar.set(Calendar.YEAR, year);
-          date = calendar.getTime();
-        }
-      } catch (ParseException e) {
-
-        date = null;
-      }
-
-      return date;
-    }
-  }
 }

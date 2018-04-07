@@ -22,30 +22,27 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.nio.charset.Charset;
-import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
-import java.util.TimeZone;
 
 public class CEFMessageEncoder extends MessageToMessageEncoder<CEFSyslogMessage> {
   private final static Logger log = LoggerFactory.getLogger(CEFMessageEncoder.class);
-  final SimpleDateFormat dateFormat;
+  final DateTimeFormatter dateFormat;
   final Charset charset;
   final byte[] cef;
   final byte[] pipe;
 
-  public CEFMessageEncoder(TimeZone timeZone) {
-    this.dateFormat = new SimpleDateFormat("MMM d HH:mm:ss");
-    this.dateFormat.setTimeZone(timeZone);
+  CEFMessageEncoder(DateTimeFormatter dateFormat) {
+    this.dateFormat = dateFormat;
     this.charset = Charset.forName("UTF-8");
     this.cef = "CEF:0".getBytes(this.charset);
     this.pipe = "|".getBytes(this.charset);
   }
 
   public CEFMessageEncoder() {
-    this(TimeZone.getTimeZone("UTC"));
+    this(DateTimeFormatter.ofPattern("MMM d HH:mm:ss"));
   }
-
 
   @Override
   protected void encode(ChannelHandlerContext channelHandlerContext, CEFSyslogMessage message, List<Object> output) throws Exception {
@@ -74,7 +71,7 @@ public class CEFMessageEncoder extends MessageToMessageEncoder<CEFSyslogMessage>
 
     int index = 0;
     for (Map.Entry<String, String> kvp : message.extension().entrySet()) {
-      if(index>0) {
+      if (index > 0) {
         buffer.writeBytes(EncoderHelper.SPACE);
       }
       buffer.writeCharSequence(kvp.getKey(), this.charset);

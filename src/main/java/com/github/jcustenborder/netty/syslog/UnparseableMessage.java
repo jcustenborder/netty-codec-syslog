@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,7 +18,7 @@ package com.github.jcustenborder.netty.syslog;
 import org.immutables.value.Value;
 
 import java.net.InetAddress;
-import java.util.Date;
+import java.time.OffsetDateTime;
 
 /**
  * Interface that is yielded when none of the configured parsers can parse the current message.
@@ -31,7 +31,7 @@ public interface UnparseableMessage {
    * message
    * @return Date the message was received.
    */
-  Date date();
+  OffsetDateTime date();
 
   /**
    * Method is used to return the remote address that sent the message.

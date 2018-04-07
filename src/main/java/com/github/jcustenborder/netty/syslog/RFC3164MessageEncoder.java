@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,23 +22,21 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.nio.charset.Charset;
-import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.TimeZone;
 
 public class RFC3164MessageEncoder extends MessageToMessageEncoder<RFC3164Message> {
   private final static Logger log = LoggerFactory.getLogger(RFC3164MessageEncoder.class);
-  final SimpleDateFormat dateFormat;
+  final DateTimeFormatter dateFormat;
   final Charset charset;
 
-  public RFC3164MessageEncoder(TimeZone timeZone) {
-    this.dateFormat = new SimpleDateFormat("MMM d HH:mm:ss");
-    this.dateFormat.setTimeZone(timeZone);
+  RFC3164MessageEncoder(DateTimeFormatter dateFormat) {
+    this.dateFormat = dateFormat;
     this.charset = Charset.forName("UTF-8");
   }
 
   public RFC3164MessageEncoder() {
-    this(TimeZone.getTimeZone("UTC"));
+    this(DateTimeFormatter.ofPattern("MMM d HH:mm:ss"));
   }
 
 
@@ -48,7 +46,7 @@ public class RFC3164MessageEncoder extends MessageToMessageEncoder<RFC3164Messag
     final ByteBuf buffer = channelHandlerContext.alloc().buffer();
     EncoderHelper.appendPriority(buffer, message);
 
-    buffer.writeCharSequence(dateFormat.format(message.date()), this.charset);
+    buffer.writeCharSequence(message.date().format(this.dateFormat), this.charset);
     buffer.writeCharSequence(" ", this.charset);
     buffer.writeCharSequence(message.host(), this.charset);
     buffer.writeCharSequence(" ", this.charset);

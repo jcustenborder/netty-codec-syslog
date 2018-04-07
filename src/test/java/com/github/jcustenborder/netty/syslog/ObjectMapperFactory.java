@@ -15,15 +15,19 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 public class ObjectMapperFactory {
   public static final ObjectMapper INSTANCE;
 
   static {
     INSTANCE = new ObjectMapper();
     INSTANCE.configure(SerializationFeature.INDENT_OUTPUT, true);
+    INSTANCE.configure(SerializationFeature.WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS, true);
+    INSTANCE.configure(DeserializationFeature.READ_DATE_TIMESTAMPS_AS_NANOSECONDS, true);
+    INSTANCE.registerModule(new JavaTimeModule());
   }
 
 }

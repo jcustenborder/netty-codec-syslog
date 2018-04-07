@@ -15,6 +15,8 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
 import io.netty.channel.ChannelHandlerContext;
@@ -24,7 +26,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestFactory;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.charset.Charset;
+import java.time.Instant;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -62,8 +68,17 @@ public class RFC3164MessageEncoderTest {
       assertNotNull(actual, "actual should not be null.");
       String a = actual.toString(Charset.forName("UTF-8")).replaceAll("\\s+", " ");
       assertEquals(testCase.input.replaceAll("\\s+", " "), a);
-
     }));
+  }
+
+  @Test
+  public void foo() throws IOException {
+    final OffsetDateTime expected = Instant.now().atOffset(ZoneOffset.UTC);
+    String output = ObjectMapperFactory.INSTANCE.writeValueAsString(Instant.now().atOffset(ZoneOffset.UTC));
+    final OffsetDateTime actual = ObjectMapperFactory.INSTANCE.readValue(output, OffsetDateTime.class);
+    System.out.println(output);
+    assertEquals(expected, actual);
+
   }
 
 }

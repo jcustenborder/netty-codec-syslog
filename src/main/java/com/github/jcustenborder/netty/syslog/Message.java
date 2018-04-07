@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,7 +16,7 @@
 package com.github.jcustenborder.netty.syslog;
 
 import java.net.InetAddress;
-import java.util.Date;
+import java.time.OffsetDateTime;
 
 /**
  * Represents a standard syslog message.
@@ -26,7 +26,7 @@ public interface Message {
    * Date of the message. This is the parsed date from the client.
    * @return Date of the message.
    */
-  Date date();
+  OffsetDateTime date();
 
   /**
    * IP Address for the sender of the message.
