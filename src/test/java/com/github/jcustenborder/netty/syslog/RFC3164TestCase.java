@@ -17,5 +17,5 @@ package com.github.jcustenborder.netty.syslog;
 
 public class RFC3164TestCase {
   public String input;
-  public BSDSyslogMessage expected;
+  public RFC3164Message expected;
 }

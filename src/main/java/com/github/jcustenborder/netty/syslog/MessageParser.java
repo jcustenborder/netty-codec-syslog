@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,7 +18,6 @@ package com.github.jcustenborder.netty.syslog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
@@ -39,9 +38,14 @@ public abstract class MessageParser {
   protected final List<DateTimeFormatter> dateFormats;
   private final ThreadLocal<Matcher> matcherStructuredData;
   private final ThreadLocal<Matcher> matcherKeyValue;
-
+  private final ZoneId zoneId;
 
   public MessageParser() {
+    this(ZoneId.of("UTC"));
+  }
+
+  public MessageParser(ZoneId zoneId) {
+    this.zoneId = zoneId;
     this.dateFormats = Arrays.asList(
         DateTimeFormatter.ISO_OFFSET_DATE_TIME,
         new DateTimeFormatterBuilder()
@@ -95,7 +99,7 @@ public abstract class MessageParser {
             LocalDateTime::from
         );
 
-        if(temporal instanceof LocalDateTime) {
+        if (temporal instanceof LocalDateTime) {
           result = ((LocalDateTime) temporal).atOffset(ZoneOffset.UTC);
         } else {
           result = (OffsetDateTime) temporal;
@@ -106,8 +110,8 @@ public abstract class MessageParser {
         ass and didn't sent a date. This is easy to detect so we set it to the current date.
          */
 
-        if(result.getLong(ChronoField.YEAR_OF_ERA) == 1) {
-          result = result.withYear(LocalDateTime.now(ZoneId.of("UTC")).getYear());
+        if (result.getLong(ChronoField.YEAR_OF_ERA) == 1) {
+          result = result.withYear(LocalDateTime.now(this.zoneId).getYear());
         }
         break;
       } catch (java.time.DateTimeException e) {
@@ -120,13 +124,14 @@ public abstract class MessageParser {
     return result;
   }
 
-  protected List<StructuredSyslogMessage.StructuredData> parseStructuredData(String structuredData) {
+  protected List<RFC5424Message.StructuredData> parseStructuredData(String structuredData) {
     log.trace("parseStructuredData() - structuredData = '{}'", structuredData);
     final Matcher matcher = matcherStructuredData.get().reset(structuredData);
-    final List<StructuredSyslogMessage.StructuredData> result = new ArrayList<>();
+    final List<RFC5424Message.StructuredData> result = new ArrayList<>();
     while (matcher.find()) {
       final String input = matcher.group(1);
       log.trace("parseStructuredData() - input = '{}'", input);
+
       ImmutableStructuredData.Builder builder = ImmutableStructuredData.builder();
 
       final Matcher kvpMatcher = matcherKeyValue.get().reset(input);

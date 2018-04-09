@@ -4,14 +4,14 @@
     "messageId" : null,
     "procId" : null,
     "appName" : "sudo",
-    "message" : "pam_unix(sudo:session): session opened for user root by jeremy(uid=0)",
     "structuredData" : [ ],
-    "date" : 1517517282959,
+    "date" : 1517516932.350959000,
     "remoteAddress" : "localhost",
     "rawMessage" : "<86>1 2018-02-01T20:28:52.350959+00:00 miner-01 sudo - - -  pam_unix(sudo:session): session opened for user root by jeremy(uid=0)",
     "level" : 6,
     "version" : 1,
     "facility" : 10,
-    "host" : "miner-01"
+    "host" : "miner-01",
+    "message" : "pam_unix(sudo:session): session opened for user root by jeremy(uid=0)"
   }
 }

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,6 +15,8 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
 
 import java.net.InetAddress;
@@ -25,6 +27,8 @@ import java.time.OffsetDateTime;
  */
 @Value.Immutable
 @Value.Style(visibility = Value.Style.ImplementationVisibility.PACKAGE)
+@JsonSerialize(as = ImmutableUnparseableMessage.class)
+@JsonDeserialize(as = ImmutableUnparseableMessage.class)
 public interface UnparseableMessage {
   /**
    * Method is used to return the date that the parser was executed. This is not the date in the

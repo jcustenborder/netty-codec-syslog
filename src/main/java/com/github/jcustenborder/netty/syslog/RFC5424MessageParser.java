@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -61,10 +61,10 @@ public class RFC5424MessageParser extends MessageParser {
     final String procID = nullableString(groupProcID);
     final String messageID = nullableString(groupMessageID);
 
-    final List<StructuredSyslogMessage.StructuredData> structuredData = parseStructuredData(groupStructuredData);
+    final List<RFC5424Message.StructuredData> structuredData = parseStructuredData(groupStructuredData);
 
     output.add(
-        ImmutableStructuredSyslogMessage.builder()
+        ImmutableRFC5424Message.builder()
             .rawMessage(request.rawMessage())
             .remoteAddress(request.remoteAddress())
             .date(date)

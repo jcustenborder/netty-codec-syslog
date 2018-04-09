@@ -19,11 +19,27 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
 
+import java.util.Map;
+
+/**
+ * Interface represents an implementation of the CEF protocol.
+ */
 @Value.Immutable
-@Value.Style(visibility = Value.Style.ImplementationVisibility.PACKAGE)
-@JsonSerialize(as = ImmutableBSDSyslogMessage.class)
-@JsonDeserialize(as = ImmutableBSDSyslogMessage.class)
-public interface BSDSyslogMessage extends RFC3164Message {
+@Value.Style(visibility = Value.Style.ImplementationVisibility.PUBLIC)
+@JsonSerialize(as = ImmutableCEFMessage.class)
+@JsonDeserialize(as = ImmutableCEFMessage.class)
+public interface CEFMessage extends Message {
+  String deviceVendor();
 
+  String deviceProduct();
 
+  String deviceVersion();
+
+  String deviceEventClassId();
+
+  String name();
+
+  String severity();
+
+  Map<String, String> extension();
 }

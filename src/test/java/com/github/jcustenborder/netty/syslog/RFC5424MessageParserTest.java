@@ -28,11 +28,11 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
-public class RFC5424MessageParserTest extends MessageParserTest<StructuredSyslogMessage, RFC5424MessageParser> {
+public class RFC5424MessageParserTest extends MessageParserTest<RFC5424Message, RFC5424MessageParser> {
 
 
   @Override
-  protected void assertMessage(StructuredSyslogMessage expected, StructuredSyslogMessage actual) {
+  protected void assertMessage(RFC5424Message expected, RFC5424Message actual) {
     MessageAssertions.assertMessage(expected, actual);
   }
 
@@ -44,7 +44,7 @@ public class RFC5424MessageParserTest extends MessageParserTest<StructuredSyslog
       List<Object> output = new ArrayList<>();
       parse(output, testCase.input);
       assertFalse(output.isEmpty());
-      StructuredSyslogMessage actual = (StructuredSyslogMessage) output.get(0);
+      RFC5424Message actual = (RFC5424Message) output.get(0);
       assertNotNull(actual, "actual should not be null.");
       assertMessage(testCase.expected, actual);
     }));

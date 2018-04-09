@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,7 +26,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 
-public class CEFMessageEncoder extends MessageToMessageEncoder<CEFSyslogMessage> {
+public class CEFMessageEncoder extends MessageToMessageEncoder<CEFMessage> {
   private final static Logger log = LoggerFactory.getLogger(CEFMessageEncoder.class);
   final DateTimeFormatter dateFormat;
   final Charset charset;
@@ -45,7 +45,7 @@ public class CEFMessageEncoder extends MessageToMessageEncoder<CEFSyslogMessage>
   }
 
   @Override
-  protected void encode(ChannelHandlerContext channelHandlerContext, CEFSyslogMessage message, List<Object> output) throws Exception {
+  protected void encode(ChannelHandlerContext channelHandlerContext, CEFMessage message, List<Object> output) throws Exception {
     log.trace("encode() - message = {}", message);
     final ByteBuf buffer = channelHandlerContext.alloc().buffer();
     EncoderHelper.appendPriority(buffer, message);

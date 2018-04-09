@@ -2,16 +2,16 @@
   "input" : "<165>1 2003-08-24T05:14:15.000003-07:00 192.0.2.1 myproc 8710 - - %% It's time to make the do-nuts.",
   "expected" : {
     "messageId" : null,
-    "procId" : null,
-    "appName" : "sudo",
-    "message" : "pam_unix(sudo:session): session closed for user root",
+    "procId" : "8710",
+    "appName" : "myproc",
     "structuredData" : [ ],
-    "date" : 1517517283979,
+    "date" : 1061727255.000003000,
     "remoteAddress" : "localhost",
-    "rawMessage" : "<86>1 2018-02-01T20:28:52.351979+00:00 miner-01 sudo - - -  pam_unix(sudo:session): session closed for user root",
-    "level" : 6,
+    "rawMessage" : "<165>1 2003-08-24T05:14:15.000003-07:00 192.0.2.1 myproc 8710 - - %% It's time to make the do-nuts.",
+    "level" : 5,
     "version" : 1,
-    "facility" : 10,
-    "host" : "miner-01"
+    "facility" : 20,
+    "host" : "192.0.2.1",
+    "message" : "%% It's time to make the do-nuts."
   }
 }

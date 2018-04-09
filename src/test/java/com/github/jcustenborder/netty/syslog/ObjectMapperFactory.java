@@ -19,6 +19,8 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.github.jcustenborder.netty.syslog.jackson.SyslogJacksonModule;
+
 public class ObjectMapperFactory {
   public static final ObjectMapper INSTANCE;
 
