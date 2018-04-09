@@ -46,8 +46,11 @@ public abstract class MessageParser {
 
   public MessageParser(ZoneId zoneId) {
     this.zoneId = zoneId;
+
     this.dateFormats = Arrays.asList(
         DateTimeFormatter.ISO_OFFSET_DATE_TIME,
+
+        //This supports
         new DateTimeFormatterBuilder()
             .appendPattern("MMM d")
             .optionalStart()
