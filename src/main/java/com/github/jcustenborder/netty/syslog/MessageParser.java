@@ -102,7 +102,7 @@ public abstract class MessageParser {
         if (temporal instanceof LocalDateTime) {
           result = ((LocalDateTime) temporal).atOffset(ZoneOffset.UTC);
         } else {
-          result = (OffsetDateTime) temporal;
+          result = ((OffsetDateTime) temporal).withOffsetSameInstant(ZoneOffset.UTC);
         }
         /*
         The parser will output dates that do not have a year. If this happens we default the year
