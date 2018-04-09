@@ -16,6 +16,7 @@
 package com.github.jcustenborder.netty.syslog;
 
 import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageEncoder;
 import org.slf4j.Logger;
@@ -25,6 +26,7 @@ import java.nio.charset.Charset;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+@ChannelHandler.Sharable
 public class RFC5424MessageEncoder extends MessageToMessageEncoder<RFC5424Message> {
   private final static Logger log = LoggerFactory.getLogger(RFC5424MessageEncoder.class);
 

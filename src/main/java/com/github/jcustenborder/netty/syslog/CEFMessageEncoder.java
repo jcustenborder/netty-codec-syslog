@@ -16,6 +16,7 @@
 package com.github.jcustenborder.netty.syslog;
 
 import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageEncoder;
 import org.slf4j.Logger;
@@ -26,6 +27,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 
+@ChannelHandler.Sharable
 public class CEFMessageEncoder extends MessageToMessageEncoder<CEFMessage> {
   private final static Logger log = LoggerFactory.getLogger(CEFMessageEncoder.class);
   final DateTimeFormatter dateFormat;
