@@ -15,14 +15,6 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import org.immutables.value.Value;
-
-@Value.Immutable
-@Value.Style(visibility = Value.Style.ImplementationVisibility.PUBLIC)
-@JsonDeserialize(as = ImmutableRFC3164Message.class)
-@JsonSerialize(as = ImmutableRFC3164Message.class)
 public interface RFC3164Message extends Message {
   @Nullable
   String tag();

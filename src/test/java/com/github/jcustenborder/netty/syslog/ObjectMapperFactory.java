@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,6 +18,7 @@ package com.github.jcustenborder.netty.syslog;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 public class ObjectMapperFactory {
@@ -29,6 +30,13 @@ public class ObjectMapperFactory {
     INSTANCE.configure(SerializationFeature.WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS, true);
     INSTANCE.configure(DeserializationFeature.READ_DATE_TIMESTAMPS_AS_NANOSECONDS, true);
     INSTANCE.registerModule(new JavaTimeModule());
+    INSTANCE.registerModule(new Mod());
+  }
+
+  static class Mod extends SimpleModule {
+    public Mod() {
+      addAbstractTypeMapping(RFC5424Message.StructuredData.class, StructuredSyslogMessage.StructuredData.class);
+    }
   }
 
 }

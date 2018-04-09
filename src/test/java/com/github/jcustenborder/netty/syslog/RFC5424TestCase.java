@@ -17,5 +17,5 @@ package com.github.jcustenborder.netty.syslog;
 
 public class RFC5424TestCase {
   public String input;
-  public RFC5424Message expected;
+  public StructuredSyslogMessage expected;
 }

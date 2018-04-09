@@ -15,17 +15,9 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import org.immutables.value.Value;
-
 import java.util.List;
 import java.util.Map;
 
-@Value.Immutable
-@Value.Style(visibility = Value.Style.ImplementationVisibility.PUBLIC)
-@JsonSerialize(as = ImmutableRFC5424Message.class)
-@JsonDeserialize(as = ImmutableRFC5424Message.class)
 public interface RFC5424Message extends Message {
   @Nullable
   String messageId();
@@ -38,10 +30,6 @@ public interface RFC5424Message extends Message {
 
   List<StructuredData> structuredData();
 
-  @Value.Immutable
-  @Value.Style(visibility = Value.Style.ImplementationVisibility.PUBLIC)
-  @JsonSerialize(as = ImmutableStructuredData.class)
-  @JsonDeserialize(as = ImmutableStructuredData.class)
   interface StructuredData {
     String id();
 

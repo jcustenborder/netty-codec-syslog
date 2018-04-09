@@ -17,5 +17,5 @@ package com.github.jcustenborder.netty.syslog;
 
 public class CEFTestCase {
   public String input;
-  public CEFMessage expected;
+  public CEFSyslogMessage expected;
 }

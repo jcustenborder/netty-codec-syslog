@@ -87,7 +87,7 @@ public class CEFMessageParser extends MessageParser {
 
     final List<String> parts = splitToList(groupData);
 
-    ImmutableCEFMessage.Builder builder = ImmutableCEFMessage.builder();
+    ImmutableCEFSyslogMessage.Builder builder = ImmutableCEFSyslogMessage.builder();
     builder.rawMessage(request.rawMessage());
     builder.remoteAddress(request.remoteAddress());
     builder.date(date);

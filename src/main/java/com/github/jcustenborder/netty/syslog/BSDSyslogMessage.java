@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,23 +15,15 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
-import java.util.Map;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.immutables.value.Value;
 
-/**
- * Interface represents an implementation of the CEF protocol.
- */
-public interface CEFMessage extends Message {
-  String deviceVendor();
+@Value.Immutable
+@Value.Style(visibility = Value.Style.ImplementationVisibility.PACKAGE)
+@JsonSerialize(as = ImmutableBSDSyslogMessage.class)
+@JsonDeserialize(as = ImmutableBSDSyslogMessage.class)
+public interface BSDSyslogMessage extends RFC3164Message {
 
-  String deviceProduct();
 
-  String deviceVersion();
-
-  String deviceEventClassId();
-
-  String name();
-
-  String severity();
-
-  Map<String, String> extension();
 }
