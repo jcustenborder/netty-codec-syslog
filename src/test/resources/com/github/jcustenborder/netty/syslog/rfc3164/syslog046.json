@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "postfix/smtpd",
     "processId" : 2579,
-    "message" : "disconnect from avas.example.com[127.0.0.1]",
-    "date" : 1519862406000,
+    "date" : 1519862406.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 1 00:00:06 avas postfix/smtpd[2579]: disconnect from avas.example.com[127.0.0.1]",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas"
+    "host" : "avas",
+    "message" : "disconnect from avas.example.com[127.0.0.1]"
   }
 }

@@ -15,16 +15,10 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DynamicTest;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestFactory;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -35,11 +29,11 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
-public class CEFMessageParserTest extends MessageParserTest<CEFSyslogMessage, CEFMessageParser> {
+public class CEFMessageParserTest extends MessageParserTest<CEFMessage, CEFMessageParser> {
 
 
   @Override
-  protected void assertMessage(CEFSyslogMessage expected, CEFSyslogMessage actual) {
+  protected void assertMessage(CEFMessage expected, CEFMessage actual) {
     MessageAssertions.assertMessage(expected, actual);
     assertEquals(expected.deviceEventClassId(), actual.deviceEventClassId(), "deviceEventClassId does not match.");
     assertEquals(expected.deviceProduct(), actual.deviceProduct(), "deviceProduct does not match.");
@@ -54,11 +48,11 @@ public class CEFMessageParserTest extends MessageParserTest<CEFSyslogMessage, CE
   public Stream<DynamicTest> parse() {
     final File testsPath = new File("src/test/resources/com/github/jcustenborder/netty/syslog/cef");
     return Arrays.stream(testsPath.listFiles()).map(file -> dynamicTest(file.getName(), () -> {
-      final TestCase testCase = this.mapper.readValue(file, TestCase.class);
+      final CEFTestCase testCase = ObjectMapperFactory.INSTANCE.readValue(file, CEFTestCase.class);
       List<Object> output = new ArrayList<>();
       parse(output, testCase.input);
       assertFalse(output.isEmpty());
-      CEFSyslogMessage actual = (CEFSyslogMessage) output.get(0);
+      CEFMessage actual = (CEFMessage) output.get(0);
       assertNotNull(actual, "actual should not be null.");
       assertMessage(testCase.expected, actual);
     }));
@@ -69,8 +63,4 @@ public class CEFMessageParserTest extends MessageParserTest<CEFSyslogMessage, CE
     return new CEFMessageParser();
   }
 
-  public static class TestCase {
-    public String input;
-    public CEFSyslogMessage expected;
-  }
 }

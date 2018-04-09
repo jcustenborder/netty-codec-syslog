@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "dbclean",
     "processId" : 13362,
-    "message" : "1.2.32 cleaning dcc_db",
-    "date" : 1520480885000,
+    "date" : 1520480885.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 8 03:48:05 avas dbclean[13362]: 1.2.32 cleaning dcc_db",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas"
+    "host" : "avas",
+    "message" : "1.2.32 cleaning dcc_db"
   }
 }

@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "CROND",
     "processId" : 11460,
-    "message" : "(cronjob) CMD (run-parts /etc/cron.weekly)",
-    "date" : 1520396520000,
+    "date" : 1520396520.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 7 04:22:00 avas CROND[11460]: (cronjob) CMD (run-parts /etc/cron.weekly)",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas"
+    "host" : "avas",
+    "message" : "(cronjob) CMD (run-parts /etc/cron.weekly)"
   }
 }

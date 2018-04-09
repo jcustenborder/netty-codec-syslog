@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "dbclean",
     "processId" : 13362,
-    "message" : "hashed 8238442 records containing 17108406 checksums, compressed 1272157 records",
-    "date" : 1520481087000,
+    "date" : 1520481087.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 8 03:51:27 avas dbclean[13362]: hashed 8238442 records containing 17108406 checksums, compressed 1272157 records",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas"
+    "host" : "avas",
+    "message" : "hashed 8238442 records containing 17108406 checksums, compressed 1272157 records"
   }
 }

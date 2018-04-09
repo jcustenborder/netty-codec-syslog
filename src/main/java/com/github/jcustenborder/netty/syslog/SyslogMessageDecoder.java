@@ -15,17 +15,20 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageDecoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.Instant;
+import java.time.ZoneOffset;
 import java.util.Arrays;
 import java.util.List;
 
+@ChannelHandler.Sharable
 public class SyslogMessageDecoder extends MessageToMessageDecoder<SyslogRequest> {
   private static final Logger log = LoggerFactory.getLogger(SyslogMessageDecoder.class);
-
   final List<MessageParser> parsers;
 
   public SyslogMessageDecoder(List<MessageParser> parsers) {
@@ -56,7 +59,7 @@ public class SyslogMessageDecoder extends MessageToMessageDecoder<SyslogRequest>
 
     output.add(
         ImmutableUnparseableMessage.builder()
-            .date(request.receivedDate())
+            .date(Instant.now().atOffset(ZoneOffset.UTC))
             .rawMessage(request.rawMessage())
             .remoteAddress(request.remoteAddress())
             .build()

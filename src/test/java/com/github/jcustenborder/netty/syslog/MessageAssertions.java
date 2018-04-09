@@ -32,6 +32,7 @@ class MessageAssertions {
     assertEquals(expected.level(), actual.level(), "level should match.");
     assertEquals(expected.remoteAddress(), actual.remoteAddress(), "remoteAddress should match.");
     assertEquals(expected.date(), actual.date(), "date should match.");
+    assertEquals(expected.rawMessage(), actual.rawMessage(), "rawMessage should match.");
   }
 
 }

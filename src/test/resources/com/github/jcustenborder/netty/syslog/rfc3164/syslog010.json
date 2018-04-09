@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "snort",
     "processId" : null,
-    "message" : "Ports to decode telnet on: 21 23 25 119",
-    "date" : 1520812862000,
+    "date" : 1520856062.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 12 12:01:02 server4 snort: Ports to decode telnet on: 21 23 25 119",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "server4"
+    "host" : "server4",
+    "message" : "Ports to decode telnet on: 21 23 25 119"
   }
 }

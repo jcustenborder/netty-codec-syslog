@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "snort",
     "processId" : null,
-    "message" : "telnet_decode arguments:",
-    "date" : 1520812862000,
+    "date" : 1520856062.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 12 12:01:02 server4 snort: telnet_decode arguments:",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "server4"
+    "host" : "server4",
+    "message" : "telnet_decode arguments:"
   }
 }

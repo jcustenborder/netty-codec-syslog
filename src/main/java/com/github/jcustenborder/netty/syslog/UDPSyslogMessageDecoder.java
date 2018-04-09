@@ -15,6 +15,7 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.socket.DatagramPacket;
 import io.netty.handler.codec.MessageToMessageDecoder;
@@ -24,6 +25,7 @@ import java.nio.charset.Charset;
 import java.util.Date;
 import java.util.List;
 
+@ChannelHandler.Sharable
 public class UDPSyslogMessageDecoder extends MessageToMessageDecoder<DatagramPacket> {
   final Charset charset;
 

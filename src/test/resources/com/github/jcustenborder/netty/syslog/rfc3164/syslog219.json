@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "dccifd",
     "processId" : 12385,
-    "message" : "no answer from 127.0.0.1 (127.0.0.1,6277) after 16016 ms",
-    "date" : 1520477426000,
+    "date" : 1520477426.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 8 02:50:26 avas dccifd[12385]: no answer from 127.0.0.1 (127.0.0.1,6277) after 16016 ms",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas"
+    "host" : "avas",
+    "message" : "no answer from 127.0.0.1 (127.0.0.1,6277) after 16016 ms"
   }
 }

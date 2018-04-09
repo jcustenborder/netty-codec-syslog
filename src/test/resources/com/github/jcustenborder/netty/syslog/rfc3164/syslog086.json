@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "amavisd",
     "processId" : 11568,
-    "message" : "starting. amavisd at avas.example.com amavisd-new-20030616-p6, Unicode aware, LANG=en_US.iso885915",
-    "date" : 1517562014000,
+    "date" : 1517562014.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Feb 2 09:00:14 avas.example.com amavisd[11568]: starting. amavisd at avas.example.com amavisd-new-20030616-p6, Unicode aware, LANG=en_US.iso885915",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas.example.com"
+    "host" : "avas.example.com",
+    "message" : "starting. amavisd at avas.example.com amavisd-new-20030616-p6, Unicode aware, LANG=en_US.iso885915"
   }
 }

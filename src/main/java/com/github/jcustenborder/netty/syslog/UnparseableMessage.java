@@ -15,23 +15,27 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
 
 import java.net.InetAddress;
-import java.util.Date;
+import java.time.OffsetDateTime;
 
 /**
  * Interface that is yielded when none of the configured parsers can parse the current message.
  */
 @Value.Immutable
 @Value.Style(visibility = Value.Style.ImplementationVisibility.PACKAGE)
+@JsonSerialize(as = ImmutableUnparseableMessage.class)
+@JsonDeserialize(as = ImmutableUnparseableMessage.class)
 public interface UnparseableMessage {
   /**
    * Method is used to return the date that the parser was executed. This is not the date in the
    * message
    * @return Date the message was received.
    */
-  Date date();
+  OffsetDateTime date();
 
   /**
    * Method is used to return the remote address that sent the message.

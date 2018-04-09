@@ -18,9 +18,8 @@ package com.github.jcustenborder.netty.syslog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Date;
+import java.time.OffsetDateTime;
 import java.util.List;
-import java.util.TimeZone;
 import java.util.regex.Matcher;
 
 public class RFC3164MessageParser extends MessageParser {
@@ -29,16 +28,6 @@ public class RFC3164MessageParser extends MessageParser {
   private final ThreadLocal<Matcher> matcherThreadLocal;
 
   public RFC3164MessageParser() {
-    this("UTC");
-  }
-
-  public RFC3164MessageParser(TimeZone timeZone) {
-    super(timeZone);
-    this.matcherThreadLocal = initMatcher(PATTERN);
-  }
-
-  public RFC3164MessageParser(String timeZoneId) {
-    super(timeZoneId);
     this.matcherThreadLocal = initMatcher(PATTERN);
   }
 
@@ -61,9 +50,9 @@ public class RFC3164MessageParser extends MessageParser {
     final String groupProcId = matcher.group("procid");
     final Integer processId = (groupProcId == null || groupProcId.isEmpty()) ? null : Integer.parseInt(groupProcId);
     final Integer priority = (groupPriority == null || groupPriority.isEmpty()) ? null : Integer.parseInt(groupPriority);
-    final Integer facility = null == priority ? null : facility(priority);
-    final Integer level = null == priority ? null : level(priority, facility);
-    final Date date = parseDate(groupDate);
+    final Integer facility = null == priority ? null : Priority.facility(priority);
+    final Integer level = null == priority ? null : Priority.level(priority, facility);
+    final OffsetDateTime date = parseDate(groupDate);
 
 
     output.add(

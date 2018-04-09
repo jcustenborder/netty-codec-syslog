@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "dbclean",
     "processId" : 10491,
-    "message" : "22763520 hash entries total, 12827182 or 56% used",
-    "date" : 1520394602000,
+    "date" : 1520394602.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 7 03:50:02 avas dbclean[10491]: 22763520 hash entries total, 12827182 or 56% used",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas"
+    "host" : "avas",
+    "message" : "22763520 hash entries total, 12827182 or 56% used"
   }
 }

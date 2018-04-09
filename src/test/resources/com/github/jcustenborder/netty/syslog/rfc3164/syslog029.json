@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "postfix/smtpd",
     "processId" : 2410,
-    "message" : "A1CE861A83: reject: RCPT from unknown[218.246.34.68]: 557 Service unavailable; Client host [218.246.34.68] blocked using list.dsbl.org; http://dsbl.org/listing?ip=218.246.34.68; from= to= proto=SMTP helo=",
-    "date" : 1519862400000,
+    "date" : 1519862400.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 1 00:00:00 avas postfix/smtpd[2410]: A1CE861A83: reject: RCPT from unknown[218.246.34.68]: 557 Service unavailable; Client host [218.246.34.68] blocked using list.dsbl.org; http://dsbl.org/listing?ip=218.246.34.68; from= to= proto=SMTP helo=",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas"
+    "host" : "avas",
+    "message" : "A1CE861A83: reject: RCPT from unknown[218.246.34.68]: 557 Service unavailable; Client host [218.246.34.68] blocked using list.dsbl.org; http://dsbl.org/listing?ip=218.246.34.68; from= to= proto=SMTP helo="
   }
 }

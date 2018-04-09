@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "syslog",
     "processId" : null,
-    "message" : "su : - ttyp1 user-informix",
-    "date" : 1520846840000,
+    "date" : 1520846840.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 12 09:27:20 server5 syslog: su : - ttyp1 user-informix",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "server5"
+    "host" : "server5",
+    "message" : "su : - ttyp1 user-informix"
   }
 }

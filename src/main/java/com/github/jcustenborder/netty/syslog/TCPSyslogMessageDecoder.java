@@ -16,6 +16,7 @@
 package com.github.jcustenborder.netty.syslog;
 
 import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageDecoder;
 
@@ -24,12 +25,14 @@ import java.nio.charset.Charset;
 import java.util.Date;
 import java.util.List;
 
+@ChannelHandler.Sharable
 public class TCPSyslogMessageDecoder extends MessageToMessageDecoder<ByteBuf> {
   final Charset charset;
 
   public TCPSyslogMessageDecoder(Charset charset) {
     this.charset = charset;
   }
+
   public TCPSyslogMessageDecoder() {
     this(Charset.forName("UTF-8"));
   }

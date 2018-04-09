@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "sshd",
     "processId" : 24742,
-    "message" : "Accepted password for netscape from 111.222.333.444 port 1420 ssh2",
-    "date" : 1520843091000,
+    "date" : 1520843091.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 12 08:24:51 server6 sshd[24742]: Accepted password for netscape from 111.222.333.444 port 1420 ssh2",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "server6"
+    "host" : "server6",
+    "message" : "Accepted password for netscape from 111.222.333.444 port 1420 ssh2"
   }
 }

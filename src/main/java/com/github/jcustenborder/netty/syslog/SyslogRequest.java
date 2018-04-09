@@ -38,6 +38,7 @@ public interface SyslogRequest {
    * @return The time the message was received by Netty.
    */
   Date receivedDate();
+
   /**
    * IP Address for the sender of the message.
    * @return Sender IP Address

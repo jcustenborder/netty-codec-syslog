@@ -4,14 +4,14 @@
     "messageId" : null,
     "procId" : "1",
     "appName" : "systemd",
-    "message" : "Stopping System Logging Service...",
     "structuredData" : [ ],
-    "date" : 1517517748779,
+    "date" : 1517516916.832779000,
     "remoteAddress" : "localhost",
     "rawMessage" : "<30>1 2018-02-01T20:28:36.832779+00:00 miner-01 systemd 1 - -  Stopping System Logging Service...",
     "level" : 6,
     "version" : 1,
     "facility" : 3,
-    "host" : "miner-01"
+    "host" : "miner-01",
+    "message" : "Stopping System Logging Service..."
   }
 }

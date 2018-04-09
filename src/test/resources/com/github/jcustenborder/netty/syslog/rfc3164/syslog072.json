@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "postfix/smtpd",
     "processId" : 2314,
-    "message" : "connect from unknown[218.149.178.173]",
-    "date" : 1519862496000,
+    "date" : 1519862496.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 1 00:01:36 avas postfix/smtpd[2314]: connect from unknown[218.149.178.173]",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas"
+    "host" : "avas",
+    "message" : "connect from unknown[218.149.178.173]"
   }
 }

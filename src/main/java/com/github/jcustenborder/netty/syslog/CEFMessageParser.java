@@ -18,12 +18,11 @@ package com.github.jcustenborder.netty.syslog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.TimeZone;
 import java.util.regex.Matcher;
 
 public class CEFMessageParser extends MessageParser {
@@ -38,18 +37,6 @@ public class CEFMessageParser extends MessageParser {
 
 
   public CEFMessageParser() {
-    this("UTC");
-  }
-
-  public CEFMessageParser(TimeZone timeZone) {
-    super(timeZone);
-    this.matcherCEFPrefix = initMatcher(CEF_PREFIX_PATTERN);
-    this.matcherCEFMain = initMatcher(CEF_MAIN_PATTERN);
-    this.matcherCEFExtension = initMatcher(PATTERN_EXTENSION);
-  }
-
-  public CEFMessageParser(String timeZoneId) {
-    super(timeZoneId);
     this.matcherCEFPrefix = initMatcher(CEF_PREFIX_PATTERN);
     this.matcherCEFMain = initMatcher(CEF_MAIN_PATTERN);
     this.matcherCEFExtension = initMatcher(PATTERN_EXTENSION);
@@ -93,9 +80,9 @@ public class CEFMessageParser extends MessageParser {
     final String groupData = matcherPrefix.group("data");
 
     final Integer priority = (groupPriority == null || groupPriority.isEmpty()) ? null : Integer.parseInt(groupPriority);
-    final Integer facility = null == priority ? null : facility(priority);
-    final Integer level = null == priority ? null : level(priority, facility);
-    final Date date = parseDate(groupDate);
+    final Integer facility = null == priority ? null : Priority.facility(priority);
+    final Integer level = null == priority ? null : Priority.level(priority, facility);
+    final OffsetDateTime date = parseDate(groupDate);
     final Integer cefVersion = Integer.parseInt(groupCEFVersion);
 
     final List<String> parts = splitToList(groupData);

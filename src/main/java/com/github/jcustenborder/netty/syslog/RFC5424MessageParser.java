@@ -18,9 +18,8 @@ package com.github.jcustenborder.netty.syslog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Date;
+import java.time.OffsetDateTime;
 import java.util.List;
-import java.util.TimeZone;
 import java.util.regex.Matcher;
 
 public class RFC5424MessageParser extends MessageParser {
@@ -29,16 +28,6 @@ public class RFC5424MessageParser extends MessageParser {
   private final ThreadLocal<Matcher> matcherThreadLocal;
 
   public RFC5424MessageParser() {
-    this("UTC");
-  }
-
-  public RFC5424MessageParser(TimeZone timeZone) {
-    super(timeZone);
-    this.matcherThreadLocal = initMatcher(PATTERN);
-  }
-
-  public RFC5424MessageParser(String timeZoneId) {
-    super(timeZoneId);
     this.matcherThreadLocal = initMatcher(PATTERN);
   }
 
@@ -64,15 +53,15 @@ public class RFC5424MessageParser extends MessageParser {
     final String groupMessage = matcher.group("message");
 
     final int priority = Integer.parseInt(groupPriority);
-    final int facility = facility(priority);
-    final Date date = parseDate(groupDate);
-    final int level = level(priority, facility);
+    final int facility = Priority.facility(priority);
+    final OffsetDateTime date = parseDate(groupDate);
+    final int level = Priority.level(priority, facility);
     final Integer version = Integer.parseInt(groupVersion);
     final String appName = nullableString(groupAppName);
     final String procID = nullableString(groupProcID);
     final String messageID = nullableString(groupMessageID);
 
-    final List<StructuredSyslogMessage.StructuredData> structuredData = parseStructuredData(groupStructuredData);
+    final List<RFC5424Message.StructuredData> structuredData = parseStructuredData(groupStructuredData);
 
     output.add(
         ImmutableStructuredSyslogMessage.builder()

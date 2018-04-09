@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "dccifd",
     "processId" : 13451,
-    "message" : "1.2.32 rejected messages to 0 targets and discarded messages to 0 targets among 1775 total since 03/07/04 00:00:00",
-    "date" : 1520467200000,
+    "date" : 1520467200.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 8 00:00:00 avas dccifd[13451]: 1.2.32 rejected messages to 0 targets and discarded messages to 0 targets among 1775 total since 03/07/04 00:00:00",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas"
+    "host" : "avas",
+    "message" : "1.2.32 rejected messages to 0 targets and discarded messages to 0 targets among 1775 total since 03/07/04 00:00:00"
   }
 }

@@ -15,8 +15,10 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.net.InetAddress;
-import java.util.Date;
+import java.time.OffsetDateTime;
 
 /**
  * Represents a standard syslog message.
@@ -26,7 +28,7 @@ public interface Message {
    * Date of the message. This is the parsed date from the client.
    * @return Date of the message.
    */
-  Date date();
+  OffsetDateTime date();
 
   /**
    * IP Address for the sender of the message.
@@ -72,6 +74,7 @@ public interface Message {
    * Message part of the overall syslog message.
    * @return Message part of the overall syslog message.
    */
+  @JsonProperty("message")
   @Nullable
   String message();
 }

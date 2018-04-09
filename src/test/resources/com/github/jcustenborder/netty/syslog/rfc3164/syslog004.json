@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "/USR/SBIN/CRON",
     "processId" : 6837,
-    "message" : "(root) CMD ( /usr/lib/sa/sa1 )",
-    "date" : 1520814000000,
+    "date" : 1520857200.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 12 12:20:00 server2 /USR/SBIN/CRON[6837]: (root) CMD ( /usr/lib/sa/sa1 )",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "server2"
+    "host" : "server2",
+    "message" : "(root) CMD ( /usr/lib/sa/sa1 )"
   }
 }

@@ -67,13 +67,13 @@ public class UDPSyslogIT extends SyslogIT {
           protected void initChannel(DatagramChannel datagramChannel) throws Exception {
             ChannelPipeline channelPipeline = datagramChannel.pipeline();
             channelPipeline.addLast(
-                new LoggingHandler("Syslog", LogLevel.TRACE),
-                new UDPSyslogMessageDecoder(),
-                new SyslogMessageDecoder(),
-                handler
-            );
-          }
-        });
+        new LoggingHandler("Syslog", LogLevel.TRACE),
+        new UDPSyslogMessageDecoder(),
+        new SyslogMessageDecoder(),
+        handler
+    );
+  }
+});
 
     return b.bind(InetAddress.getLoopbackAddress(), port());
   }

@@ -3,13 +3,13 @@
   "expected" : {
     "tag" : "postfix/smtpd",
     "processId" : 2410,
-    "message" : "connect from user-0c99au7.cable.mindspring.com[24.148.171.199]",
-    "date" : 1519862491000,
+    "date" : 1519862491.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 1 00:01:31 avas postfix/smtpd[2410]: connect from user-0c99au7.cable.mindspring.com[24.148.171.199]",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "avas"
+    "host" : "avas",
+    "message" : "connect from user-0c99au7.cable.mindspring.com[24.148.171.199]"
   }
 }

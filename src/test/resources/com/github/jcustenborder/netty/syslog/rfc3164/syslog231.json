@@ -1,15 +1,15 @@
 {
-  "input" : "Sep   19  08:26:10 host CEF:0|Security|threatmanager|1.0|100|worm successfully stopped|10|src=10.0.0.1 dst=2.1.2.2 spt=1232",
+  "input" : "Oct 12 14:58:35 example_host BG: 1234:01:01:site=support.example.com;who=John Smith(jsmith);who_ip=192.168.1.1; event=login;target=web/login;status=success",
   "expected" : {
-    "tag" : "CEF",
+    "tag" : "BG",
     "processId" : null,
-    "message" : "0|Security|threatmanager|1.0|100|worm successfully stopped|10|src=10.0.0.1 dst=2.1.2.2 spt=1232",
-    "date" : 1537345570000,
+    "date" : 1539356315.000000000,
     "remoteAddress" : "localhost",
-    "rawMessage" : "Sep   19  08:26:10 host CEF:0|Security|threatmanager|1.0|100|worm successfully stopped|10|src=10.0.0.1 dst=2.1.2.2 spt=1232",
+    "rawMessage" : "Oct 12 14:58:35 example_host BG: 1234:01:01:site=support.example.com;who=John Smith(jsmith);who_ip=192.168.1.1; event=login;target=web/login;status=success",
     "level" : null,
     "version" : null,
     "facility" : null,
-    "host" : "host"
+    "host" : "example_host",
+    "message" : "1234:01:01:site=support.example.com;who=John Smith(jsmith);who_ip=192.168.1.1; event=login;target=web/login;status=success"
   }
 }
