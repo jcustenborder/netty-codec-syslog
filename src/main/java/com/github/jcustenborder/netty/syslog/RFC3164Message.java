@@ -18,7 +18,4 @@ package com.github.jcustenborder.netty.syslog;
 public interface RFC3164Message extends Message {
   @Nullable
   String tag();
-
-  @Nullable
-  Integer processId();
 }

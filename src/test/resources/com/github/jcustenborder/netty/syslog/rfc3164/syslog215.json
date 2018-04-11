@@ -2,7 +2,7 @@
   "input" : "Mar 7 19:01:58 avas dccd[13284]: no outgoing flood connection to dcc1.example.no, server-ID XXXX",
   "expected" : {
     "tag" : "dccd",
-    "processId" : 13284,
+    "processId" : "13284",
     "date" : 1520449318.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 7 19:01:58 avas dccd[13284]: no outgoing flood connection to dcc1.example.no, server-ID XXXX",

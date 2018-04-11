@@ -2,7 +2,7 @@
   "input" : "Mar 7 04:20:00 avas CROND[11373]: (cronjob) CMD (/usr/lib/sa/sa1 1 1)",
   "expected" : {
     "tag" : "CROND",
-    "processId" : 11373,
+    "processId" : "11373",
     "date" : 1520396400.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 7 04:20:00 avas CROND[11373]: (cronjob) CMD (/usr/lib/sa/sa1 1 1)",

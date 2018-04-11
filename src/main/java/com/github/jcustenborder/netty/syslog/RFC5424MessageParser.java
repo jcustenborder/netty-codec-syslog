@@ -73,7 +73,7 @@ public class RFC5424MessageParser extends MessageParser {
             .facility(facility)
             .message(groupMessage)
             .version(version)
-            .procId(procID)
+            .processId(procID)
             .messageId(messageID)
             .structuredData(structuredData)
             .appName(appName)

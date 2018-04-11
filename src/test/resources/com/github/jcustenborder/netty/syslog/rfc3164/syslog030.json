@@ -2,7 +2,7 @@
   "input" : "Mar 1 00:00:02 avas postfix/smtpd[2410]: lost connection after RCPT from unknown[218.246.34.68]",
   "expected" : {
     "tag" : "postfix/smtpd",
-    "processId" : 2410,
+    "processId" : "2410",
     "date" : 1519862402.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 1 00:00:02 avas postfix/smtpd[2410]: lost connection after RCPT from unknown[218.246.34.68]",

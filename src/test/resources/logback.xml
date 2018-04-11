@@ -9,6 +9,8 @@
     </appender>
 
     <logger name="com.github.jcustenborder.netty.syslog" level="TRACE" />
+    <logger name="io.netty.buffer" level="INFO" />
+    <logger name="io.netty.util" level="INFO" />
 
     <root level="TRACE">
         <appender-ref ref="STDOUT" />

@@ -61,8 +61,8 @@ public class RFC5424MessageEncoder extends MessageToMessageEncoder<RFC5424Messag
     if (null != message.appName()) {
       buffer.writeCharSequence(message.appName(), this.charset);
     }
-    if (null != message.procId()) {
-      buffer.writeCharSequence(message.procId(), this.charset);
+    if (null != message.processId()) {
+      buffer.writeCharSequence(message.processId(), this.charset);
     } else {
       buffer.writeCharSequence(" -", this.charset);
     }

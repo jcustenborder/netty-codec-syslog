@@ -2,7 +2,7 @@
   "input" : "Mar 12 08:49:53 server6 ftpd[27281]: FTP LOGIN FROM 111.222.333.444 [111.222.333.444], netscape",
   "expected" : {
     "tag" : "ftpd",
-    "processId" : 27281,
+    "processId" : "27281",
     "date" : 1520844593.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 12 08:49:53 server6 ftpd[27281]: FTP LOGIN FROM 111.222.333.444 [111.222.333.444], netscape",

@@ -2,7 +2,7 @@
   "input" : "Mar 1 00:00:04 avas postfix/smtpd[2314]: C0E5861AA4: reject: RCPT from host81-153-11-97.range81-153.btcentralplus.com[81.153.11.97]: 450 : Sender address rejected: Domain not found; from= to= proto=ESMTP helo=",
   "expected" : {
     "tag" : "postfix/smtpd",
-    "processId" : 2314,
+    "processId" : "2314",
     "date" : 1519862404.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 1 00:00:04 avas postfix/smtpd[2314]: C0E5861AA4: reject: RCPT from host81-153-11-97.range81-153.btcentralplus.com[81.153.11.97]: 450 : Sender address rejected: Domain not found; from= to= proto=ESMTP helo=",

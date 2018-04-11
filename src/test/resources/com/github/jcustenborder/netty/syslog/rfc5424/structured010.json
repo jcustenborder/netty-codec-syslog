@@ -2,7 +2,7 @@
   "input" : "<85>1 2018-02-01T20:28:52.350767+00:00 miner-01 sudo - - -    jeremy : TTY=pts/0 ; PWD=/etc/rsyslog.d ; USER=root ; COMMAND=/bin/cat /var/log/syslog-all",
   "expected" : {
     "messageId" : null,
-    "procId" : null,
+    "processId" : null,
     "appName" : "sudo",
     "structuredData" : [ ],
     "date" : 1517516932.350767000,

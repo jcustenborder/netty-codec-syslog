@@ -2,7 +2,7 @@
   "input" : "<46>1 2018-02-01T20:28:36.836975+00:00 miner-01 rsyslogd - - - rsyslogd's groupid changed to 108",
   "expected" : {
     "messageId" : null,
-    "procId" : null,
+    "processId" : null,
     "appName" : "rsyslogd",
     "structuredData" : [ ],
     "date" : 1517516916.836975000,

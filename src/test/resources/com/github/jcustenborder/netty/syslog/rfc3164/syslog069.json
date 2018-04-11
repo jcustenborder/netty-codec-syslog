@@ -2,7 +2,7 @@
   "input" : "Mar 1 00:01:31 avas postfix/smtpd[2410]: connect from user-0c99au7.cable.mindspring.com[24.148.171.199]",
   "expected" : {
     "tag" : "postfix/smtpd",
-    "processId" : 2410,
+    "processId" : "2410",
     "date" : 1519862491.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 1 00:01:31 avas postfix/smtpd[2410]: connect from user-0c99au7.cable.mindspring.com[24.148.171.199]",

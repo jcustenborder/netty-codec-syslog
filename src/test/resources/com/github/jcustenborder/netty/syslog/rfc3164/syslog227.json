@@ -2,7 +2,7 @@
   "input" : "Mar 8 03:52:04 avas dccd[13284]: 1.2.32 database /home/dcc/dcc_db reopened with 997 MByte window",
   "expected" : {
     "tag" : "dccd",
-    "processId" : 13284,
+    "processId" : "13284",
     "date" : 1520481124.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 8 03:52:04 avas dccd[13284]: 1.2.32 database /home/dcc/dcc_db reopened with 997 MByte window",

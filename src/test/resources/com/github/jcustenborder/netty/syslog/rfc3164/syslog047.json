@@ -2,7 +2,7 @@
   "input" : "Mar 1 00:00:06 avas amavis[2430]: (02430-01) Passed,  -> , Message-ID: <20040301080005.445C261AA4@avas.example.com>, Hits: 0",
   "expected" : {
     "tag" : "amavis",
-    "processId" : 2430,
+    "processId" : "2430",
     "date" : 1519862406.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 1 00:00:06 avas amavis[2430]: (02430-01) Passed,  -> , Message-ID: <20040301080005.445C261AA4@avas.example.com>, Hits: 0",

@@ -2,7 +2,7 @@
   "input" : "Mar 12 12:27:03 server3 named[32173]: lame server resolving 'jakarta5.wasantara.net.id' (in 'wasantara.net.id'?): 202.159.65.171#53",
   "expected" : {
     "tag" : "named",
-    "processId" : 32173,
+    "processId" : "32173",
     "date" : 1520857623.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 12 12:27:03 server3 named[32173]: lame server resolving 'jakarta5.wasantara.net.id' (in 'wasantara.net.id'?): 202.159.65.171#53",

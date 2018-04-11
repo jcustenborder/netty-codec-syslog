@@ -77,4 +77,7 @@ public interface Message {
   @JsonProperty("message")
   @Nullable
   String message();
+
+  @Nullable
+  String processId();
 }

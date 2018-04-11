@@ -2,7 +2,7 @@
   "input" : "Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Archive::Tar 1.07",
   "expected" : {
     "tag" : "amavisd",
-    "processId" : 11568,
+    "processId" : "11568",
     "date" : 1517562014.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Feb 2 09:00:14 avas.example.com amavisd[11568]: Module Archive::Tar 1.07",

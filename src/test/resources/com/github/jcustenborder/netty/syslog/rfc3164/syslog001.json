@@ -2,7 +2,7 @@
   "input" : "Mar 12 12:00:08 server2 rcd[308]: id=304 COMPLETE 'Downloading https://server2/data/red-carpet.rdf' time=0s (failed)",
   "expected" : {
     "tag" : "rcd",
-    "processId" : 308,
+    "processId" : "308",
     "date" : 1520856008.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 12 12:00:08 server2 rcd[308]: id=304 COMPLETE 'Downloading https://server2/data/red-carpet.rdf' time=0s (failed)",

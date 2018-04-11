@@ -2,7 +2,7 @@
   "input" : "Mar 6 20:06:37 avas dccd[13284]: \"packet length 44 too small for REPORT\" sent to client 1 at 194.63.250.215,56007",
   "expected" : {
     "tag" : "dccd",
-    "processId" : 13284,
+    "processId" : "13284",
     "date" : 1520366797.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 6 20:06:37 avas dccd[13284]: \"packet length 44 too small for REPORT\" sent to client 1 at 194.63.250.215,56007",

@@ -2,7 +2,7 @@
   "input" : "Mar 8 02:50:26 avas dccifd[12385]: write(MTA socket,4): Broken pipe",
   "expected" : {
     "tag" : "dccifd",
-    "processId" : 12385,
+    "processId" : "12385",
     "date" : 1520477426.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 8 02:50:26 avas dccifd[12385]: write(MTA socket,4): Broken pipe",
