@@ -2,7 +2,7 @@
   "input" : "Mar 12 12:32:24 server6 sshd[11187]: Accepted password for jfalgout from 111.222.333.444 port 34138 ssh2",
   "expected" : {
     "tag" : "sshd",
-    "processId" : 11187,
+    "processId" : "11187",
     "date" : 1520857944.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 12 12:32:24 server6 sshd[11187]: Accepted password for jfalgout from 111.222.333.444 port 34138 ssh2",

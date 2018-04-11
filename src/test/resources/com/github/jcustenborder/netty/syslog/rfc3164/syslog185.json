@@ -2,7 +2,7 @@
   "input" : "Mar 6 03:51:25 avas dbclean[19972]: hashed 9753301 records containing 21909874 checksums, compressed 1316498 records",
   "expected" : {
     "tag" : "dbclean",
-    "processId" : 19972,
+    "processId" : "19972",
     "date" : 1520308285.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 6 03:51:25 avas dbclean[19972]: hashed 9753301 records containing 21909874 checksums, compressed 1316498 records",

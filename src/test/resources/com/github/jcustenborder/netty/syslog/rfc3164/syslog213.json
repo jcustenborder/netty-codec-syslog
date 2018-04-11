@@ -2,7 +2,7 @@
   "input" : "Mar 7 16:50:58 avas dccifd[998]: missing message body",
   "expected" : {
     "tag" : "dccifd",
-    "processId" : 998,
+    "processId" : "998",
     "date" : 1520441458.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 7 16:50:58 avas dccifd[998]: missing message body",

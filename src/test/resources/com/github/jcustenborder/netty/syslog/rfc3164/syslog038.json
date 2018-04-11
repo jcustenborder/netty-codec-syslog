@@ -2,7 +2,7 @@
   "input" : "Mar 1 00:00:05 avas postfix/pickup[1473]: 445C261AA4: uid=0 from=",
   "expected" : {
     "tag" : "postfix/pickup",
-    "processId" : 1473,
+    "processId" : "1473",
     "date" : 1519862405.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 1 00:00:05 avas postfix/pickup[1473]: 445C261AA4: uid=0 from=",

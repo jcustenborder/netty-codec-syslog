@@ -2,7 +2,7 @@
   "input" : "Mar 8 03:51:27 avas dbclean[13362]: 21596160 hash entries total, 12649013 or 58% used",
   "expected" : {
     "tag" : "dbclean",
-    "processId" : 13362,
+    "processId" : "13362",
     "date" : 1520481087.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 8 03:51:27 avas dbclean[13362]: 21596160 hash entries total, 12649013 or 58% used",

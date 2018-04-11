@@ -2,7 +2,7 @@
   "input" : "Mar 1 00:00:06 avas postfix/qmgr[23698]: 4391461A83: from=, size=1048, nrcpt=1 (queue active)",
   "expected" : {
     "tag" : "postfix/qmgr",
-    "processId" : 23698,
+    "processId" : "23698",
     "date" : 1519862406.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 1 00:00:06 avas postfix/qmgr[23698]: 4391461A83: from=, size=1048, nrcpt=1 (queue active)",

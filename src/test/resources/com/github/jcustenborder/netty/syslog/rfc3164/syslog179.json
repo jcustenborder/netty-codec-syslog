@@ -2,7 +2,7 @@
   "input" : "Mar 7 05:05:00 avas CROND[20208]: (mailman) CMD (/usr/local/bin/python -S /usr/local/mailman/cron/gate_news)",
   "expected" : {
     "tag" : "CROND",
-    "processId" : 20208,
+    "processId" : "20208",
     "date" : 1520399100.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 7 05:05:00 avas CROND[20208]: (mailman) CMD (/usr/local/bin/python -S /usr/local/mailman/cron/gate_news)",

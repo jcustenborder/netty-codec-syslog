@@ -2,7 +2,7 @@
   "input" : "Feb 2 09:00:14 avas.example.com amavisd[11569]: No $unfreeze, not using it",
   "expected" : {
     "tag" : "amavisd",
-    "processId" : 11569,
+    "processId" : "11569",
     "date" : 1517562014.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Feb 2 09:00:14 avas.example.com amavisd[11569]: No $unfreeze, not using it",

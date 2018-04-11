@@ -2,7 +2,7 @@
   "input" : "Mar 1 00:01:38 avas postfix/smtpd[1822]: connect from host76-117.pool80180.interbusiness.it[80.180.117.76]",
   "expected" : {
     "tag" : "postfix/smtpd",
-    "processId" : 1822,
+    "processId" : "1822",
     "date" : 1519862498.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 1 00:01:38 avas postfix/smtpd[1822]: connect from host76-117.pool80180.interbusiness.it[80.180.117.76]",

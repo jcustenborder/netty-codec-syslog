@@ -2,7 +2,7 @@
   "input" : "Mar 1 00:01:44 avas postfix/smtpd[2411]: disconnect from unknown[208.37.192.234]",
   "expected" : {
     "tag" : "postfix/smtpd",
-    "processId" : 2411,
+    "processId" : "2411",
     "date" : 1519862504.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 1 00:01:44 avas postfix/smtpd[2411]: disconnect from unknown[208.37.192.234]",

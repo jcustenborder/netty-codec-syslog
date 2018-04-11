@@ -2,7 +2,7 @@
   "input" : "Mar 7 04:22:00 avas CROND[11460]: (cronjob) CMD (run-parts /etc/cron.weekly)",
   "expected" : {
     "tag" : "CROND",
-    "processId" : 11460,
+    "processId" : "11460",
     "date" : 1520396520.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 7 04:22:00 avas CROND[11460]: (cronjob) CMD (run-parts /etc/cron.weekly)",

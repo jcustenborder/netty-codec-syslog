@@ -2,7 +2,7 @@
   "input" : "Mar 7 04:30:01 avas CROND[19695]: (cronjob) CMD (/sbin/dcccollect.sh)",
   "expected" : {
     "tag" : "CROND",
-    "processId" : 19695,
+    "processId" : "19695",
     "date" : 1520397001.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 7 04:30:01 avas CROND[19695]: (cronjob) CMD (/sbin/dcccollect.sh)",

@@ -2,7 +2,7 @@
   "input" : "Mar 12 12:10:00 server2 /USR/SBIN/CRON[6808]: (root) CMD ( /usr/lib/sa/sa1 )",
   "expected" : {
     "tag" : "/USR/SBIN/CRON",
-    "processId" : 6808,
+    "processId" : "6808",
     "date" : 1520856600.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 12 12:10:00 server2 /USR/SBIN/CRON[6808]: (root) CMD ( /usr/lib/sa/sa1 )",

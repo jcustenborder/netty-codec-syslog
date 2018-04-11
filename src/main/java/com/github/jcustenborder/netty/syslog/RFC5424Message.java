@@ -23,9 +23,6 @@ public interface RFC5424Message extends Message {
   String messageId();
 
   @Nullable
-  String procId();
-
-  @Nullable
   String appName();
 
   List<StructuredData> structuredData();

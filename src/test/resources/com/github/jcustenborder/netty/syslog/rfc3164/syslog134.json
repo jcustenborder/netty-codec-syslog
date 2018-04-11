@@ -2,7 +2,7 @@
   "input" : "Feb 2 09:00:44 avas.example.com amavisd[11600]: (11600-05) Not-Delivered, <67dkmsca@hanmir.com> -> ,, quarantine spam-a7bd8bbb40d860656ba8bec5df04e007-20040202-090044-11600-05, Message-ID: <1l$l$r$6494gk-679-l7j2-fy3xx9@lkj5z.l8ml>, Hits: 31.578",
   "expected" : {
     "tag" : "amavisd",
-    "processId" : 11600,
+    "processId" : "11600",
     "date" : 1517562044.000000000,
     "remoteAddress" : "localhost",
     "rawMessage" : "Feb 2 09:00:44 avas.example.com amavisd[11600]: (11600-05) Not-Delivered, <67dkmsca@hanmir.com> -> ,, quarantine spam-a7bd8bbb40d860656ba8bec5df04e007-20040202-090044-11600-05, Message-ID: <1l$l$r$6494gk-679-l7j2-fy3xx9@lkj5z.l8ml>, Hits: 31.578",
