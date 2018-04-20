@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -17,14 +17,12 @@ package com.github.jcustenborder.netty.syslog;
 
 import org.junit.jupiter.api.BeforeEach;
 
-import java.util.List;
-
 public class DateTimeFormatterTest {
-  public static class Dummy extends MessageParser {
+  public static class Dummy extends MessageParser<Message> {
 
     @Override
-    public boolean parse(SyslogRequest request, List<Object> output) {
-      return false;
+    public Message parse(SyslogRequest request) {
+      return null;
     }
   }
 

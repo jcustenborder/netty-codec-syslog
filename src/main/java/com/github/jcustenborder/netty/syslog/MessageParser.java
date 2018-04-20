@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class MessageParser {
+public abstract class MessageParser<M extends Message> {
   private static final Logger log = LoggerFactory.getLogger(MessageParser.class);
   private static final String NULL_TOKEN = "-";
   protected final List<DateTimeFormatter> dateFormats;
@@ -69,13 +69,9 @@ public abstract class MessageParser {
    * Method is used to parse an incoming syslog message.
    *
    * @param request Incoming syslog request.
-   * @param output  Output to write the message to.
-   * @return true if was parsed successfully. False if not.
+   * @return Object to pass along the pipeline. Null if could not be parsed.
    */
-  public abstract boolean parse(
-      SyslogRequest request,
-      final List<Object> output
-  );
+  public abstract M parse(SyslogRequest request);
 
   protected final ThreadLocal<Matcher> initMatcher(String pattern) {
     return initMatcher(pattern, 0);
@@ -155,6 +151,7 @@ public abstract class MessageParser {
     }
     return result;
   }
+
 
   static class MatcherInheritableThreadLocal extends InheritableThreadLocal<Matcher> {
     private final Pattern pattern;

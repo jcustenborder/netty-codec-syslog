@@ -21,7 +21,7 @@ import io.netty.channel.SimpleChannelInboundHandler;
 import java.util.ArrayList;
 import java.util.List;
 
-class SyslogMessageHandler extends SimpleChannelInboundHandler<RFC3164Message> {
+class TestSyslogMessageHandler extends SimpleChannelInboundHandler<RFC3164Message> {
   List<RFC3164Message> messages = new ArrayList<>(1024);
 
   @Override
