@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 
-public class CEFMessageParser extends MessageParser {
+public class CEFMessageParser extends MessageParser<CEFSyslogMessage> {
   private static final Logger log = LoggerFactory.getLogger(CEFMessageParser.class);
   private static final String CEF_PREFIX_PATTERN = "^(<(?<priority>\\d+)>)?(?<date>([a-zA-Z]{3}\\s+\\d+\\s+\\d+:\\d+:\\d+)|([0-9T:.Z-]+))\\s+(?<host>\\S+)\\s+CEF:(?<version>\\d+)\\|(?<data>.*)$";
   private static final String CEF_MAIN_PATTERN = "(?<!\\\\)\\|";
@@ -63,13 +63,13 @@ public class CEFMessageParser extends MessageParser {
   }
 
   @Override
-  public boolean parse(SyslogRequest request, List<Object> output) {
+  public CEFSyslogMessage parse(SyslogRequest request) {
     log.trace("parse() - request = '{}'", request);
     final Matcher matcherPrefix = this.matcherCEFPrefix.get().reset(request.rawMessage());
 
     if (!matcherPrefix.find()) {
       log.trace("parse() - Could not match message. request = '{}'", request);
-      return false;
+      return null;
     }
 
     log.trace("parse() - Parsed message as CEF.");
@@ -131,8 +131,7 @@ public class CEFMessageParser extends MessageParser {
       index++;
     }
 
-    output.add(builder.build());
-    return true;
+    return builder.build();
   }
 
   private Map<String, String> parseExtension(String token) {

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -17,7 +17,7 @@ package com.github.jcustenborder.netty.syslog;
 
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.handler.codec.MessageToMessageDecoder;
+import io.netty.channel.SimpleChannelInboundHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,15 +27,15 @@ import java.util.Arrays;
 import java.util.List;
 
 @ChannelHandler.Sharable
-public class SyslogMessageDecoder extends MessageToMessageDecoder<SyslogRequest> {
-  private static final Logger log = LoggerFactory.getLogger(SyslogMessageDecoder.class);
+public class SyslogMessageHandler extends SimpleChannelInboundHandler<SyslogRequest> {
+  private static final Logger log = LoggerFactory.getLogger(SyslogMessageHandler.class);
   final List<MessageParser> parsers;
 
-  public SyslogMessageDecoder(List<MessageParser> parsers) {
+  public SyslogMessageHandler(List<MessageParser> parsers) {
     this.parsers = parsers;
   }
 
-  public SyslogMessageDecoder() {
+  public SyslogMessageHandler() {
     this(
         Arrays.asList(
             new CEFMessageParser(),
@@ -46,23 +46,29 @@ public class SyslogMessageDecoder extends MessageToMessageDecoder<SyslogRequest>
   }
 
   @Override
-  protected void decode(ChannelHandlerContext channelHandlerContext, SyslogRequest request, List<Object> output) throws Exception {
-    log.trace("decode() - request = '{}'", request);
+  protected void channelRead0(ChannelHandlerContext context, SyslogRequest request) throws Exception {
+    log.trace("channelRead0() - request = '{}'", request);
+    context.executor().execute(new Runnable() {
+      @Override
+      public void run() {
+        for (MessageParser parser : parsers) {
+          Object result = parser.parse(request);
 
-    for (MessageParser parser : this.parsers) {
-      if (parser.parse(request, output)) {
-        return;
-      }
-    }
+          if (null != result) {
+            log.trace("channelRead0() - add result = '{}'", result);
+            context.fireChannelRead(result);
+            return;
+          }
+        }
 
-    log.warn("decode() - Could not parse message. request = '{}'", request);
-
-    output.add(
-        ImmutableUnparseableMessage.builder()
+        log.warn("decode() - Could not parse message. request = '{}'", request);
+        UnparseableMessage unparseableMessage = ImmutableUnparseableMessage.builder()
             .date(Instant.now().atOffset(ZoneOffset.UTC))
             .rawMessage(request.rawMessage())
             .remoteAddress(request.remoteAddress())
-            .build()
-    );
+            .build();
+        context.write(unparseableMessage);
+      }
+    });
   }
 }

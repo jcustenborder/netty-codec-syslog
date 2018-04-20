@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,7 +22,7 @@ import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.regex.Matcher;
 
-public class RFC5424MessageParser extends MessageParser {
+public class RFC5424MessageParser extends MessageParser<StructuredSyslogMessage> {
   private static final Logger log = LoggerFactory.getLogger(RFC5424MessageParser.class);
   private static final String PATTERN = "^<(?<priority>\\d+)>(?<version>\\d{1,3})\\s*(?<date>[0-9:+-TZ]+)\\s*(?<host>\\S+)\\s*(?<appname>\\S+)\\s*(?<procid>\\S+)\\s*(?<msgid>\\S+)\\s*(?<structureddata>(-|\\[.+\\]))\\s*(?<message>.+)$";
   private final ThreadLocal<Matcher> matcherThreadLocal;
@@ -32,13 +32,13 @@ public class RFC5424MessageParser extends MessageParser {
   }
 
   @Override
-  public boolean parse(SyslogRequest request, List<Object> output) {
+  public StructuredSyslogMessage parse(SyslogRequest request) {
     log.trace("parse() - request = '{}'", request);
     final Matcher matcher = matcherThreadLocal.get().reset(request.rawMessage());
 
     if (!matcher.find()) {
       log.trace("parse() - Could not match message. request = '{}'", request);
-      return false;
+      return null;
     }
 
     log.trace("parse() - Successfully matched message");
@@ -63,23 +63,19 @@ public class RFC5424MessageParser extends MessageParser {
 
     final List<RFC5424Message.StructuredData> structuredData = parseStructuredData(groupStructuredData);
 
-    output.add(
-        ImmutableStructuredSyslogMessage.builder()
-            .rawMessage(request.rawMessage())
-            .remoteAddress(request.remoteAddress())
-            .date(date)
-            .host(groupHost)
-            .level(level)
-            .facility(facility)
-            .message(groupMessage)
-            .version(version)
-            .processId(procID)
-            .messageId(messageID)
-            .structuredData(structuredData)
-            .appName(appName)
-            .build()
-    );
-
-    return true;
+    return ImmutableStructuredSyslogMessage.builder()
+        .rawMessage(request.rawMessage())
+        .remoteAddress(request.remoteAddress())
+        .date(date)
+        .host(groupHost)
+        .level(level)
+        .facility(facility)
+        .message(groupMessage)
+        .version(version)
+        .processId(procID)
+        .messageId(messageID)
+        .structuredData(structuredData)
+        .appName(appName)
+        .build();
   }
 }

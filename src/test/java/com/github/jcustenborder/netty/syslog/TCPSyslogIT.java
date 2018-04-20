@@ -44,7 +44,7 @@ public class TCPSyslogIT extends SyslogIT {
   }
 
   @Override
-  protected ChannelFuture setupServer(EventLoopGroup bossGroup, EventLoopGroup workerGroup, SyslogMessageHandler handler) throws InterruptedException {
+  protected ChannelFuture setupServer(EventLoopGroup bossGroup, EventLoopGroup workerGroup, TestSyslogMessageHandler handler) throws InterruptedException {
     ServerBootstrap b = new ServerBootstrap(); // (2)
     b.group(bossGroup, workerGroup)
         .channel(NioServerSocketChannel.class) // (3)
@@ -55,7 +55,7 @@ public class TCPSyslogIT extends SyslogIT {
                 new LoggingHandler("Syslog", LogLevel.INFO),
                 new DelimiterBasedFrameDecoder(2000, true, Delimiters.lineDelimiter()),
                 new TCPSyslogMessageDecoder(),
-                new SyslogMessageDecoder(),
+                new SyslogMessageHandler(),
                 handler
             );
           }

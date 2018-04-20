@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,10 +19,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.OffsetDateTime;
-import java.util.List;
 import java.util.regex.Matcher;
 
-public class RFC3164MessageParser extends MessageParser {
+public class RFC3164MessageParser extends MessageParser<BSDSyslogMessage> {
   private static final Logger log = LoggerFactory.getLogger(RFC3164MessageParser.class);
   private static final String PATTERN = "^(<(?<priority>\\d+)>)?(?<date>([a-zA-Z]{3}\\s+\\d+\\s+\\d+:\\d+:\\d+)|([0-9T:.Z-]+))\\s+(?<host>\\S+)\\s+((?<tag>[^\\[\\s\\]]+)(\\[(?<procid>\\d+)\\])?:)*\\s*(?<message>.+)$";
   private final ThreadLocal<Matcher> matcherThreadLocal;
@@ -32,13 +31,13 @@ public class RFC3164MessageParser extends MessageParser {
   }
 
   @Override
-  public boolean parse(SyslogRequest request, List<Object> output) {
+  public BSDSyslogMessage parse(SyslogRequest request) {
     log.trace("parse() - request = '{}'", request);
     final Matcher matcher = matcherThreadLocal.get().reset(request.rawMessage());
 
     if (!matcher.find()) {
       log.trace("parse() - Could not match message. request = '{}'", request);
-      return false;
+      return null;
     }
 
     log.trace("parse() - Parsed message as RFC 3164");
@@ -55,20 +54,17 @@ public class RFC3164MessageParser extends MessageParser {
     final OffsetDateTime date = parseDate(groupDate);
 
 
-    output.add(
-        ImmutableBSDSyslogMessage.builder()
-            .rawMessage(request.rawMessage())
-            .remoteAddress(request.remoteAddress())
-            .date(date)
-            .host(groupHost)
-            .level(level)
-            .facility(facility)
-            .message(groupMessage)
-            .tag(groupTag)
-            .processId(processId)
-            .build()
-    );
+    return ImmutableBSDSyslogMessage.builder()
+        .rawMessage(request.rawMessage())
+        .remoteAddress(request.remoteAddress())
+        .date(date)
+        .host(groupHost)
+        .level(level)
+        .facility(facility)
+        .message(groupMessage)
+        .tag(groupTag)
+        .processId(processId)
+        .build();
 
-    return true;
   }
 }
