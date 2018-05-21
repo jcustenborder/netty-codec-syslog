@@ -1,17 +1,16 @@
 {
   "input" : "<86>1 2018-02-01T20:28:36.838555+00:00 miner-01 sudo - - -  pam_unix(sudo:session): session closed for user root",
   "expected" : {
-    "messageId" : null,
-    "processId" : null,
-    "appName" : "sudo",
-    "structuredData" : [ ],
-    "date" : 1517516916.838555000,
+    "date" : "2018-02-01T20:28:36.838555",
     "remoteAddress" : "localhost",
     "rawMessage" : "<86>1 2018-02-01T20:28:36.838555+00:00 miner-01 sudo - - -  pam_unix(sudo:session): session closed for user root",
+    "type" : "RFC5424",
     "level" : 6,
     "version" : 1,
     "facility" : 10,
     "host" : "miner-01",
-    "message" : "pam_unix(sudo:session): session closed for user root"
+    "message" : "pam_unix(sudo:session): session closed for user root",
+    "appName" : "sudo",
+    "structuredData" : [ ]
   }
 }

@@ -1,15 +1,13 @@
 {
   "input" : "Mar 7 04:22:00 avas CROND[11460]: (cronjob) CMD (run-parts /etc/cron.weekly)",
   "expected" : {
-    "tag" : "CROND",
-    "processId" : "11460",
-    "date" : 1520396520.000000000,
+    "date" : "2018-03-07T04:22:00",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 7 04:22:00 avas CROND[11460]: (cronjob) CMD (run-parts /etc/cron.weekly)",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas",
-    "message" : "(cronjob) CMD (run-parts /etc/cron.weekly)"
+    "message" : "(cronjob) CMD (run-parts /etc/cron.weekly)",
+    "processId" : "11460",
+    "tag" : "CROND"
   }
 }

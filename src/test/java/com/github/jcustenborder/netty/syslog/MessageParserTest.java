@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,12 +26,14 @@ import java.net.InetAddress;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public abstract class MessageParserTest<M extends Message, P extends MessageParser<M>, T extends TestCase<M>> {
+public abstract class MessageParserTest<P extends MessageParser> {
   private static final Logger log = LoggerFactory.getLogger(MessageParserTest.class);
 
   protected P parser;
@@ -41,25 +43,45 @@ public abstract class MessageParserTest<M extends Message, P extends MessagePars
     this.parser = createParser();
   }
 
-  protected abstract void assertMessage(M expected, M actual);
+  void assertMessage(Message expected, Message actual) {
+    if (null != expected) {
+      assertNotNull(actual, "actual should not be null.");
+    } else {
+      assertNull(actual, "actual should be null.");
+      return;
+    }
+
+    assertEquals(expected.facility(), actual.facility(), "facility should match.");
+    assertEquals(expected.level(), actual.level(), "level should match.");
+    assertEquals(expected.remoteAddress(), actual.remoteAddress(), "remoteAddress should match.");
+    assertEquals(expected.date(), actual.date(), "date should match.");
+    assertEquals(expected.rawMessage(), actual.rawMessage(), "rawMessage should match.");
+
+    assertEquals(expected.deviceEventClassId(), actual.deviceEventClassId(), "deviceEventClassId does not match.");
+    assertEquals(expected.deviceProduct(), actual.deviceProduct(), "deviceProduct does not match.");
+    assertEquals(expected.deviceVendor(), actual.deviceVendor(), "deviceVendor does not match.");
+    assertEquals(expected.deviceVersion(), actual.deviceVersion(), "deviceVersion does not match.");
+    assertEquals(expected.name(), actual.name(), "name does not match.");
+    assertEquals(expected.severity(), actual.severity(), "severity does not match.");
+    assertEquals(expected.extension(), actual.extension(), "extension does not match.");
+  }
 
   protected abstract P createParser();
 
-  protected abstract Class<T> testCaseClass();
-
   protected abstract File testsPath();
+
 
   @TestFactory
   public Stream<DynamicTest> parse() {
     final File testsPath = testsPath();
-    final Class<T> testCaseClass = testCaseClass();
 
     return Arrays.stream(testsPath.listFiles(p -> p.getName().endsWith(".json"))).map(file -> dynamicTest(file.getName(), () -> {
-      final T testCase = ObjectMapperFactory.INSTANCE.readValue(file, testCaseClass);
+      final TestCase testCase = ObjectMapperFactory.INSTANCE.readValue(file, TestCase.class);
       SyslogRequest request = mock(SyslogRequest.class);
       when(request.rawMessage()).thenReturn(testCase.input);
       when(request.remoteAddress()).thenReturn(InetAddress.getLoopbackAddress());
-      M actual = this.parser.parse(request);
+      Message actual = this.parser.parse(request);
+      ObjectMapperFactory.INSTANCE.writeValue(file, testCase);
       assertNotNull(actual, "actual should not be null.");
       assertMessage(testCase.expected, actual);
     }));

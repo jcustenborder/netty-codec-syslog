@@ -1,15 +1,13 @@
 {
   "input" : "Mar 8 03:48:05 avas dbclean[13362]: 1.2.32 cleaning dcc_db",
   "expected" : {
-    "tag" : "dbclean",
-    "processId" : "13362",
-    "date" : 1520480885.000000000,
+    "date" : "2018-03-08T03:48:05",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 8 03:48:05 avas dbclean[13362]: 1.2.32 cleaning dcc_db",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas",
-    "message" : "1.2.32 cleaning dcc_db"
+    "message" : "1.2.32 cleaning dcc_db",
+    "processId" : "13362",
+    "tag" : "dbclean"
   }
 }

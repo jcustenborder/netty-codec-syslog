@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class MessageParser<M extends Message> {
+public abstract class MessageParser {
   private static final Logger log = LoggerFactory.getLogger(MessageParser.class);
   private static final String NULL_TOKEN = "-";
   protected final List<DateTimeFormatter> dateFormats;
@@ -71,7 +71,7 @@ public abstract class MessageParser<M extends Message> {
    * @param request Incoming syslog request.
    * @return Object to pass along the pipeline. Null if could not be parsed.
    */
-  public abstract M parse(SyslogRequest request);
+  public abstract Message parse(SyslogRequest request);
 
   protected final ThreadLocal<Matcher> initMatcher(String pattern) {
     return initMatcher(pattern, 0);
@@ -86,9 +86,9 @@ public abstract class MessageParser<M extends Message> {
     return NULL_TOKEN.equals(groupText) ? null : groupText;
   }
 
-  protected OffsetDateTime parseDate(String date) {
+  protected LocalDateTime parseDate(String date) {
     final String cleanDate = date.replaceAll("\\s+", " ");
-    OffsetDateTime result = null;
+    LocalDateTime result = null;
 
     for (DateTimeFormatter formatter : this.dateFormats) {
       try {
@@ -99,9 +99,9 @@ public abstract class MessageParser<M extends Message> {
         );
 
         if (temporal instanceof LocalDateTime) {
-          result = ((LocalDateTime) temporal).atOffset(ZoneOffset.UTC);
+          result = ((LocalDateTime) temporal);
         } else {
-          result = ((OffsetDateTime) temporal).withOffsetSameInstant(ZoneOffset.UTC);
+          result = ((OffsetDateTime) temporal).withOffsetSameInstant(ZoneOffset.UTC).toLocalDateTime();
         }
         /*
         The parser will output dates that do not have a year. If this happens we default the year
@@ -123,10 +123,10 @@ public abstract class MessageParser<M extends Message> {
     return result;
   }
 
-  protected List<RFC5424Message.StructuredData> parseStructuredData(String structuredData) {
+  protected List<Message.StructuredData> parseStructuredData(String structuredData) {
     log.trace("parseStructuredData() - structuredData = '{}'", structuredData);
     final Matcher matcher = matcherStructuredData.get().reset(structuredData);
-    final List<RFC5424Message.StructuredData> result = new ArrayList<>();
+    final List<Message.StructuredData> result = new ArrayList<>();
     while (matcher.find()) {
       final String input = matcher.group(1);
       log.trace("parseStructuredData() - input = '{}'", input);

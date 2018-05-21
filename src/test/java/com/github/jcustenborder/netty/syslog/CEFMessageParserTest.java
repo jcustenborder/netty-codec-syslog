@@ -19,27 +19,11 @@ import java.io.File;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CEFMessageParserTest extends MessageParserTest<CEFSyslogMessage, CEFMessageParser, CEFTestCase> {
-  @Override
-  protected void assertMessage(CEFSyslogMessage expected, CEFSyslogMessage actual) {
-    MessageAssertions.assertMessage(expected, actual);
-    assertEquals(expected.deviceEventClassId(), actual.deviceEventClassId(), "deviceEventClassId does not match.");
-    assertEquals(expected.deviceProduct(), actual.deviceProduct(), "deviceProduct does not match.");
-    assertEquals(expected.deviceVendor(), actual.deviceVendor(), "deviceVendor does not match.");
-    assertEquals(expected.deviceVersion(), actual.deviceVersion(), "deviceVersion does not match.");
-    assertEquals(expected.name(), actual.name(), "name does not match.");
-    assertEquals(expected.severity(), actual.severity(), "severity does not match.");
-    assertEquals(expected.extension(), actual.extension(), "extension does not match.");
-  }
+public class CEFMessageParserTest extends MessageParserTest<CEFMessageParser> {
 
   @Override
   protected CEFMessageParser createParser() {
     return new CEFMessageParser();
-  }
-
-  @Override
-  protected Class<CEFTestCase> testCaseClass() {
-    return CEFTestCase.class;
   }
 
   @Override

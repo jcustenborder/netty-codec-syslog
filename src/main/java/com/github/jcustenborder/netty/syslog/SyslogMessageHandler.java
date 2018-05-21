@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -21,8 +21,7 @@ import io.netty.channel.SimpleChannelInboundHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.time.Instant;
-import java.time.ZoneOffset;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -48,27 +47,25 @@ public class SyslogMessageHandler extends SimpleChannelInboundHandler<SyslogRequ
   @Override
   protected void channelRead0(ChannelHandlerContext context, SyslogRequest request) throws Exception {
     log.trace("channelRead0() - request = '{}'", request);
-    context.executor().execute(new Runnable() {
-      @Override
-      public void run() {
-        for (MessageParser parser : parsers) {
-          Object result = parser.parse(request);
+    context.executor().submit(() -> {
+      for (MessageParser parser : parsers) {
+        Object result = parser.parse(request);
 
-          if (null != result) {
-            log.trace("channelRead0() - add result = '{}'", result);
-            context.fireChannelRead(result);
-            return;
-          }
+        if (null != result) {
+          log.trace("channelRead0() - add result = '{}'", result);
+          context.fireChannelRead(result);
+          return;
         }
-
-        log.warn("decode() - Could not parse message. request = '{}'", request);
-        UnparseableMessage unparseableMessage = ImmutableUnparseableMessage.builder()
-            .date(Instant.now().atOffset(ZoneOffset.UTC))
-            .rawMessage(request.rawMessage())
-            .remoteAddress(request.remoteAddress())
-            .build();
-        context.write(unparseableMessage);
       }
+
+      log.warn("decode() - Could not parse message. request = '{}'", request);
+      Message unparseableMessage = ImmutableMessage.builder()
+          .type(MessageType.UNKNOWN)
+          .date(LocalDateTime.now())
+          .rawMessage(request.rawMessage())
+          .remoteAddress(request.remoteAddress())
+          .build();
+      context.write(unparseableMessage);
     });
   }
 }

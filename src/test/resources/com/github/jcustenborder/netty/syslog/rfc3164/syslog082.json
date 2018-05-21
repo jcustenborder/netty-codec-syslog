@@ -1,15 +1,13 @@
 {
   "input" : "Mar 1 00:01:49 avas postfix/smtpd[2314]: disconnect from unknown[218.149.178.173]",
   "expected" : {
-    "tag" : "postfix/smtpd",
-    "processId" : "2314",
-    "date" : 1519862509.000000000,
+    "date" : "2018-03-01T00:01:49",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 1 00:01:49 avas postfix/smtpd[2314]: disconnect from unknown[218.149.178.173]",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas",
-    "message" : "disconnect from unknown[218.149.178.173]"
+    "message" : "disconnect from unknown[218.149.178.173]",
+    "processId" : "2314",
+    "tag" : "postfix/smtpd"
   }
 }

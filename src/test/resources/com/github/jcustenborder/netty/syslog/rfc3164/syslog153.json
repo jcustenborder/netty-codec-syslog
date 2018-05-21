@@ -1,15 +1,13 @@
 {
   "input" : "Mar 7 04:30:00 avas CROND[19684]: (cronjob) CMD (/usr/lib/sa/sa1 1 1)",
   "expected" : {
-    "tag" : "CROND",
-    "processId" : "19684",
-    "date" : 1520397000.000000000,
+    "date" : "2018-03-07T04:30:00",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 7 04:30:00 avas CROND[19684]: (cronjob) CMD (/usr/lib/sa/sa1 1 1)",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas",
-    "message" : "(cronjob) CMD (/usr/lib/sa/sa1 1 1)"
+    "message" : "(cronjob) CMD (/usr/lib/sa/sa1 1 1)",
+    "processId" : "19684",
+    "tag" : "CROND"
   }
 }

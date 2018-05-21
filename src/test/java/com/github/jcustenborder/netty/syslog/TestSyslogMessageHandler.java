@@ -21,11 +21,11 @@ import io.netty.channel.SimpleChannelInboundHandler;
 import java.util.ArrayList;
 import java.util.List;
 
-class TestSyslogMessageHandler extends SimpleChannelInboundHandler<RFC3164Message> {
-  List<RFC3164Message> messages = new ArrayList<>(1024);
+class TestSyslogMessageHandler extends SimpleChannelInboundHandler<Message> {
+  List<Message> messages = new ArrayList<>(1024);
 
   @Override
-  protected void channelRead0(ChannelHandlerContext channelHandlerContext, RFC3164Message message) throws Exception {
+  protected void channelRead0(ChannelHandlerContext channelHandlerContext, Message message) throws Exception {
     messages.add(message);
   }
 }

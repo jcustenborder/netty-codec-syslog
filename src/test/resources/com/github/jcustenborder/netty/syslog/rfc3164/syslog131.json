@@ -1,15 +1,13 @@
 {
   "input" : "Feb 2 09:00:41 avas.example.com amavisd[11602]: (11602-01) Passed,  -> , Message-ID: <970613513.1075739667242.JavaMail.ebayapp@sj-v3offer22>, Hits: 2.172",
   "expected" : {
-    "tag" : "amavisd",
-    "processId" : "11602",
-    "date" : 1517562041.000000000,
+    "date" : "2018-02-02T09:00:41",
     "remoteAddress" : "localhost",
     "rawMessage" : "Feb 2 09:00:41 avas.example.com amavisd[11602]: (11602-01) Passed,  -> , Message-ID: <970613513.1075739667242.JavaMail.ebayapp@sj-v3offer22>, Hits: 2.172",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas.example.com",
-    "message" : "(11602-01) Passed,  -> , Message-ID: <970613513.1075739667242.JavaMail.ebayapp@sj-v3offer22>, Hits: 2.172"
+    "message" : "(11602-01) Passed,  -> , Message-ID: <970613513.1075739667242.JavaMail.ebayapp@sj-v3offer22>, Hits: 2.172",
+    "processId" : "11602",
+    "tag" : "amavisd"
   }
 }

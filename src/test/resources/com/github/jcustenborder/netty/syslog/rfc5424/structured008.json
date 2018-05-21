@@ -1,17 +1,16 @@
 {
   "input" : "<44>1 2018-02-01T20:28:36.837726+00:00 miner-01 rsyslogd-2007 - - - action 'action 10' suspended, next retry is Thu Feb  1 20:29:06 2018 [v8.16.0 try http://www.rsyslog.com/e/2007 ]",
   "expected" : {
-    "messageId" : null,
-    "processId" : null,
-    "appName" : "rsyslogd-2007",
-    "structuredData" : [ ],
-    "date" : 1517516916.837726000,
+    "date" : "2018-02-01T20:28:36.837726",
     "remoteAddress" : "localhost",
     "rawMessage" : "<44>1 2018-02-01T20:28:36.837726+00:00 miner-01 rsyslogd-2007 - - - action 'action 10' suspended, next retry is Thu Feb  1 20:29:06 2018 [v8.16.0 try http://www.rsyslog.com/e/2007 ]",
+    "type" : "RFC5424",
     "level" : 4,
     "version" : 1,
     "facility" : 5,
     "host" : "miner-01",
-    "message" : "action 'action 10' suspended, next retry is Thu Feb  1 20:29:06 2018 [v8.16.0 try http://www.rsyslog.com/e/2007 ]"
+    "message" : "action 'action 10' suspended, next retry is Thu Feb  1 20:29:06 2018 [v8.16.0 try http://www.rsyslog.com/e/2007 ]",
+    "appName" : "rsyslogd-2007",
+    "structuredData" : [ ]
   }
 }

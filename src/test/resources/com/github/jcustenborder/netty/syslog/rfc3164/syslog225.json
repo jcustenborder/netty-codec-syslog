@@ -1,15 +1,13 @@
 {
   "input" : "Mar 8 03:51:27 avas dbclean[13362]: hashed 8238442 records containing 17108406 checksums, compressed 1272157 records",
   "expected" : {
-    "tag" : "dbclean",
-    "processId" : "13362",
-    "date" : 1520481087.000000000,
+    "date" : "2018-03-08T03:51:27",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 8 03:51:27 avas dbclean[13362]: hashed 8238442 records containing 17108406 checksums, compressed 1272157 records",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas",
-    "message" : "hashed 8238442 records containing 17108406 checksums, compressed 1272157 records"
+    "message" : "hashed 8238442 records containing 17108406 checksums, compressed 1272157 records",
+    "processId" : "13362",
+    "tag" : "dbclean"
   }
 }

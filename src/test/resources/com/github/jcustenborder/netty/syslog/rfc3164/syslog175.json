@@ -1,15 +1,13 @@
 {
   "input" : "Mar 7 05:00:00 avas CROND[20094]: (cronjob) CMD (/sbin/uv.sh)",
   "expected" : {
-    "tag" : "CROND",
-    "processId" : "20094",
-    "date" : 1520398800.000000000,
+    "date" : "2018-03-07T05:00:00",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 7 05:00:00 avas CROND[20094]: (cronjob) CMD (/sbin/uv.sh)",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas",
-    "message" : "(cronjob) CMD (/sbin/uv.sh)"
+    "message" : "(cronjob) CMD (/sbin/uv.sh)",
+    "processId" : "20094",
+    "tag" : "CROND"
   }
 }

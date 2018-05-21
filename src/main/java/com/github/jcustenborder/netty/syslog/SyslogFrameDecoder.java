@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,11 +22,11 @@ import io.netty.util.ByteProcessor;
 import io.netty.util.CharsetUtil;
 
 public class SyslogFrameDecoder extends LineBasedFrameDecoder {
+  final static ByteProcessor INTEGER = b -> b >= ((byte) 48) && b <= ((byte) 57);
+
   public SyslogFrameDecoder(int maxLength) {
     super(maxLength, true, false);
   }
-
-  final static ByteProcessor INTEGER = b -> b >= ((byte) 48) && b <= ((byte) 57);
 
   @Override
   protected Object decode(ChannelHandlerContext ctx, ByteBuf b) throws Exception {

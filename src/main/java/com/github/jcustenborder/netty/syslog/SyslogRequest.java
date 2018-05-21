@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,16 +15,18 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
 
 import java.net.InetAddress;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * Interface represents an incoming syslog request. This interface acts as an intermediary between
  * the TCPSyslogMessageDecoder and UDPSyslogMessageDecoder
+ *
  * @see TCPSyslogMessageDecoder
  * @see UDPSyslogMessageDecoder
  */
@@ -35,19 +37,25 @@ import java.util.Date;
 public interface SyslogRequest {
   /**
    * The time the message was received by Netty.
+   *
    * @return The time the message was received by Netty.
    */
-  Date receivedDate();
+  @JsonProperty(required = true)
+  LocalDateTime receivedDate();
 
   /**
    * IP Address for the sender of the message.
+   *
    * @return Sender IP Address
    */
+  @JsonProperty(required = true)
   InetAddress remoteAddress();
 
   /**
    * The raw message that was delivered
+   *
    * @return Raw message.
    */
+  @JsonProperty(required = true)
   String rawMessage();
 }

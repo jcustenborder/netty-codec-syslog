@@ -18,7 +18,7 @@ package com.github.jcustenborder.netty.syslog;
 import org.junit.jupiter.api.BeforeEach;
 
 public class DateTimeFormatterTest {
-  public static class Dummy extends MessageParser<Message> {
+  public static class Dummy extends MessageParser {
 
     @Override
     public Message parse(SyslogRequest request) {

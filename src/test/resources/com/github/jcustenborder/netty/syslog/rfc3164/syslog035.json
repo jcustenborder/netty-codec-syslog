@@ -1,15 +1,13 @@
 {
   "input" : "Mar 1 00:00:03 avas postfix/smtpd[1822]: 4EC6561A83: reject: RCPT from unknown[62.113.122.52]: 450 : Sender address rejected: Domain not found; from= to= proto=ESMTP helo=",
   "expected" : {
-    "tag" : "postfix/smtpd",
-    "processId" : "1822",
-    "date" : 1519862403.000000000,
+    "date" : "2018-03-01T00:00:03",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 1 00:00:03 avas postfix/smtpd[1822]: 4EC6561A83: reject: RCPT from unknown[62.113.122.52]: 450 : Sender address rejected: Domain not found; from= to= proto=ESMTP helo=",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas",
-    "message" : "4EC6561A83: reject: RCPT from unknown[62.113.122.52]: 450 : Sender address rejected: Domain not found; from= to= proto=ESMTP helo="
+    "message" : "4EC6561A83: reject: RCPT from unknown[62.113.122.52]: 450 : Sender address rejected: Domain not found; from= to= proto=ESMTP helo=",
+    "processId" : "1822",
+    "tag" : "postfix/smtpd"
   }
 }

@@ -1,15 +1,12 @@
 {
   "input" : "Oct 12 14:58:35 example_host BG: 1234:01:01:site=support.example.com;who=John Smith(jsmith);who_ip=192.168.1.1; event=login;target=web/login;status=success",
   "expected" : {
-    "tag" : "BG",
-    "processId" : null,
-    "date" : 1539356315.000000000,
+    "date" : "2018-10-12T14:58:35",
     "remoteAddress" : "localhost",
     "rawMessage" : "Oct 12 14:58:35 example_host BG: 1234:01:01:site=support.example.com;who=John Smith(jsmith);who_ip=192.168.1.1; event=login;target=web/login;status=success",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "example_host",
-    "message" : "1234:01:01:site=support.example.com;who=John Smith(jsmith);who_ip=192.168.1.1; event=login;target=web/login;status=success"
+    "message" : "1234:01:01:site=support.example.com;who=John Smith(jsmith);who_ip=192.168.1.1; event=login;target=web/login;status=success",
+    "tag" : "BG"
   }
 }

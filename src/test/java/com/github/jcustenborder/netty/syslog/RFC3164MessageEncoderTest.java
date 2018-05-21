@@ -43,42 +43,9 @@ import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class RFC3164MessageEncoderTest {
-
-  RFC3164MessageEncoder encoder;
-
-  @BeforeEach
-  public void setup() {
-    this.encoder = new RFC3164MessageEncoder();
+public class RFC3164MessageEncoderTest extends MessageEncoderTest {
+  @Override
+  protected File testsPath() {
+    return new File("src/test/resources/com/github/jcustenborder/netty/syslog/rfc3164");
   }
-
-  @TestFactory
-  public Stream<DynamicTest> encode() {
-    final File testsPath = new File("src/test/resources/com/github/jcustenborder/netty/syslog/rfc3164");
-    return Arrays.stream(testsPath.listFiles()).map(file -> dynamicTest(file.getName(), () -> {
-      final RFC3164TestCase testCase = ObjectMapperFactory.INSTANCE.readValue(file, RFC3164TestCase.class);
-      ChannelHandlerContext context = mock(ChannelHandlerContext.class);
-      when(context.alloc()).thenReturn(ByteBufAllocator.DEFAULT);
-      List<Object> output = new ArrayList<>();
-
-      this.encoder.encode(context, testCase.expected, output);
-
-      assertFalse(output.isEmpty());
-      ByteBuf actual = (ByteBuf) output.get(0);
-      assertNotNull(actual, "actual should not be null.");
-      String a = actual.toString(Charset.forName("UTF-8")).replaceAll("\\s+", " ");
-      assertEquals(testCase.input.replaceAll("\\s+", " "), a);
-    }));
-  }
-
-  @Test
-  public void foo() throws IOException {
-    final OffsetDateTime expected = Instant.now().atOffset(ZoneOffset.UTC);
-    String output = ObjectMapperFactory.INSTANCE.writeValueAsString(Instant.now().atOffset(ZoneOffset.UTC));
-    final OffsetDateTime actual = ObjectMapperFactory.INSTANCE.readValue(output, OffsetDateTime.class);
-    System.out.println(output);
-    assertEquals(expected, actual);
-
-  }
-
 }

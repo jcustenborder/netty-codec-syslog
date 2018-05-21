@@ -1,15 +1,13 @@
 {
   "input" : "Mar 12 12:00:08 server2 rcd[308]: id=304 COMPLETE 'Downloading https://server2/data/red-carpet.rdf' time=0s (failed)",
   "expected" : {
-    "tag" : "rcd",
-    "processId" : "308",
-    "date" : 1520856008.000000000,
+    "date" : "2018-03-12T12:00:08",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 12 12:00:08 server2 rcd[308]: id=304 COMPLETE 'Downloading https://server2/data/red-carpet.rdf' time=0s (failed)",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "server2",
-    "message" : "id=304 COMPLETE 'Downloading https://server2/data/red-carpet.rdf' time=0s (failed)"
+    "message" : "id=304 COMPLETE 'Downloading https://server2/data/red-carpet.rdf' time=0s (failed)",
+    "processId" : "308",
+    "tag" : "rcd"
   }
 }

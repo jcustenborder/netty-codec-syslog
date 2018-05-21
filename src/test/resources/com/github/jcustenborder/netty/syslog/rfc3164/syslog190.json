@@ -1,15 +1,13 @@
 {
   "input" : "Mar 6 19:01:42 avas dccd[13284]: no outgoing flood connection to dcc1.example.no, server-ID XXXX",
   "expected" : {
-    "tag" : "dccd",
-    "processId" : "13284",
-    "date" : 1520362902.000000000,
+    "date" : "2018-03-06T19:01:42",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 6 19:01:42 avas dccd[13284]: no outgoing flood connection to dcc1.example.no, server-ID XXXX",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas",
-    "message" : "no outgoing flood connection to dcc1.example.no, server-ID XXXX"
+    "message" : "no outgoing flood connection to dcc1.example.no, server-ID XXXX",
+    "processId" : "13284",
+    "tag" : "dccd"
   }
 }

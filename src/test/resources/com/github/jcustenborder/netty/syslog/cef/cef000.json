@@ -1,6 +1,12 @@
 {
   "input" : "Sep   19  08:26:10 host CEF:0|Security|threatmanager|1.0|100|worm successfully stopped|10|src=10.0.0.1 dst=2.1.2.2 spt=1232",
   "expected" : {
+    "date" : "2018-09-19T08:26:10",
+    "remoteAddress" : "localhost",
+    "rawMessage" : "Sep   19  08:26:10 host CEF:0|Security|threatmanager|1.0|100|worm successfully stopped|10|src=10.0.0.1 dst=2.1.2.2 spt=1232",
+    "type" : "CEF",
+    "version" : 0,
+    "host" : "host",
     "deviceVendor" : "Security",
     "deviceProduct" : "threatmanager",
     "deviceVersion" : "1.0",
@@ -11,14 +17,6 @@
       "src" : "10.0.0.1",
       "dst" : "2.1.2.2",
       "spt" : "1232"
-    },
-    "date" : 1537345570.000000000,
-    "remoteAddress" : "localhost",
-    "rawMessage" : "Sep   19  08:26:10 host CEF:0|Security|threatmanager|1.0|100|worm successfully stopped|10|src=10.0.0.1 dst=2.1.2.2 spt=1232",
-    "level" : null,
-    "version" : 0,
-    "facility" : null,
-    "host" : "host",
-    "message" : null
+    }
   }
 }

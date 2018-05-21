@@ -24,6 +24,7 @@ import org.junit.jupiter.api.TestFactory;
 
 import java.io.File;
 import java.nio.charset.Charset;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -36,33 +37,22 @@ import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class CEFMessageEncoderTest {
+public class CEFMessageEncoderTest extends MessageEncoderTest {
 
-  CEFMessageEncoder encoder;
 
-  @BeforeEach
-  public void setup() {
-    this.encoder = new CEFMessageEncoder();
+  @Override
+  protected File testsPath() {
+    return new File("src/test/resources/com/github/jcustenborder/netty/syslog/cef");
   }
 
-  @TestFactory
-  public Stream<DynamicTest> encode() {
-    final File testsPath = new File("src/test/resources/com/github/jcustenborder/netty/syslog/cef");
-    return Arrays.stream(testsPath.listFiles()).map(file -> dynamicTest(file.getName(), () -> {
-      final CEFTestCase testCase = ObjectMapperFactory.INSTANCE.readValue(file, CEFTestCase.class);
-      ChannelHandlerContext context = mock(ChannelHandlerContext.class);
-      when(context.alloc()).thenReturn(ByteBufAllocator.DEFAULT);
-      List<Object> output = new ArrayList<>();
+  //
+//  CEFMessageEncoder encoder;
+//
+//  @BeforeEach
+//  public void setup() {
+//    this.encoder = new CEFMessageEncoder();
+//  }
+//
 
-      this.encoder.encode(context, testCase.expected, output);
-
-      assertFalse(output.isEmpty());
-      ByteBuf actual = (ByteBuf) output.get(0);
-      assertNotNull(actual, "actual should not be null.");
-      String a = actual.toString(Charset.forName("UTF-8")).replaceAll("\\s+", " ");
-      assertEquals(testCase.input.replaceAll("\\s+", " "), a);
-
-    }));
-  }
 
 }

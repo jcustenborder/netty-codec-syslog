@@ -1,15 +1,13 @@
 {
   "input" : "Mar 8 02:50:26 avas dccifd[12385]: write(MTA socket,4): Broken pipe",
   "expected" : {
-    "tag" : "dccifd",
-    "processId" : "12385",
-    "date" : 1520477426.000000000,
+    "date" : "2018-03-08T02:50:26",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 8 02:50:26 avas dccifd[12385]: write(MTA socket,4): Broken pipe",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas",
-    "message" : "write(MTA socket,4): Broken pipe"
+    "message" : "write(MTA socket,4): Broken pipe",
+    "processId" : "12385",
+    "tag" : "dccifd"
   }
 }

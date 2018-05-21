@@ -1,17 +1,16 @@
 {
   "input" : "<43>1 2018-02-01T20:28:36.837700+00:00 miner-01 rsyslogd-2039 - - - Could not open output pipe '/dev/xconsole':: No such file or directory [v8.16.0 try http://www.rsyslog.com/e/2039 ]",
   "expected" : {
-    "messageId" : null,
-    "processId" : null,
-    "appName" : "rsyslogd-2039",
-    "structuredData" : [ ],
-    "date" : 1517516916.837700000,
+    "date" : "2018-02-01T20:28:36.8377",
     "remoteAddress" : "localhost",
     "rawMessage" : "<43>1 2018-02-01T20:28:36.837700+00:00 miner-01 rsyslogd-2039 - - - Could not open output pipe '/dev/xconsole':: No such file or directory [v8.16.0 try http://www.rsyslog.com/e/2039 ]",
+    "type" : "RFC5424",
     "level" : 3,
     "version" : 1,
     "facility" : 5,
     "host" : "miner-01",
-    "message" : "Could not open output pipe '/dev/xconsole':: No such file or directory [v8.16.0 try http://www.rsyslog.com/e/2039 ]"
+    "message" : "Could not open output pipe '/dev/xconsole':: No such file or directory [v8.16.0 try http://www.rsyslog.com/e/2039 ]",
+    "appName" : "rsyslogd-2039",
+    "structuredData" : [ ]
   }
 }

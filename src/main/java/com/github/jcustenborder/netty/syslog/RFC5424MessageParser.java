@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,11 +18,11 @@ package com.github.jcustenborder.netty.syslog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.regex.Matcher;
 
-public class RFC5424MessageParser extends MessageParser<StructuredSyslogMessage> {
+public class RFC5424MessageParser extends MessageParser {
   private static final Logger log = LoggerFactory.getLogger(RFC5424MessageParser.class);
   private static final String PATTERN = "^<(?<priority>\\d+)>(?<version>\\d{1,3})\\s*(?<date>[0-9:+-TZ]+)\\s*(?<host>\\S+)\\s*(?<appname>\\S+)\\s*(?<procid>\\S+)\\s*(?<msgid>\\S+)\\s*(?<structureddata>(-|\\[.+\\]))\\s*(?<message>.+)$";
   private final ThreadLocal<Matcher> matcherThreadLocal;
@@ -32,7 +32,7 @@ public class RFC5424MessageParser extends MessageParser<StructuredSyslogMessage>
   }
 
   @Override
-  public StructuredSyslogMessage parse(SyslogRequest request) {
+  public Message parse(SyslogRequest request) {
     log.trace("parse() - request = '{}'", request);
     final Matcher matcher = matcherThreadLocal.get().reset(request.rawMessage());
 
@@ -54,16 +54,17 @@ public class RFC5424MessageParser extends MessageParser<StructuredSyslogMessage>
 
     final int priority = Integer.parseInt(groupPriority);
     final int facility = Priority.facility(priority);
-    final OffsetDateTime date = parseDate(groupDate);
+    final LocalDateTime date = parseDate(groupDate);
     final int level = Priority.level(priority, facility);
     final Integer version = Integer.parseInt(groupVersion);
     final String appName = nullableString(groupAppName);
     final String procID = nullableString(groupProcID);
     final String messageID = nullableString(groupMessageID);
 
-    final List<RFC5424Message.StructuredData> structuredData = parseStructuredData(groupStructuredData);
+    final List<Message.StructuredData> structuredData = parseStructuredData(groupStructuredData);
 
-    return ImmutableStructuredSyslogMessage.builder()
+    return ImmutableMessage.builder()
+        .type(MessageType.RFC5424)
         .rawMessage(request.rawMessage())
         .remoteAddress(request.remoteAddress())
         .date(date)

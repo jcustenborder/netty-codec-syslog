@@ -20,22 +20,13 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 
-public class RFC3164MessageParserTest extends MessageParserTest<BSDSyslogMessage, RFC3164MessageParser, RFC3164TestCase> {
+public class RFC3164MessageParserTest extends MessageParserTest<RFC3164MessageParser> {
   private static final Logger log = LoggerFactory.getLogger(RFC3164MessageParserTest.class);
 
-  @Override
-  protected void assertMessage(BSDSyslogMessage expected, BSDSyslogMessage actual) {
-    MessageAssertions.assertMessage(expected, actual);
-  }
 
   @Override
   protected RFC3164MessageParser createParser() {
     return new RFC3164MessageParser();
-  }
-
-  @Override
-  protected Class<RFC3164TestCase> testCaseClass() {
-    return RFC3164TestCase.class;
   }
 
   @Override

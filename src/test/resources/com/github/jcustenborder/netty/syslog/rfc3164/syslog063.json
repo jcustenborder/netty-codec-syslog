@@ -1,15 +1,13 @@
 {
   "input" : "Mar 1 00:01:13 avas postfix/smtpd[2411]: warning: 208.37.192.234: address not listed for hostname mail.globrite.com",
   "expected" : {
-    "tag" : "postfix/smtpd",
-    "processId" : "2411",
-    "date" : 1519862473.000000000,
+    "date" : "2018-03-01T00:01:13",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 1 00:01:13 avas postfix/smtpd[2411]: warning: 208.37.192.234: address not listed for hostname mail.globrite.com",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas",
-    "message" : "warning: 208.37.192.234: address not listed for hostname mail.globrite.com"
+    "message" : "warning: 208.37.192.234: address not listed for hostname mail.globrite.com",
+    "processId" : "2411",
+    "tag" : "postfix/smtpd"
   }
 }

@@ -1,17 +1,16 @@
 {
   "input" : "<46>1 2018-02-01T20:28:36.837039+00:00 miner-01 rsyslogd - - - rsyslogd's userid changed to 104",
   "expected" : {
-    "messageId" : null,
-    "processId" : null,
-    "appName" : "rsyslogd",
-    "structuredData" : [ ],
-    "date" : 1517516916.837039000,
+    "date" : "2018-02-01T20:28:36.837039",
     "remoteAddress" : "localhost",
     "rawMessage" : "<46>1 2018-02-01T20:28:36.837039+00:00 miner-01 rsyslogd - - - rsyslogd's userid changed to 104",
+    "type" : "RFC5424",
     "level" : 6,
     "version" : 1,
     "facility" : 5,
     "host" : "miner-01",
-    "message" : "rsyslogd's userid changed to 104"
+    "message" : "rsyslogd's userid changed to 104",
+    "appName" : "rsyslogd",
+    "structuredData" : [ ]
   }
 }

@@ -1,15 +1,13 @@
 {
   "input" : "Mar 12 11:44:20 server7 ftpd[25306]: Goodbye.",
   "expected" : {
-    "tag" : "ftpd",
-    "processId" : "25306",
-    "date" : 1520855060.000000000,
+    "date" : "2018-03-12T11:44:20",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 12 11:44:20 server7 ftpd[25306]: Goodbye.",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "server7",
-    "message" : "Goodbye."
+    "message" : "Goodbye.",
+    "processId" : "25306",
+    "tag" : "ftpd"
   }
 }
