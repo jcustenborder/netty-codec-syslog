@@ -22,7 +22,7 @@ import io.netty.handler.codec.MessageToMessageDecoder;
 
 import java.net.InetAddress;
 import java.nio.charset.Charset;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @ChannelHandler.Sharable
@@ -43,7 +43,7 @@ public class UDPSyslogMessageDecoder extends MessageToMessageDecoder<DatagramPac
     final InetAddress inetAddress = datagramPacket.sender().getAddress();
     output.add(
         ImmutableSyslogRequest.builder()
-            .receivedDate(new Date())
+            .receivedDate(LocalDateTime.now())
             .rawMessage(rawMessage)
             .remoteAddress(inetAddress)
             .build()

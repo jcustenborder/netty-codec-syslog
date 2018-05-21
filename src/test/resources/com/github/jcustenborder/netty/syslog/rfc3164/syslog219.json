@@ -1,15 +1,13 @@
 {
   "input" : "Mar 8 02:50:26 avas dccifd[12385]: no answer from 127.0.0.1 (127.0.0.1,6277) after 16016 ms",
   "expected" : {
-    "tag" : "dccifd",
-    "processId" : "12385",
-    "date" : 1520477426.000000000,
+    "date" : "2018-03-08T02:50:26",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 8 02:50:26 avas dccifd[12385]: no answer from 127.0.0.1 (127.0.0.1,6277) after 16016 ms",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas",
-    "message" : "no answer from 127.0.0.1 (127.0.0.1,6277) after 16016 ms"
+    "message" : "no answer from 127.0.0.1 (127.0.0.1,6277) after 16016 ms",
+    "processId" : "12385",
+    "tag" : "dccifd"
   }
 }

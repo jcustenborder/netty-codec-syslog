@@ -1,15 +1,13 @@
 {
   "input" : "Mar 7 04:35:01 avas CROND[19804]: (mailman) CMD (/usr/local/bin/python -S /usr/local/mailman/cron/gate_news)",
   "expected" : {
-    "tag" : "CROND",
-    "processId" : "19804",
-    "date" : 1520397301.000000000,
+    "date" : "2018-03-07T04:35:01",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 7 04:35:01 avas CROND[19804]: (mailman) CMD (/usr/local/bin/python -S /usr/local/mailman/cron/gate_news)",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas",
-    "message" : "(mailman) CMD (/usr/local/bin/python -S /usr/local/mailman/cron/gate_news)"
+    "message" : "(mailman) CMD (/usr/local/bin/python -S /usr/local/mailman/cron/gate_news)",
+    "processId" : "19804",
+    "tag" : "CROND"
   }
 }

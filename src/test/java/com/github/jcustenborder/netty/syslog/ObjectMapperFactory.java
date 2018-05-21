@@ -15,6 +15,7 @@
  */
 package com.github.jcustenborder.netty.syslog;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -27,16 +28,11 @@ public class ObjectMapperFactory {
   static {
     INSTANCE = new ObjectMapper();
     INSTANCE.configure(SerializationFeature.INDENT_OUTPUT, true);
-    INSTANCE.configure(SerializationFeature.WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS, true);
-    INSTANCE.configure(DeserializationFeature.READ_DATE_TIMESTAMPS_AS_NANOSECONDS, true);
+    INSTANCE.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+    INSTANCE.configure(SerializationFeature.WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS, false);
+    INSTANCE.configure(DeserializationFeature.READ_DATE_TIMESTAMPS_AS_NANOSECONDS, false);
+    INSTANCE.setSerializationInclusion(JsonInclude.Include.NON_NULL);
     INSTANCE.registerModule(new JavaTimeModule());
-    INSTANCE.registerModule(new Mod());
-  }
-
-  static class Mod extends SimpleModule {
-    public Mod() {
-      addAbstractTypeMapping(RFC5424Message.StructuredData.class, StructuredSyslogMessage.StructuredData.class);
-    }
   }
 
 }

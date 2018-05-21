@@ -1,8 +1,16 @@
 {
   "input" : "<165>1 2003-10-11T22:14:15.003Z mymachine.example.com evntslog - ID47 [exampleSDID@32473 iut=\"3\" eventSource=\"Application\" eventID=\"1011\"][examplePriority@32473 class=\"high\"]",
   "expected" : {
+    "date" : "2003-10-11T22:14:15.003",
+    "remoteAddress" : "localhost",
+    "rawMessage" : "<165>1 2003-10-11T22:14:15.003Z mymachine.example.com evntslog - ID47 [exampleSDID@32473 iut=\"3\" eventSource=\"Application\" eventID=\"1011\"][examplePriority@32473 class=\"high\"]",
+    "type" : "RFC5424",
+    "level" : 5,
+    "version" : 1,
+    "facility" : 20,
+    "host" : "mymachine.example.com",
+    "message" : "[examplePriority@32473 class=\"high\"]",
     "messageId" : "ID47",
-    "processId" : null,
     "appName" : "evntslog",
     "structuredData" : [ {
       "id" : "exampleSDID@32473",
@@ -11,14 +19,6 @@
         "eventSource" : "Application",
         "eventID" : "1011"
       }
-    } ],
-    "date" : 1065910455.003000000,
-    "remoteAddress" : "localhost",
-    "rawMessage" : "<165>1 2003-10-11T22:14:15.003Z mymachine.example.com evntslog - ID47 [exampleSDID@32473 iut=\"3\" eventSource=\"Application\" eventID=\"1011\"][examplePriority@32473 class=\"high\"]",
-    "level" : 5,
-    "version" : 1,
-    "facility" : 20,
-    "host" : "mymachine.example.com",
-    "message" : "[examplePriority@32473 class=\"high\"]"
+    } ]
   }
 }

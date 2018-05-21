@@ -17,25 +17,15 @@ package com.github.jcustenborder.netty.syslog;
 
 import java.io.File;
 
-public class RFC5424MessageParserTest extends MessageParserTest<StructuredSyslogMessage, RFC5424MessageParser, RFC5424TestCase> {
-  @Override
-  protected void assertMessage(StructuredSyslogMessage expected, StructuredSyslogMessage actual) {
-    MessageAssertions.assertMessage(expected, actual);
-  }
-
+public class RFC5424MessageParserTest extends MessageParserTest<RFC5424MessageParser> {
   @Override
   protected RFC5424MessageParser createParser() {
     return new RFC5424MessageParser();
   }
 
-  @Override
-  protected Class<RFC5424TestCase> testCaseClass() {
-    return RFC5424TestCase.class;
-  }
 
   @Override
   protected File testsPath() {
     return new File("src/test/resources/com/github/jcustenborder/netty/syslog/rfc5424");
   }
-
 }

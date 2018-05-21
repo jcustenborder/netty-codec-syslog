@@ -1,15 +1,13 @@
 {
   "input" : "Mar 12 12:00:08 server2 rcd[308]: Unable to downloaded licenses info: Unable to authenticate - Authorization Required (https://server2/data/red-carpet.rdf)",
   "expected" : {
-    "tag" : "rcd",
-    "processId" : "308",
-    "date" : 1520856008.000000000,
+    "date" : "2018-03-12T12:00:08",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 12 12:00:08 server2 rcd[308]: Unable to downloaded licenses info: Unable to authenticate - Authorization Required (https://server2/data/red-carpet.rdf)",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "server2",
-    "message" : "Unable to downloaded licenses info: Unable to authenticate - Authorization Required (https://server2/data/red-carpet.rdf)"
+    "message" : "Unable to downloaded licenses info: Unable to authenticate - Authorization Required (https://server2/data/red-carpet.rdf)",
+    "processId" : "308",
+    "tag" : "rcd"
   }
 }

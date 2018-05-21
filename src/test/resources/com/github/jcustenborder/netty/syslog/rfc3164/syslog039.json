@@ -1,15 +1,13 @@
 {
   "input" : "Mar 1 00:00:05 avas postfix/cleanup[2400]: 445C261AA4: message-id=<20040301080005.445C261AA4@avas.example.com>",
   "expected" : {
-    "tag" : "postfix/cleanup",
-    "processId" : "2400",
-    "date" : 1519862405.000000000,
+    "date" : "2018-03-01T00:00:05",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 1 00:00:05 avas postfix/cleanup[2400]: 445C261AA4: message-id=<20040301080005.445C261AA4@avas.example.com>",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas",
-    "message" : "445C261AA4: message-id=<20040301080005.445C261AA4@avas.example.com>"
+    "message" : "445C261AA4: message-id=<20040301080005.445C261AA4@avas.example.com>",
+    "processId" : "2400",
+    "tag" : "postfix/cleanup"
   }
 }

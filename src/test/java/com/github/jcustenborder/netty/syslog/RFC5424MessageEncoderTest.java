@@ -38,33 +38,10 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @Disabled
-public class RFC5424MessageEncoderTest {
+public class RFC5424MessageEncoderTest extends MessageEncoderTest {
 
-  RFC5424MessageEncoder encoder;
-
-  @BeforeEach
-  public void setup() {
-    this.encoder = new RFC5424MessageEncoder();
+  @Override
+  protected File testsPath() {
+    return new File("src/test/resources/com/github/jcustenborder/netty/syslog/rfc5424");
   }
-
-  @TestFactory
-  public Stream<DynamicTest> encode() {
-    final File testsPath = new File("src/test/resources/com/github/jcustenborder/netty/syslog/rfc5424");
-    return Arrays.stream(testsPath.listFiles()).map(file -> dynamicTest(file.getName(), () -> {
-      final RFC5424TestCase testCase = ObjectMapperFactory.INSTANCE.readValue(file, RFC5424TestCase.class);
-      ChannelHandlerContext context = mock(ChannelHandlerContext.class);
-      when(context.alloc()).thenReturn(ByteBufAllocator.DEFAULT);
-      List<Object> output = new ArrayList<>();
-
-      this.encoder.encode(context, testCase.expected, output);
-
-      assertFalse(output.isEmpty());
-      ByteBuf actual = (ByteBuf) output.get(0);
-      assertNotNull(actual, "actual should not be null.");
-      String a = actual.toString(Charset.forName("UTF-8")).replaceAll("\\s+", " ");
-      assertEquals(testCase.input.replaceAll("\\s+", " "), a);
-
-    }));
-  }
-
 }

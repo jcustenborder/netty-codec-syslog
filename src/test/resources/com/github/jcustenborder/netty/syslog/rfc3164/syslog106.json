@@ -1,15 +1,13 @@
 {
   "input" : "Feb 2 09:00:14 avas.example.com amavisd[11569]: Found $file at /usr/local/bin/file",
   "expected" : {
-    "tag" : "amavisd",
-    "processId" : "11569",
-    "date" : 1517562014.000000000,
+    "date" : "2018-02-02T09:00:14",
     "remoteAddress" : "localhost",
     "rawMessage" : "Feb 2 09:00:14 avas.example.com amavisd[11569]: Found $file at /usr/local/bin/file",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas.example.com",
-    "message" : "Found $file at /usr/local/bin/file"
+    "message" : "Found $file at /usr/local/bin/file",
+    "processId" : "11569",
+    "tag" : "amavisd"
   }
 }

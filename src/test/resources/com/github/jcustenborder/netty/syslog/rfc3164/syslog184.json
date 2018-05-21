@@ -1,15 +1,13 @@
 {
   "input" : "Mar 6 03:49:26 avas dbclean[19972]: expired 3899900 records and 11994010 checksums in /home/dcc/dcc_db",
   "expected" : {
-    "tag" : "dbclean",
-    "processId" : "19972",
-    "date" : 1520308166.000000000,
+    "date" : "2018-03-06T03:49:26",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 6 03:49:26 avas dbclean[19972]: expired 3899900 records and 11994010 checksums in /home/dcc/dcc_db",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas",
-    "message" : "expired 3899900 records and 11994010 checksums in /home/dcc/dcc_db"
+    "message" : "expired 3899900 records and 11994010 checksums in /home/dcc/dcc_db",
+    "processId" : "19972",
+    "tag" : "dbclean"
   }
 }

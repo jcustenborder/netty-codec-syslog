@@ -22,11 +22,11 @@ import io.netty.util.ByteProcessor;
 import io.netty.util.CharsetUtil;
 
 public class SyslogFrameDecoder extends LineBasedFrameDecoder {
+  final static ByteProcessor INTEGER = b -> b >= ((byte) 48) && b <= ((byte) 57);
+
   public SyslogFrameDecoder(int maxLength) {
     super(maxLength, true, false);
   }
-
-  final static ByteProcessor INTEGER = b -> b >= ((byte) 48) && b <= ((byte) 57);
 
   @Override
   protected Object decode(ChannelHandlerContext ctx, ByteBuf b) throws Exception {

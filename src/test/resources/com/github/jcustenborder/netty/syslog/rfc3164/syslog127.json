@@ -1,15 +1,13 @@
 {
   "input" : "Feb 2 09:00:36 avas.example.com amavisd[11601]: (11601-02) Passed,  -> , Message-ID: , Hits: 0.194",
   "expected" : {
-    "tag" : "amavisd",
-    "processId" : "11601",
-    "date" : 1517562036.000000000,
+    "date" : "2018-02-02T09:00:36",
     "remoteAddress" : "localhost",
     "rawMessage" : "Feb 2 09:00:36 avas.example.com amavisd[11601]: (11601-02) Passed,  -> , Message-ID: , Hits: 0.194",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas.example.com",
-    "message" : "(11601-02) Passed,  -> , Message-ID: , Hits: 0.194"
+    "message" : "(11601-02) Passed,  -> , Message-ID: , Hits: 0.194",
+    "processId" : "11601",
+    "tag" : "amavisd"
   }
 }

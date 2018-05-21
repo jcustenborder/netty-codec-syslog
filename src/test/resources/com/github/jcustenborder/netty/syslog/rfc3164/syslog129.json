@@ -1,15 +1,13 @@
 {
   "input" : "Feb 2 09:00:38 avas.example.com amavisd[11600]: (11600-04) Not-Delivered,  -> , quarantine spam-33f14e0d35a02c88714201b11984a1c6-20040202-090038-11600-04, Message-ID: <401E7F65.0FA4B9AC@tiscali.co.uk>, Hits: 15.23",
   "expected" : {
-    "tag" : "amavisd",
-    "processId" : "11600",
-    "date" : 1517562038.000000000,
+    "date" : "2018-02-02T09:00:38",
     "remoteAddress" : "localhost",
     "rawMessage" : "Feb 2 09:00:38 avas.example.com amavisd[11600]: (11600-04) Not-Delivered,  -> , quarantine spam-33f14e0d35a02c88714201b11984a1c6-20040202-090038-11600-04, Message-ID: <401E7F65.0FA4B9AC@tiscali.co.uk>, Hits: 15.23",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas.example.com",
-    "message" : "(11600-04) Not-Delivered,  -> , quarantine spam-33f14e0d35a02c88714201b11984a1c6-20040202-090038-11600-04, Message-ID: <401E7F65.0FA4B9AC@tiscali.co.uk>, Hits: 15.23"
+    "message" : "(11600-04) Not-Delivered,  -> , quarantine spam-33f14e0d35a02c88714201b11984a1c6-20040202-090038-11600-04, Message-ID: <401E7F65.0FA4B9AC@tiscali.co.uk>, Hits: 15.23",
+    "processId" : "11600",
+    "tag" : "amavisd"
   }
 }

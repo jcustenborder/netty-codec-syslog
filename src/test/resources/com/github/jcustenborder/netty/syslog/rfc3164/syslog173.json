@@ -1,15 +1,13 @@
 {
   "input" : "Mar 7 05:00:00 avas CROND[20085]: (cronjob) CMD ((cd /home/dcc/libexec; ./fetchblack))",
   "expected" : {
-    "tag" : "CROND",
-    "processId" : "20085",
-    "date" : 1520398800.000000000,
+    "date" : "2018-03-07T05:00:00",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 7 05:00:00 avas CROND[20085]: (cronjob) CMD ((cd /home/dcc/libexec; ./fetchblack))",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas",
-    "message" : "(cronjob) CMD ((cd /home/dcc/libexec; ./fetchblack))"
+    "message" : "(cronjob) CMD ((cd /home/dcc/libexec; ./fetchblack))",
+    "processId" : "20085",
+    "tag" : "CROND"
   }
 }

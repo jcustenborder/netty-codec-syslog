@@ -18,10 +18,10 @@ package com.github.jcustenborder.netty.syslog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.regex.Matcher;
 
-public class RFC3164MessageParser extends MessageParser<BSDSyslogMessage> {
+public class RFC3164MessageParser extends MessageParser {
   private static final Logger log = LoggerFactory.getLogger(RFC3164MessageParser.class);
   private static final String PATTERN = "^(<(?<priority>\\d+)>)?(?<date>([a-zA-Z]{3}\\s+\\d+\\s+\\d+:\\d+:\\d+)|([0-9T:.Z-]+))\\s+(?<host>\\S+)\\s+((?<tag>[^\\[\\s\\]]+)(\\[(?<procid>\\d+)\\])?:)*\\s*(?<message>.+)$";
   private final ThreadLocal<Matcher> matcherThreadLocal;
@@ -31,7 +31,7 @@ public class RFC3164MessageParser extends MessageParser<BSDSyslogMessage> {
   }
 
   @Override
-  public BSDSyslogMessage parse(SyslogRequest request) {
+  public Message parse(SyslogRequest request) {
     log.trace("parse() - request = '{}'", request);
     final Matcher matcher = matcherThreadLocal.get().reset(request.rawMessage());
 
@@ -51,10 +51,11 @@ public class RFC3164MessageParser extends MessageParser<BSDSyslogMessage> {
     final Integer priority = (groupPriority == null || groupPriority.isEmpty()) ? null : Integer.parseInt(groupPriority);
     final Integer facility = null == priority ? null : Priority.facility(priority);
     final Integer level = null == priority ? null : Priority.level(priority, facility);
-    final OffsetDateTime date = parseDate(groupDate);
+    final LocalDateTime date = parseDate(groupDate);
 
 
-    return ImmutableBSDSyslogMessage.builder()
+    return ImmutableMessage.builder()
+        .type(MessageType.RFC3164)
         .rawMessage(request.rawMessage())
         .remoteAddress(request.remoteAddress())
         .date(date)

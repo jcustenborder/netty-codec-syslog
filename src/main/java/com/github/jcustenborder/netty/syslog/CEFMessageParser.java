@@ -18,14 +18,14 @@ package com.github.jcustenborder.netty.syslog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 
-public class CEFMessageParser extends MessageParser<CEFSyslogMessage> {
+public class CEFMessageParser extends MessageParser {
   private static final Logger log = LoggerFactory.getLogger(CEFMessageParser.class);
   private static final String CEF_PREFIX_PATTERN = "^(<(?<priority>\\d+)>)?(?<date>([a-zA-Z]{3}\\s+\\d+\\s+\\d+:\\d+:\\d+)|([0-9T:.Z-]+))\\s+(?<host>\\S+)\\s+CEF:(?<version>\\d+)\\|(?<data>.*)$";
   private static final String CEF_MAIN_PATTERN = "(?<!\\\\)\\|";
@@ -63,7 +63,7 @@ public class CEFMessageParser extends MessageParser<CEFSyslogMessage> {
   }
 
   @Override
-  public CEFSyslogMessage parse(SyslogRequest request) {
+  public Message parse(SyslogRequest request) {
     log.trace("parse() - request = '{}'", request);
     final Matcher matcherPrefix = this.matcherCEFPrefix.get().reset(request.rawMessage());
 
@@ -82,12 +82,13 @@ public class CEFMessageParser extends MessageParser<CEFSyslogMessage> {
     final Integer priority = (groupPriority == null || groupPriority.isEmpty()) ? null : Integer.parseInt(groupPriority);
     final Integer facility = null == priority ? null : Priority.facility(priority);
     final Integer level = null == priority ? null : Priority.level(priority, facility);
-    final OffsetDateTime date = parseDate(groupDate);
+    final LocalDateTime date = parseDate(groupDate);
     final Integer cefVersion = Integer.parseInt(groupCEFVersion);
 
     final List<String> parts = splitToList(groupData);
 
-    ImmutableCEFSyslogMessage.Builder builder = ImmutableCEFSyslogMessage.builder();
+    ImmutableMessage.Builder builder = ImmutableMessage.builder();
+    builder.type(MessageType.CEF);
     builder.rawMessage(request.rawMessage());
     builder.remoteAddress(request.remoteAddress());
     builder.date(date);

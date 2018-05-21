@@ -1,15 +1,13 @@
 {
   "input" : "Mar 12 12:34:23 server7 sshd[27393]: pam_authenticate: error Authentication failed",
   "expected" : {
-    "tag" : "sshd",
-    "processId" : "27393",
-    "date" : 1520858063.000000000,
+    "date" : "2018-03-12T12:34:23",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 12 12:34:23 server7 sshd[27393]: pam_authenticate: error Authentication failed",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "server7",
-    "message" : "pam_authenticate: error Authentication failed"
+    "message" : "pam_authenticate: error Authentication failed",
+    "processId" : "27393",
+    "tag" : "sshd"
   }
 }

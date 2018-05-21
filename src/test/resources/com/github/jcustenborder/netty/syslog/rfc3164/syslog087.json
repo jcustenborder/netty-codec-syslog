@@ -1,15 +1,13 @@
 {
   "input" : "Feb 2 09:00:14 avas.example.com amavisd[11568]: Perl version 5.008001",
   "expected" : {
-    "tag" : "amavisd",
-    "processId" : "11568",
-    "date" : 1517562014.000000000,
+    "date" : "2018-02-02T09:00:14",
     "remoteAddress" : "localhost",
     "rawMessage" : "Feb 2 09:00:14 avas.example.com amavisd[11568]: Perl version 5.008001",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas.example.com",
-    "message" : "Perl version 5.008001"
+    "message" : "Perl version 5.008001",
+    "processId" : "11568",
+    "tag" : "amavisd"
   }
 }

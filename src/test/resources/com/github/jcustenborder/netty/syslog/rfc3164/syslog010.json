@@ -1,15 +1,12 @@
 {
   "input" : "Mar 12 12:01:02 server4 snort: Ports to decode telnet on: 21 23 25 119",
   "expected" : {
-    "tag" : "snort",
-    "processId" : null,
-    "date" : 1520856062.000000000,
+    "date" : "2018-03-12T12:01:02",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 12 12:01:02 server4 snort: Ports to decode telnet on: 21 23 25 119",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "server4",
-    "message" : "Ports to decode telnet on: 21 23 25 119"
+    "message" : "Ports to decode telnet on: 21 23 25 119",
+    "tag" : "snort"
   }
 }

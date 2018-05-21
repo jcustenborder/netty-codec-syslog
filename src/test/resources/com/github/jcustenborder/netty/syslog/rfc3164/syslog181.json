@@ -1,15 +1,13 @@
 {
   "input" : "Mar 6 03:48:24 avas dccd[19972]: automatic dbclean; starting `dbclean -DPq -i 1189 -L info,local5.notice -L error,local5.err`",
   "expected" : {
-    "tag" : "dccd",
-    "processId" : "19972",
-    "date" : 1520308104.000000000,
+    "date" : "2018-03-06T03:48:24",
     "remoteAddress" : "localhost",
     "rawMessage" : "Mar 6 03:48:24 avas dccd[19972]: automatic dbclean; starting `dbclean -DPq -i 1189 -L info,local5.notice -L error,local5.err`",
-    "level" : null,
-    "version" : null,
-    "facility" : null,
+    "type" : "RFC3164",
     "host" : "avas",
-    "message" : "automatic dbclean; starting `dbclean -DPq -i 1189 -L info,local5.notice -L error,local5.err`"
+    "message" : "automatic dbclean; starting `dbclean -DPq -i 1189 -L info,local5.notice -L error,local5.err`",
+    "processId" : "19972",
+    "tag" : "dccd"
   }
 }
