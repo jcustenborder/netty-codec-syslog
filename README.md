@@ -12,21 +12,31 @@ format you wish to support.
 * [RFC 5424 - The Syslog Protocol](https://tools.ietf.org/html/rfc5424)
 * [CEF - ArcSight Common Event Format](https://community.softwaregrp.com/t5/ArcSight-Connectors/ArcSight-Common-Event-Format-CEF-Guide/ta-p/1589306)
 
-## RFC 3164 - The BSD Syslog Protocol
+# Setting up a listener
+
+## UDP
 
 ```java
-
+     Bootstrap b = new Bootstrap();
+     b.group(workerGroup)
+         .channel(NioDatagramChannel.class)
+         .handler(new ChannelInitializer<DatagramChannel>() {
+           @Override
+           protected void initChannel(DatagramChannel datagramChannel) throws Exception {
+             ChannelPipeline channelPipeline = datagramChannel.pipeline();
+             channelPipeline.addLast(
+                 new UDPSyslogMessageDecoder(),
+                 new SyslogMessageHandler(),
+                 handler
+             );
+           }
+         });
+ 
+     return b.bind(InetAddress.getLoopbackAddress(), port());
 ```
 
-## RFC 5424 - The Syslog Protocol
-
-```java
-
-```
-
-## CEF - ArcSight Common Event Format
-
-```java
-
+# Building
+```bash
+mvn clean install
 ```
 
