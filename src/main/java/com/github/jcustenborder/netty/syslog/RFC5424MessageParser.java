@@ -63,7 +63,7 @@ public class RFC5424MessageParser extends MessageParser {
 
     final List<Message.StructuredData> structuredData = parseStructuredData(groupStructuredData);
 
-    return ImmutableMessage.builder()
+    return ImmutableSyslogMessage.builder()
         .type(MessageType.RFC5424)
         .rawMessage(request.rawMessage())
         .remoteAddress(request.remoteAddress())

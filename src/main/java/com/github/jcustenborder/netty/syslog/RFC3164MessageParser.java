@@ -54,7 +54,7 @@ public class RFC3164MessageParser extends MessageParser {
     final LocalDateTime date = parseDate(groupDate);
 
 
-    return ImmutableMessage.builder()
+    return ImmutableSyslogMessage.builder()
         .type(MessageType.RFC3164)
         .rawMessage(request.rawMessage())
         .remoteAddress(request.remoteAddress())
