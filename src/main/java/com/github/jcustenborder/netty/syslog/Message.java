@@ -18,6 +18,7 @@ package com.github.jcustenborder.netty.syslog;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.apache.avro.reflect.Nullable;
 import org.immutables.value.Value;
 
 import java.net.InetAddress;
@@ -28,10 +29,6 @@ import java.util.Map;
 /**
  * Represents a standard syslog message.
  */
-@Value.Immutable
-@Value.Style(visibility = Value.Style.ImplementationVisibility.PACKAGE)
-@JsonSerialize(as = ImmutableMessage.class)
-@JsonDeserialize(as = ImmutableMessage.class)
 public interface Message {
   /**
    * Date of the message. This is the parsed date from the client.

@@ -59,7 +59,7 @@ public class SyslogMessageHandler extends SimpleChannelInboundHandler<SyslogRequ
       }
 
       log.warn("decode() - Could not parse message. request = '{}'", request);
-      Message unparseableMessage = ImmutableMessage.builder()
+      Message unparseableMessage = ImmutableSyslogMessage.builder()
           .type(MessageType.UNKNOWN)
           .date(LocalDateTime.now())
           .rawMessage(request.rawMessage())
