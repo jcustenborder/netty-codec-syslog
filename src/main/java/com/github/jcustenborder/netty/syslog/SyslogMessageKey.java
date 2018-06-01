@@ -22,5 +22,5 @@ import org.immutables.value.Value;
 @Value.Immutable
 @JsonSerialize(as = ImmutableSyslogMessageKey.class)
 @JsonDeserialize(as = ImmutableSyslogMessageKey.class)
-public interface SyslogMessageKey {
+public interface SyslogMessageKey extends MessageKey {
 }
